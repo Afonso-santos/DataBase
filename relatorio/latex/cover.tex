@@ -6,14 +6,14 @@
 %==========================================================================
 
 \backgroundsetup{
-    scale=1, 
-    angle=0, 
+    scale=1,
+    angle=0,
     opacity=1,
     contents={
         \begin{tikzpicture}[remember picture,overlay]
-            \path [fill=titlepagecolor] 
+            \path [fill=titlepagecolor]
                 (current page.north west) -- ($(current page.north west) + (5,0)$)
-                -- ($(current page.south west) + (5,0)$)-- (current page.south west); 
+                -- ($(current page.south west) + (5,0)$)-- (current page.south west);
             \node[color=white] at ($(current page.south west) + (3,4)$) {\bfseries {\fontsize{120}{60} \textsf{LI}}};
             \node[color=titlepagecolor] at ($(current page.south west) + (5.8,4)$) {\bfseries {\fontsize{120}{60} \textsf{4}}};
         \end{tikzpicture}
@@ -59,7 +59,7 @@
 %% UniPic
 \newcommand{\UniPic}{\includegraphics[scale=0.09]{images/uminho.png}}
 
-%% University 
+%% University
 \newcommand{\University}{
     \begin{flushleft}
         \UniPic
@@ -89,7 +89,7 @@
 \makeatother
 
 %==========================================================================
-% CLASSIFICATION SECTION 
+% CLASSIFICATION SECTION
 %==========================================================================
 
 %% School Year
@@ -101,21 +101,17 @@
 %% Observations
 \newcommand{\Observations}{}
 
-
-
-
-
 %% MAKETEMPLATE
 \newcommand{\makecover}{
 
 %==========================================================================
-% BEGIN COVER PAGE 
+% BEGIN COVER PAGE
 %==========================================================================
 
 %% Removes page number on footer
 \thispagestyle{empty}
 
-%% No indentation 
+%% No indentation
 \setlength{\parindent}{0em}
 
 %% Put Background defined on \backgroundsetup, in this page
@@ -134,7 +130,7 @@
 \SchoolYear
 
 \vspace*{5cm}
-%% bigger space (i think its the default one) between paragraphs 
+%% bigger space (i think its the default one) between paragraphs
 \setlength{\parskip}{1em}
 
 %% builds title info defined previously
@@ -151,18 +147,18 @@
 \pagebreak
 
 %==========================================================================
-% END COVER PAGE 
+% END COVER PAGE
 %==========================================================================
 
 %==========================================================================
-% BEGIN BACK COVER PAGE 
+% BEGIN BACK COVER PAGE
 %==========================================================================
 
 %% Removes page number on footer
 \thispagestyle{empty}
 
-% Changing look of lines in tabular environment 
-% Dashed -> dotted 
+% Changing look of lines in tabular environment
+% Dashed -> dotted
 %% length of dashes
 \setlength\dashlinedash{0.3pt}
 %% space between dashes
@@ -173,7 +169,7 @@
 
 %% This values can be changed in the preamble
 \begin{flushright}
-\begin{tabular}{ :p{4cm}:p{4cm}: } 
+\begin{tabular}{ :p{4cm}:p{4cm}: }
 \hdashline
 Data de Receção & \ReceptionDate \\ [2ex]
 \hdashline
@@ -204,6 +200,6 @@ Observações & \Observations \\ [7ex]
 
 \pagebreak
 %==========================================================================
-% END BACK COVER PAGE 
+% END BACK COVER PAGE
 %==========================================================================
 }
