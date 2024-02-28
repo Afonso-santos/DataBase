@@ -1,7 +1,7 @@
 # latex engine
 TEX = xelatex
 # output directory
-OUT = out
+OUT = output
 
 all: clean build
 
