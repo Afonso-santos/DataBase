@@ -1,5 +1,5 @@
 %% Blue cover color
-\definecolor{titlepagecolor}{RGB}{54,95,145}
+\definecolor{titlepagecolor}{RGB}{49,132,155}
 
 %==========================================================================
 % COLORED BAR ON THE LEFT SIDE
@@ -11,11 +11,9 @@
     opacity=1,
     contents={
         \begin{tikzpicture}[remember picture,overlay]
-            \path [fill=titlepagecolor]
-                (current page.north west) -- ($(current page.north west) + (5,0)$)
-                -- ($(current page.south west) + (5,0)$)-- (current page.south west);
-            \node[color=white] at ($(current page.south west) + (3,4)$) {\bfseries {\fontsize{120}{60} \textsf{LI}}};
-            \node[color=titlepagecolor] at ($(current page.south west) + (5.8,4)$) {\bfseries {\fontsize{120}{60} \textsf{4}}};
+            \path [fill=titlepagecolor] (-10.5,-15) rectangle ++ (5,30);
+            \node[color=white] at (-7,-12) {\bfseries {\fontsize{120}{60} \textsf{B}}};
+            \node[color=titlepagecolor] at (-4,-12) {\bfseries {\fontsize{120}{60} \textsf{D}}};
         \end{tikzpicture}
     }
 }
@@ -26,9 +24,8 @@
 
 %% Changes values in this field to show information in the cover and back cover about your team/project
 
-
 %% TITLE
-\title{CDC – Consultoria de Detetives Christie}
+\title{CDC – Consultoria de \\ Detetives Christie}
 
 %% AUTHORS
 \author{
@@ -72,7 +69,7 @@
 %% UC
 \newcommand{\UC}{
     \begin{flushleft}
-        \par\textcolor{titlepagecolor}{  \LARGE\textbf{\textsf{Unidade Curricular de \\ Laboratórios de Informática IV}}}
+        \par\textcolor{titlepagecolor}{  \LARGE\textbf{\textsf{Unidade Curricular de \\ Bases de Dados}}}
     \end{flushleft}
 }
 
@@ -166,7 +163,6 @@
 %% width of dashes
 \setlength\arrayrulewidth{1.1pt}
 
-
 %% This values can be changed in the preamble
 \begin{flushright}
 \begin{tabular}{ :p{4cm}:p{4cm}: }
@@ -181,7 +177,6 @@ Observações & \Observations \\ [7ex]
 \hdashline
 \end{tabular}
 \end{flushright}
-
 
 \vspace{9cm}
 \begin{flushleft}
