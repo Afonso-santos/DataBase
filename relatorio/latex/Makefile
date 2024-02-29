@@ -1,17 +1,20 @@
 # latex engine
 TEX = xelatex
+TEX_FLAGS = -output-directory=$(OUT) -shell-restricted
 # output directory
 OUT = output
 
-all: clean build
+.PHONY: build install
 
 build:
 	mkdir -p $(OUT)
-	$(TEX) -output-directory=$(OUT) main.tex
+	# Generate the index
+	makeindex $(OUT)/main.nlo -s nomencl.ist -o $(OUT)/main.nls
+	# Compile the document
+	$(TEX) $(TEX_FLAGS) main.tex
 
 install:
+	# Install the required packages
 	sudo apt install -y texlive-xetex texlive-lang-portuguese texlive-latex-recommended ttf-mscorefonts-installer
+	# Check if Arial font is installed
 	sudo fc-cache -f && fc-match Arial
-
-clean:
-	rm -f $(OUT)/*.log $(OUT)/*.aux $(OUT)/*.fdb_latexmk $(OUT)/*.fls $(OUT)/*.lof $(OUT)/*.lot $(OUT)/*.nlo $(OUT)/*.out $(OUT)/*.toc
