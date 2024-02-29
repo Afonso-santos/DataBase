@@ -1,0 +1,98 @@
+Nesta altura, penso que é importante dar-vos algumas ideias e sugestões relativamente à forma como deverão organizar e redigir a primeira parte do relatório do trabalho da disciplina de Bases de Dados, edição 2023-2024.
+Nesse sentido, de seguida, indico-vos a estrutura para a Parte I do relatório, que segue muito de perto aquilo que foi (e vai ser) lecionado nas aulas, em termos do desenvolvimento de um sistema de bases de dados. A estrutura que devem seguir é a seguinte:
+
+Resumo (250 palavras)
+
+>> Descrição resumida do processo de desenvolvimento do sistema de bases de dados.
+
+Palavras-chave (no máximo 6 palavras)
+
+>> Enumeração de um conjunto de palavras-chave relacionadas com o projeto.
+
+1. Definição do Sistema
+
+1.1 Contexto de aplicação
+
+>> Apresentação (com detalhe) do contexto do caso de estudo para o qual vão desenvolver o sistema de bases de dados que idealizaram.  
+
+1.2 Motivação e Objetivos do Trabalho
+
+>> Apresentação e fundamentação do projeto, apresentando o motivo porque é que deve ser desenvolvido. Enumerar e explicar cada um dos objetivos que se pretende alcançar com a implementação do sistema de bases de dados.
+
+1.3 Análise da Viabilidade do processo
+
+>> Apresentação e justificar a viabilidade do projeto. Justificar com exemplos concretos de viabilidade.
+
+1.4 Recursos e Equipa de Trabalho
+
+>> Enumeração dos diversos recursos humanos e materiais que serão utilizados durante o processo de desenvolvimento do projeto. Justificar cada um deles e enquadrá-los no processo de desenvolvimento.
+
+1.5 Plano de Execução do Projeto
+
+>> Apresentação de um diagrama GANTT que ilustre detalhadamente a forma como as diversas etapas do projeto vão ser realizadas, associando os seus diversos atores. Justificar os períodos de tempo definidos para cada tarefa.
+
+2. Levantamento e Análise de Requisitos
+
+2.1 Método de Levantamento e de Análise de Requisitos Adotado
+
+>> Identificação, justificação e caracterização das diversas formas de levantamento de requisitos adotadas, expondo os seus diversos intervenientes. Referir e incluir eventual documentação utilizada ou recolhida – atas de reuniões, documentos de processos de trabalho, diagramas de atividade, etc.
+
+2.2 Organização dos Requisitos Levantados
+
+>> Explicação do processo de levantamento realizado e exposição da organização de requisitos adotada. Enumeração e organização dos requisitos levantados, de acordo com a sua categorização (descrição, manipulação e controlo). Caracterização dos requisitos tendo em consideração os seguintes elementos: tipo, número, data, descrição do requisito, fonte de informação e analista.
+
+2.3 Análise e Validação Geral dos Requisitos
+
+>> Validação dos requisitos apresentados com os diversos intervenientes do processo. Relatar eventuais anomalias e ações corretivas desenvolvidas.
+
+3. Modelação Conceptual
+
+3.1 Apresentação da Abordagem de Modelação Realizada
+
+>> Apresentação e explicação do processo de modelação concetual adotado, com referência à notação e ferramenta adotadas.  
+
+3.2 Identificação e Caracterização das Entidades
+
+>> Explicação do processo de identificação das entidades do sistema. Enumeração e fundamentação de cada uma das entidades identificadas, tendo em conta a caracterização sugerida em [Connoly e Begg, 2015]. Indicar os requisitos que originaram cada uma das entidades.
+
+3.3 Identificação e Caracterização dos Relacionamentos
+
+>> Explicação do processo de identificação dos relacionamentos entre as entidades definidas. Enumeração e fundamentação de cada um dos relacionamentos identificados, tendo em conta a caracterização sugerida em [Connolly e Begg, 2015]. Indicar os requisitos que originaram cada um dos relacionamentos enumerados.
+
+3.4 Identificação e Caracterização dos Atributos das Entidades e dos Relacionamentos.
+
+>> Explicação do processo de identificação dos vários atributos das entidades e dos relacionamentos. Enumeração e fundamentação de cada atributo, organizando-os por entidades e relacionamentos identificados, tendo em conta a caracterização sugerida em [Connolly e Begg, 2015]. Indicar os requisitos que originaram cada um dos atributos enumerados.
+
+3.5 Apresentação e Explicação do Diagrama ER Produzido
+
+>> Apresentação do diagrama concetual produzido. Explicação do seu processo de construção, tendo em conta as entidades e os relacionamentos identificados anteriormente, bem com as suas caracterizações em termos de atributos.
+
+4. Modelação Lógica
+
+4.1 Construção e Validação do Modelo de Dados Lógico
+
+>> Apresentação e explicação do processo de modelação lógica adotado, com referência à ferramenta adotada.  
+
+4.2 Apresentação e Explicação do Modelo Lógico Produzido
+
+>> Apresentação do processo de conversão realizado, expondo e justificando a origem de cada uma das tabelas que foram criadas. Apresentação do modelo lógico produzido.
+
+4.3 Normalização de Dados
+
+>> Indicação se o modelo está ou não normalizado. Explicar.
+
+4.4 Validação do Modelo com Interrogações do Utilizador
+
+>> Apresentação de 4-6 expressões em Álgebra Relacional que representem queries previamente enunciadas no conjunto de requisitos de manipulação estabelecidos anteriormente.
+
+5. Conclusões e Trabalho Futuro
+
+>> Resumo breve do trabalho realizado e das ações desenvolvidas. Enumeração e análise de aspetos positivos e negativos identificados durante o processo de desenvolvimento do sistema de bases de dados. Exposição das próximas linhas de desenvolvimneto do projeto.
+
+6. Bibliografia
+
+>> Enumeração dos diversos recursos bibliográficos utilizados. Utilizar o sistema de referenciação APA (https://guias.sdum.uminho.pt/apa).
+
+Anexos (Caso existam)
+
+>> Apresentação de textos, diagramas e outros documentos que não foram incluídos no texto do corpo do relatório, mas que são importantes para o entendimento do projeto desenvolvido.
