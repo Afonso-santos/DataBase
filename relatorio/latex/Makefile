@@ -7,7 +7,7 @@ all: clean build
 
 build:
 	mkdir -p $(OUT)
-	xelatex -output-directory=$(OUT) main.tex
+	$(TEX) -output-directory=$(OUT) main.tex
 
 install:
 	sudo apt install -y texlive-xetex texlive-lang-portuguese texlive-latex-recommended ttf-mscorefonts-installer
