@@ -1,0 +1,133 @@
+group:CDC
+description:Base de dados da agência de detetives CDC
+
+-- Entidades
+caso = {
+    id, cliente, estado, categoria, descricao,  dataAbertura, dataFechamento, pagamentos, despesas
+    1,  1,       1,      1,         'exemplo1', '20/03/2024', 'NULL',         1,          1
+    2,  1,       2,      3,         'exemplo2', '10/03/2024', 'NULL',         2,          2
+    3,  2,       2,      1,         'exemplo3', '18/03/2024', 'NULL',         3,          3
+}
+
+detetive = {
+    id, nome,   telefone,         email,    dataNascimento, morada,    salario, dataContratacao, dataFimContrato, especialidade, efetivo, estado
+    1,  'det1', '+351 910000000', 'email1', '20/03/2024',   'morada1', 1000,    '20/03/2024',    'NULL',          3,             1,       1
+    2,  'det2', '+351 910000001', 'email2', '19/03/2024',   'morada2', 1000,    '20/03/2024',    'NULL',          2,             1,       1
+    3,  'det3', '+351 910000002', 'email3', '05/05/2020',   'morada3', 1000,    '20/03/2024',    'NULL',          1,             0,       1
+    4,  'det4', '+351 910000003', 'email4', '20/03/2024',   'morada4', 1000,    '12/12/2023',    '20/03/2024',    3,             1,       0
+}
+
+cliente = {
+    id, nome,       telefone,         email,                  morada
+    1,  'cliente1', '+351 910000000', 'cliente1@example.com', 'morada1'
+    2,  'cliente2', '+351 910000001', 'cliente2@example.com', 'morada2'
+    3,  'cliente3', '+351 910000002', 'cliente3@example.com', 'NULL'
+    4,  'cliente4', '+351 910000003', 'NULL',                 'morada4'
+}
+
+testemunha = {
+    id, nome,   telefone,         email,                     morada,    dataRegisto
+    1,  'tes1', '+351 910000000', 'testemunha1@example.com', 'morada1', '20/03/2024'
+    2,  'tes2', '+351 910000001', 'testemunha2@example.com', 'morada2', '20/03/2024'
+    3,  'tes3', '+351 910000002', 'testemunha3@example.com', 'morada3', '20/03/2024'
+}
+
+suspeito = {
+    id, nome,   telefone,         email,                   dataNascimento, sexo, morada,    descricao,  dataRegisto
+    1,  'sus1', '+351 910000000', 'suspeito1@example.com', '01/01/2000',   'M',  'morada1', 'exemplo1', '18/03/2024'
+    2,  'sus2', '+351 910000001', 'suspeito2@example.com', '25/12/1998',   'F',  'morada2', 'exemplo2', '20/03/2024'
+    3,  'sus3', 'NULL',           'NULL',                  'NULL',         'M',  'morada3', 'exemplo3', '20/03/2024'
+}
+
+evidencia = {
+    id, caso, dataColeta,   descricao,  tipo, arquivo
+    1,  1,    '20/03/2024', 'exemplo1', 1,    'arquivo1'
+    2,  1,    '20/03/2024', 'exemplo2', 2,    'NULL'
+    3,  2,    '20/03/2024', 'exemplo3', 3,    'arquivo3'
+}
+
+-- relações originadas de atributos multivalorados
+pagamento = {
+    id, caso, data,         valor, descricao
+    1,  1,    '20/03/2024', 100,   'exemplo1'
+    2,  1,    '20/03/2024', 200,   'exemplo2'
+    3,  3,    '20/03/2024', 300,   'exemplo3'
+}
+
+despesa = {
+    id, caso, data, valor, descricao
+    1,  1,    '20/03/2024', 150,   'transporte'
+    2,  2,    '20/03/2024', 250,   'licensa de software'
+    3,  3,    '20/03/2024', 50,    'material de investigação'
+}
+
+-- relações originadas de relacionamentos (N:M)
+vinculacao = {
+    id, detetive, caso, dataVinculacao, dataDesvinculacao, descricao
+    1,  1,        1,    '22/02/2024',   '21/02/2024',            'exemplo1'
+    2,  2,        1,    '20/03/2024',   'NULL',            'exemplo2'
+    3,  3,        1,    '12/03/2024',   'NULL',            'exemplo3'
+    4,  1,        2,    '20/03/2024',   'NULL',            'exemplo4'
+    5,  2,        2,    '20/03/2024',   'NULL',            'exemplo5'
+    6,  1,        3,    '20/03/2024',   'NULL',            'exemplo6'
+    7,  2,        3,    '20/03/2024',   'NULL',            'exemplo7'
+    8,  3,        3,    '20/03/2024',   'NULL',            'exemplo8'
+}
+
+casosuspeito = {
+    id, caso, suspeito
+    1,  1,    1
+    2,  1,    2
+    3,  2,    3
+}
+
+casotestemunha = {
+    id, caso, testemunha
+    1,  1,    1
+    2,  2,    2
+    3,  1,    3
+}
+
+-- relações para mapeamentos de valores
+evidenciatipo = {
+    id, designacao
+    1,  'testemunhal'
+    2,  'documental'
+    3,  'pericial'
+    4,  'indicial'
+    5,  'real'
+}
+
+casoestado = {
+    id, designacao
+    1,  'aberto'
+    2,  'resolvido'
+    3,  'arquivado'
+}
+
+casocategoria = {
+    id, designacao
+    1,  'fraude'
+    2,  'roubo'
+    3,  'homicídio'
+    4,  '...'
+}
+
+detetiveespecialidade = {
+    id, designacao
+    1,  'Investigação e descoberta de esquemas de fraude'
+    2,  'Investigações de natureza jurídica'
+    3,  'Busca e apreensão'
+    4,  'Serviços corporativos'
+    5,  'Aplicativo espião sobre identidades particulares'
+    6,  'Aplicativo espião sobre identidades cooperativas'
+    7,  'Detetive particular criminalista'
+    8,  'Investigações cibernéticas'
+}
+
+detetiveestado = {
+    id, designacao
+    1,  'contratado'
+    2,  'demitido'
+    3,  'aposentado'
+}
