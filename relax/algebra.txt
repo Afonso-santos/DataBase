@@ -1,27 +1,28 @@
 -- Aceder a identificadores de detetives que estão num caso em específico (exemplo: ID do caso = 0), nessa instância.
-σ(caso = 1 ∧ dataDesvinculacao = 'NULL') (vinculacao)
+σ (caso = 1 ∧ dataDesvinculacao = 'NULL') (vinculacao)
 
 -- Aceder a identificadores de detetives que estiveram num caso em específico (exemplo: ID do caso = 1).
-σ(caso = 1 ∧ dataDesvinculacao != 'NULL') (vinculacao)
+σ (caso = 1 ∧ dataDesvinculacao != 'NULL') (vinculacao)
 
 -- Relatório completo de pagamentos com data, descrição e valor para um caso em específico (exemplo: ID do caso = 1).
-π data, valor, descricao σ(caso = 1) (pagamento)
+π data, valor, descricao
+σ (caso = 1) (pagamento)
 
 -- Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).
 π caso.id, caso.dataAbertura, casoestado.designacao
-((σ(dataAbertura ≥ '14/03/2024' ∧ dataAbertura ≤ '20/04/2024') (caso))
+(( σ(dataAbertura ≥ '14/03/2024' ∧ dataAbertura ≤ '20/04/2024') (caso))
 ⨝ caso.estado = casoestado.id (casoestado))
 
 -- Apresentar os dados de um caso (exemplo: ID do caso = 1) - evidências, suspeitos e testemunhas - por ordem cronológica.
 τ evidencia.dataColeta
 σ (caso = 1) (evidencia)
 
-τ suspeito.dataRegisto
+τ suspeito.dataRegisto ASC
 π suspeito.nome, suspeito.telefone, suspeito.email, suspeito.dataNascimento, suspeito.sexo, suspeito.morada, suspeito.descricao, suspeito.dataRegisto
 (σ (casosuspeito.caso = 1) (casosuspeito)
 ⨝ casosuspeito.suspeito = suspeito.id (suspeito))
 
-τ testemunha.dataRegisto
+τ testemunha.dataRegisto ASC
 π testemunha.nome, testemunha.telefone, testemunha.email, testemunha.morada, testemunha.dataRegisto
 (σ (casotestemunha.caso = 1) (casotestemunha)
 ⨝ casotestemunha.testemunha = testemunha.id (testemunha))
