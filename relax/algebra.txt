@@ -1,18 +1,18 @@
--- Aceder a identificadores de detetives que estão num caso em específico (id do caso = 1)
-σ(caso = 1) (vinculacao)
+-- Aceder a identificadores de detetives que estão num caso em específico (exemplo: id do caso = 0), nessa instância.
+σ(caso = 1 ∧ dataDesvinculacao == 'NULL') (vinculacao)
 
--- Aceder a identificadores de detetives que estiveram num caso em específico (id do caso = 1)
+-- Aceder a identificadores de detetives que estiveram num caso em específico (exemplo: id do caso = 1).
 σ(caso = 1 ∧ dataDesvinculacao != 'NULL') (vinculacao)
 
--- Relatório de pagamentos com data, descrição e valor para um caso em específico (id do caso = 1)
+-- Relatório completo de pagamentos com data, descrição e valor para um caso em específico (exemplo: id do caso = 1).
 π data, valor, descricao σ(caso = 1) (pagamento)
 
--- Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: 12/03/2024 a 18/03/2024)
+-- Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).
 π caso.id, caso.dataAbertura, casoestado.designacao
 ((σ(dataAbertura ≥ '14/03/2024' ∧ dataAbertura ≤ '20/04/2024') (caso))
 ⨝ caso.estado = casoestado.id (casoestado))
 
--- Apresentar os dados de um caso - evidências, suspeitos e testemuhas - por ordem cronológica
+-- Apresentar os dados de um caso (exemplo: id do caso = 1) - evidências, suspeitos e testemuhas - por ordem cronológica.
 τ evidencia.dataColeta
 σ (caso = 1) (evidencia)
 
@@ -26,7 +26,7 @@
 (σ (casotestemunha.caso = 1) (casotestemunha)
 ⨝ casotestemunha.testemunha = testemunha.id (testemunha))
 
--- Relatório diário de novas evidências, suspeitos e testemunhas de uma caso em específico (id do caso = 1 e data = 20/03/2024)
+-- Relatório diário de novas evidências, suspeitos e testemunhas de um caso em específico (exemplo: id do caso = 1 e data = 20/03/2024).
 π evidencia.id, evidencia.dataColeta, evidencia.descricao
 σ (caso = 1 ∧ dataColeta = '20/03/2024') (evidencia)
 
