@@ -2,31 +2,41 @@
 \contentsline {chapter}{\numberline {1}Definição do Sistema}{1}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Contexto de Aplicação}{1}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Motivação e Objetivos do Trabalho}{2}{section.1.2}%
-\contentsline {section}{\numberline {1.3}Análise da Viabilidade do Processo}{3}{section.1.3}%
-\contentsline {section}{\numberline {1.4}Recursos e Equipa de Trabalho}{4}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}Recursos Humanos:}{4}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Recursos Físicos:}{4}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}Recursos Digitais:}{4}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}Equipa de Trabalho:}{5}{subsection.1.4.4}%
-\contentsline {section}{\numberline {1.5}Plano de Execução do Projeto}{5}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Estrutura do Relatório}{5}{section.1.6}%
-\contentsline {chapter}{\numberline {2}Levantamento e Análise de Requisitos}{7}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Método de Levantamento e de Análise de Requisitos Adotado}{7}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Organização dos Requisitos Levantados}{8}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Análise e Validação Geral dos Requisitos}{8}{section.2.3}%
-\contentsline {chapter}{\numberline {3}Modelação Conceptual}{9}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Apresentação da Abordagem de Modelação Realizada}{9}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Identificação e Caracterização das Entidades}{9}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Identificação e Caracterização dos Relacionamentos}{10}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Identificação e Caracterização dos Atributos das Entidades e dos Relacionamentos}{13}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Apresentação e Explicação do Diagrama ER Produzido}{13}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Modelação Lógica}{15}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Construção e Validação do Modelo de Dados Lógico}{15}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Apresentação e Explicação do Modelo Lógico Produzido}{15}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Normalização de Dados}{15}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Validação do Modelo com Interrogações do Utilizador}{17}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Conclusões e Trabalho Futuro}{26}{chapter.5}%
-\contentsline {chapter}{\nonumberline Lista de Siglas e Acrónimos}{28}{chapter*.5}%
-\contentsline {chapter}{\nonumberline Anexos}{29}{chapter*.6}%
-\contentsline {section}{\nonumberline Anexo 1}{29}{section*.8}%
+\contentsline {section}{\numberline {1.3}Análise da Viabilidade do Processo}{4}{section.1.3}%
+\contentsline {section}{\numberline {1.4}Recursos e Equipa de Trabalho}{5}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}Recursos Humanos:}{5}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Recursos Físicos:}{5}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}Recursos Digitais:}{5}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}Equipa de Trabalho:}{6}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}Plano de Execução do Projeto}{7}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Estrutura do Relatório}{9}{section.1.6}%
+\contentsline {chapter}{\numberline {2}Levantamento e Análise de Requisitos}{10}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Método de Levantamento e de Análise de Requisitos Adotado}{10}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Organização dos Requisitos Levantados}{11}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Requisitos de Descrição}{11}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Requisitos de Manipulação}{14}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Requisitos de Controlo}{16}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.3}Análise e Validação Geral dos Requisitos}{17}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Modelação Conceptual}{18}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Apresentação da Abordagem de Modelação Realizada}{18}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Identificação e Caracterização das Entidades}{19}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Identificação e Caracterização dos Relacionamentos}{21}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Identificação e Caracterização dos Atributos das Entidades e dos Relacionamentos}{24}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Apresentação e Explicação do Diagrama ER Produzido}{30}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Modelação Lógica}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Construção e Validação do Modelo de Dados Lógico}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Apresentação e Explicação do Modelo Lógico Produzido}{33}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Normalização de Dados}{42}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Validação do Modelo com Interrogações do Utilizador}{43}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Conclusões e Trabalho Futuro}{54}{chapter.5}%
+\contentsline {chapter}{Bibliografia}{55}{chapter*.4}%
+\contentsline {chapter}{\nonumberline Lista de Siglas e Acrónimos}{56}{chapter*.5}%
+\contentsline {chapter}{\nonumberline Anexos}{57}{chapter*.6}%
+\contentsline {section}{\nonumberline \href {https://drive.google.com/file/d/1agTd5YEz52V7wCNFIrlbNgWCyI8yPJf1/view?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[I] Diagrama de Gantt} }{57}{section*.8}%
+\contentsline {section}{\nonumberline \href {https://docs.google.com/spreadsheets/d/1fe0qM1BRolL9VpDwkwYJ8-H2jR_JmQkdMciH0ri9ANc/edit?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[II] Documentos de Requisitos} }{57}{section*.10}%
+\contentsline {section}{\nonumberline \href {https://drive.google.com/file/d/1sBiFGwm6gOL_odOlY_IXcbbDkU8ZvKsC/view?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[III] Modelo Conceptual} }{57}{section*.12}%
+\contentsline {section}{\nonumberline \href {https://drive.google.com/file/d/1WCVEVx54g5WdHCTaMYi2YOkwK56RDnAg/view?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[IV] Modelo Lógico} }{57}{section*.14}%
+\contentsline {section}{\nonumberline \href {https://drive.google.com/file/d/1AuuAQxwBL63ALrXJo416Q9tukYyG0qn6/view?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[V] Ficheiro para a criação de relações/grupos para \textit {ReLaX}} }{57}{section*.16}%
+\contentsline {section}{\nonumberline \href {https://drive.google.com/file/d/1td6NRYSttnLRIKJZYQeEwMVnIf1fl5sn/view?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[VI] Ficheiro com expressões em AR para \textit {ReLaX}} }{57}{section*.18}%
+\contentsline {section}{\nonumberline \href {https://drive.google.com/file/d/13TvAYIQOglJ_Wpz7RWt_ZgIu_MXA9gk9/view?usp=sharing}{\relax \fontsize {10.95}{13.6}\selectfont \abovedisplayskip 11\p@ plus3\p@ minus6\p@ \abovedisplayshortskip \z@ plus3\p@ \belowdisplayshortskip 6.5\p@ plus3.5\p@ minus3\p@ \def \leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep \topsep \z@ \parsep \parskip \itemsep \z@ {\leftmargin \leftmargini \topsep 9\p@ plus3\p@ minus5\p@ \parsep 4.5\p@ plus2\p@ minus\p@ \itemsep \parsep }\belowdisplayskip \abovedisplayskip \add@extra@listi {sml}[VII] Diagrama de Gantt na Realidade} }{57}{section*.20}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

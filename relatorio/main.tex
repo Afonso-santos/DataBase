@@ -36,8 +36,7 @@
     %% https://ctan.org/pkg/hyperref?lang=en
 \usepackage{hyperref}
     %% math environments
-    %% https://ctan.org/pkg/amsmath?lang=en
-    
+    %% https://ctan.org/pkg/amsmath?lang=en        
     %% settings
     \hypersetup{
         colorlinks,
@@ -86,11 +85,43 @@
 }
 
 %% further RelaX definitions
-\usepackage{stix}
+%% \usepackage{stix}
 
 %% Defining sfdefault font and default font for document
 \renewcommand{\familydefault}{\sfdefault}
 
+%% For tables
+\usepackage{pbox}
+\usepackage{longtable}
+\usepackage{xcolor} % for coloring rows
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{array}
+
+% Custom ColumnSpec for tables
+% \newcolumntype{ColumnSpec}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+\newcommand{\MyColumnSpec}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+
+%% Rquisitos table header custom command
+\newcommand{\Header}[1]{%
+    \hline
+    \rowcolor{#1} \cellcolor{#1} Nr & \multicolumn{4}{c|}{\cellcolor{#1}Descrição} \\
+    \hhline{~----}
+    \cellcolor{#1}
+    & \cellcolor{#1}Data e Hora & \cellcolor{#1}Área & \cellcolor{#1}Fonte & \cellcolor{#1}Analista \\
+    \hline
+}
+
+%% Custom commands for filling cells
+\newcommand{\Nao}{%
+    \cellcolor{red!40}Não
+}
+\newcommand{\Sim}{%
+    \cellcolor{green!40}Sim
+}
+\newcommand{\Maybe}{%
+    \cellcolor{yellow!40}Talvez
+}
 %==========================================================================
 % DOCUMENT
 %==========================================================================
@@ -108,6 +139,7 @@
 
 %% smaller footer and header size
 \newgeometry{top=3cm,left=3cm,right=3cm,bottom=4cm}
+\savegeometry{default}
 
 %==========================================================================
 % BEGIN OPCIONAL DEDICATÓRIA
@@ -141,17 +173,20 @@
 \begin{abstract}
     No âmbito da UC Base de Dados, lecionada pelo regente, Professor Orlando Belo, visamos a
     realização de um projeto que consiste na modelação, desenvolvimento e implementação de um
-    Sistema de Base de Dados.
-    \par Tendo em consideração o tema deste ano - uma agência de detetives -, decidimos explorar
+    Sistema de Base de Dados Relacional.
+    
+    Tendo em consideração o tema deste ano - uma agência de detetives -, decidimos explorar
     uma agência liderada por Agatha Christie, de nome CDC - Consultoria de Detetives Christie.
-    Relativamente à modelação e desenvolvimento do nosso projeto, iremos dividi-lo em partes:
-    começaremos de forma abstrata, transformando os factos
-    \par \textbf{Área de Aplicação}: \textcolor{red}{
-        <<Identificação da Área de trabalho. Por exemplo: Desenho e arquitectura de Sistemas de Bases de Dados.>>
-    }
-    \par \textbf{Palavras-Chave}: \textcolor{red}{
-        <<Conjunto de palavras-chave que permitirão referenciar domínios de conhecimento, tecnologias, estratégias, etc., directa ou indirectamente referidos no relatório. Por exemplo: Bases de Dados Relacionais, Gestão de Índices, JAVA, Protocolos de Comunicação.>>
-    }
+    Relativamente à modelação e desenvolvimento do nosso projeto, iremos dividi-lo em partes: começaremos de forma abstrata e de alto nível, transformando os factos em requisitos e fazendo uma progressão sucessiva para o baixo nível à medida que convertemos estes num modelo conceptual, e, por conseguinte, o conceptual num modelo lógico. Para esta fase de modelação, recorremos ao BR-Modelo e ao \textit{MySQL Workbench}.
+    
+    
+    Posteriormente, numa fase seguinte, desenvolveremos este modelo numa Base de Dados que cumpra o que a CDC necessita após a sua implementação.
+    
+    
+    \textbf{Área de Aplicação}: Desenvolvimento e Arquitetura de Sistema de Base de Dados.
+
+    \textbf{Palavras-Chave}: Base de Dados Relacionais, Levantamento e Análise de Requisitos, Modelação Conceptual e Lógica, BR-Modelo, \textit{ReLaX}, \textit{MySQL}.
+
 \end{abstract}
 \end{flushleft}
 
@@ -166,13 +201,15 @@
 %==========================================================================
 
 %% Changes table of content name
-%% Portuguese babel default : "Conteúdo"
-%% Personally I prefer "índice"
+%% Portuguese babel default : “Conteúdo”
+%% Personally I prefer “índice”
 \renewcommand{\contentsname}{Índice}
 \renewcommand{\listfigurename}{Índice de Figuras}
 \renewcommand{\listtablename}{Índice de Tabelas}
 
+\newgeometry{top=2cm}
 \tableofcontents
+\loadgeometry{default}
 
 \pagebreak
 
@@ -201,31 +238,29 @@
     no final dos anos 90 após concluir que a sua carreira como detetive privada não ia ser
     suficiente para vingar-se do mundo sujo e curioso do crime.
 
-    \par A sua agência começou como algo discreto - um escritório na periferia de Londres,
+    A sua agência começou como algo discreto - um escritório na periferia de Londres,
     constituído por Agatha - gerente e secretária, a cara da Consultoria de Detetives Christie
     (CDC) - e mais três detetives, responsáveis por resolver os casos dos clientes que recorriam
     à agência nos seus momentos de aflição.
     
-    \par Não obstante, nos últimos três anos, houve um crescimento exponencial de casos, visto que a
+    Não obstante, nos últimos três anos, houve um crescimento exponencial de clientes, visto que a
     sua agência tornou-se renomada devido a alta variedade de casos que é capaz de solucionar -
     desde os mais “mundanos”, como casos de infidelidade e perseguições, até aos mais
     “mórbidos”, como homicídios e desaparecimentos. E, visto que Agatha é fascinada pelo avanço
     tecnológico, a sua consultoria também é exemplo de vanguarda na solução de cibercrimes.
     
-    \par Como tal, toda esta nova popularidade acrescida levou a que Agatha contratasse um novo
+    Como tal, toda esta nova popularidade acrescida levou a que Agatha contratasse um novo
     estagiário, aumentando a sua equipa e procurando conseguir prepará-lo para a subida de
     casos que a agência enfrentava a todo o vapor.
 
-    \par Agatha Christie decidiu contratar a SIM, uma empresa de soluções informáticas portuguesa,
-    para desenvolver um sistema de gestão do seu negócio depois de ouvir falar que os portugueses
-    são baratos, mas sabem inglês.
+    Agatha Christie decidiu contratar a SIM, uma empresa de soluções informáticas portuguesa,
+    para desenvolver um sistema de gestão do seu negócio depois de ouvir dizer que os portugueses fazem o trabalho por um preço acessível e comunicam-se bem em inglês.
 
-    \par A SIM - Soluções Informáticas Minho - é uma empresa de consultoria informática fundada em
-    Braga em 2003 onde hoje ainda está sediada. Esta oferece serviços como o desenvolvimento e
-    implementação de sistemas de bases de dados (SBD).
+    A SIM - Soluções Informáticas Minho - é uma empresa de consultoria informática, fundada em
+    Braga, em 2003, onde hoje ainda está sediada. Esta oferece serviços como o desenvolvimento e
+    implementação de Sistemas de Bases de Dados.
 
     \pagebreak
-    
 
     \section{Motivação e Objetivos do Trabalho}
     A CDC enfrenta um aumento significativo na procura dos seus serviços de investigação devido à
@@ -237,54 +272,57 @@
     informações cruciais, como pistas ou relatos de testemunhas, já haviam sido perdidos ou duplicados
     no passado, o que fazia Agatha temer que a sua agência acabasse por ficar com uma má reputação.
     
-    \par Com a sua mente analítica e perspicaz, ela reconheceu que a chave para resolver este mistério
+    Com a sua mente analítica e perspicaz, ela reconheceu que a chave para resolver este mistério
     organizacional estava  na modernização tecnológica, nomeadamente, na implementação de um Sistema de
     Base de Dados que possa lidar com a crescente quantidade de informações e casos de forma eficiente e
     escalável, bem como gerenciar e organizar as informações relacionadas aos casos, clientes, evidências
-    e suspeitos. Este projeto visa atender a essa demanda e proporcionar à CDC as ferramentas necessárias
+    e suspeitos. Este projeto visa atender a essa procura e proporcionar à CDC as ferramentas necessárias
     para continuar a oferecer serviços de alta qualidade e eficácia, assim garantindo o sucesso da agência
     e aliviando as preocupações de Agatha sobre a popularidade acrescida.
+
+    \clearpage
     
-    \par Por conseguinte, os objetivos principais que pretendemos alcançar com o desenvolvimento deste SBD são os seguintes:
+    Por conseguinte, os objetivos principais que a CDC pretende alcançar com o desenvolvimento deste SGBD são os seguintes:
     
     \begin{itemize}
         \item \textbf{Escalabilidade:} À medida que a CDC cresce e enfrenta um aumento contínuo na procura pelos
             seus serviços, é essencial ter um sistema que possa escalar para atender às necessidades em constante
-            evolução da agência. Um Sistema de Base de Dados escalável pode crescer junto com a CDC, garantindo que
-            ela permaneça ágil e adaptável às mudanças no mercado, sem falhas ou confusões no sistema.
+            evolução da agência. Um Sistema de Gestão de Bases de Dados escalável pode crescer junto com a CDC, garantindo que
+            esta permaneça ágil e adaptável às mudanças no mercado, sem falhas ou confusões no sistema.
             
-        \item \textbf{Centralização dos Dados:} Com um Sistema de Base de Dados, os dados relacionados a
+        \item \textbf{Centralização dos Dados:} Com um Sistema de Gestão de Bases de Dados, os dados relacionados a
             casos, clientes, evidências e investigações podem ser acedidos rapidamente num local centralizado de
             forma rápida e eficiente, o que permite uma colaboração mais eficaz entre os detetives e facilita a
             tomada de decisões informadas.
             
-        \item\textbf{Eficiência Operacional:} Com o aumento do volume de casos, os métodos manuais de organização de informações tornaram-se cada vez mais ineficientes. Um Sistema de Base de Dados pode automatizar diversas tarefas, como armazenamento, recuperação e atualização de dados, libertando tempo e recursos dos funcionários para se concentrarem na própria investigação.
+        \item\textbf{Eficiência Operacional:} Com o aumento do volume de casos, os métodos manuais de organização de informações tornaram-se cada vez mais ineficientes. Um Sistema de Gestão de Bases de Dados pode automatizar diversas tarefas, como armazenamento, recuperação e atualização de dados, libertando tempo e recursos dos funcionários para se concentrarem na própria investigação.
             
             
-        \item \textbf{Precisão e Consistência:} Os registos físicos estão sujeitos a erros humanos, como duplicação e perda de dados. Um Sistema de Base de Dados garante precisão e consistência nas informações, ajudando assim a evitar erros e inconsistências que possam comprometer a qualidade do trabalho da CDC.
+        \item \textbf{Precisão e Consistência:} Os registos físicos estão sujeitos a erros humanos, como duplicação e perda de dados. Um Sistema de Gestão de Bases de Dados garante precisão e consistência nas informações, ajudando assim a evitar erros e inconsistências que possam comprometer a qualidade do trabalho da CDC.
 
         \item \textbf{Segurança de dados:} Os registos físicos podem ser facilmente acedidos por qualquer pessoa
             que os encontre. Isso inclui funcionários não autorizados ou intrusos, provocando falsificações, destruição
-            acidental e intencional de provas. Com a implementação de Sistema de Bases de Dados, existe um maior
+            acidental e intencional de provas. Com a implementação de Sistema de Gestão de Bases de Dados, existe um maior
             controlo de acesso.
             
         \item \textbf{Controlo de Despesas:} Com a quantidade de informação que ocorre durante um caso, alguns registos de despesas podem ser esquecidas, por isso é importante saber qual foi o custo de um caso.
     \end{itemize}
-    
+
+    \clearpage
+
     \section{Análise da Viabilidade do Processo}
-        A viabilidade de um projeto de desenvolvimento de software depende da habilidade de compreender e satisfazer as
-        demandas do mercado e dos utilizadores. Isto requer um planeamento cuidadoso e eficiente para garantir a
+        A viabilidade de um projeto de desenvolvimento de software depende da habilidade de compreender e satisfazer a procura do mercado e dos utilizadores. Isto requer um planeamento cuidadoso e eficiente para garantir a
         entrega de um produto confiável e de alta qualidade. E, ao seguir uma abordagem metódica, o projeto pode
         maximizar as suas chances de sucesso ao atender às expectativas e necessidades do público-alvo de forma eficaz.
         
-        \par Consideramos que o desenvolvimento de um SBD para a CDC é bastante viável, pois este garantirá uma série de benefícios para a agência, nomeadamente:
+        A SIM considerou que o desenvolvimento de um SGBD para a CDC é bastante viável, pois este garantirá uma série de benefícios para a agência, nomeadamente:
         
         \begin{itemize}
-            \item \textbf{Melhor Gestão de Funcionários:} Com um Sistema de Base de Dados, existe uma maior facilidade para identificar que funcionários estão ocupados ou disponíveis, possibilitando uma alocação mais rápida dos mesmos aos casos, bem como uma melhor assistência destes conforme necessária.
+            \item \textbf{Melhor Gestão de Funcionários:} Com um Sistema de Gestão de Bases de Dados, existe uma maior facilidade para identificar que funcionários estão ocupados ou disponíveis, possibilitando uma alocação mais rápida dos mesmos aos casos, bem como uma melhor assistência destes conforme necessária.
             
             \item \textbf{Melhor Gestão da Consultoria:} Ao conhecer os custos de cada caso, é possível otimizar os recursos financeiros, planear orçamentos mais precisos e tomar decisões estratégicas fundamentadas para maximizar a eficiência e rentabilidade da empresa.
             
-            \item \textbf{Melhorar a Qualidade de Serviço e de Bem Estar no Trabalho:} Um Sistema de Bases de Dados
+            \item \textbf{Melhorar a Qualidade de Serviço e de Bem Estar no Trabalho:} Um Sistema de Gestão de Bases de Dados
                 promoverá um melhor bem estar aos seus funcionários, evitando buscas intensivas ao sistema de
                 informação já recolhida, consequentemente melhorando a qualidade do serviço, significativamente.
                 
@@ -292,16 +330,20 @@
                 serão capazes de resolver um caso com mais eficiência e rapidez, ficando disponíveis mais rapidamente.
                 Como tal, a sua produtividade vai aumentar e vai ficar a par da nova enchente de casos.
                 
-            \item \textbf{Segurança Acrescida:} Com um Sistema de Base de Dados, existe um maior controlo de acesso relativamente a informações cruciais aos casos, o que garante a inexistência de adulteração ou destruição de provas. Com isto, tem-se a certeza que as informações presentes nos registos são as originais e não foram acedidas por intrusos.
+            \item \textbf{Segurança Acrescida:} Com um Sistema de Gestão de Bases de Dados, existe um maior controlo de acesso relativamente a informações cruciais aos casos, o que garante a inexistência de adulteração ou destruição de provas. Com isto, tem-se a certeza que as informações presentes nos registos são as originais e não foram acedidas por intrusos.
         \end{itemize}
-        \par Considerando esses fatores, fica claro que o projeto de implementação do Sistema de Base de Dados é
+        
+        Considerando esses fatores, fica claro que o projeto de implementação do Sistema de Gestão de Bases de Dados é
         altamente viável e trará benefícios substanciais para a CDC, principalmente a níveis financeiros, de
         organização de dados e serviços, e, a longo prazo, de crescimento contínuo no mercado de detetives particulares.
+
+    \clearpage
+    
     \section{Recursos e Equipa de Trabalho}
         \subsection{Recursos Humanos:}
             \begin{itemize}
-                \item Funcionários da Consultoria (Detetives, estagiários e gerente);
-                \item Clientes (Vítimas e os seus familiares, etc);
+                \item Funcionários da Consultoria (Detetives, estagiários e gerência);
+                \item Clientes (Entidades particulares, corporativas, etc);
                 \item Equipa de desenvolvimento.
             \end{itemize}
         \subsection{Recursos Físicos:}
@@ -313,51 +355,69 @@
         \subsection{Recursos Digitais:}
             \begin{itemize}
                 \item Sistemas Operativos: \textit{Windows} 11 e \textit{Linux} (\textit{Ubuntu} 22.04.3 \textit{LTS});
-                \item \textit{Google Drive};
-                \item \textit{GitHub};
-                \item \textit{LaTeX};
-                \item brModelo (v3.31);
+                \item \textit{Google Drive} e \textit{Google Sheets};
+                \item \textit{Git} e \textit{GitHub};
+                \item \textit{LaTeX} e \textit{Overleaf};
+                \item BR Modelo \textit{Web};
                 \item \textit{RelaX} (https://dbis-uibk.github.io/relax);
-                \item \textcolor{red}{(...) vamos preenchendo isto à medida que vamos usando ferramentas}.
+                \item \textit{MySQL Server Community Edition};
+                \item \textit{MySQL Workbench Community Edition}.
             \end{itemize}
+
+        \clearpage
+        
         \subsection{Equipa de Trabalho:}
             \begin{itemize}
-                \item \textbf{Perssoal Interno:}
+                \item \textbf{Pessoal Interno:}
                 \begin{itemize}
-                    \item \textbf{Agatha Christie:} Funcionamento da agência, atendimento a clientes,
-                        validação de serviços, atribuição de casos aos agentes, depoimento de informações
-                        cruciais ao projeto.
-                    \item \textcolor{red}{\textbf{Detetives efetivos:}}
-                    \item \textcolor{red}{\textbf{Detetives estagiários:}}
+                    \item \textbf{Agatha Christie:} Funcionamento da agência e da gerência, atendimento a clientes,
+                    validação de serviços, atribuição de casos aos agentes, depoimento de informações
+                    cruciais ao projeto.
+                    \item\textbf{Detetives efetivos:} Funcionamento dos detetives em si - seja em investigações solo ou em grupo -, depoimento de informações cruciais ao projeto, funcionamento das investigações e do tipo de despesas que um detetive encontra ao longo de um caso. 
+                    \item\textbf{Detetives estagiários:} Depoimento de informação sobre a agência e casos que tiveram a oportunidade de participar.
                 \end{itemize}
-            \item \textbf{Pessoal Externo:} \textcolor{red}{(para continuar ao longo do tempo)}
+            \item \textbf{Pessoal Externo:}
                 \begin{itemize}
-                    \item \textbf{Afonso Santos:}
-                    \item \textbf{Ana Pinto:}
-                    \item \textbf{Carlos Ferreira:} Levantamento de Requisitos
-                    \item \textbf{Flávia Araújo:}
-                    \item \textbf{Miguel Carvalho:} Levantamento de Requisitos
+                    \item \textbf{Afonso Santos:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica;
+                    \item \textbf{Ana Pinto:} Levantamento de Requisitos, Modelação Conceptual e Lógica;
+                    \item \textbf{Carlos Ferreira:} Levantamento de Requisitos, Modelação Conceptual e Lógica;
+                    \item \textbf{Flávia Araújo:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica;
+                    \item \textbf{Miguel Carvalho:} Levantamento de Requisitos, Modelação Conceptual e Lógica, Normalização de Dados, Álgebra Relacional. 
                 \end{itemize}
             \end{itemize}
 
+    \clearpage
+
     \section{Plano de Execução do Projeto}
-        \par Para assegurar uma implementação eficiente e eficaz do sistema de bases de dados, foram realizadas reuniões e conversas com a Sra. Christie, detetives e estagiários envolvidos no projeto. Com base nessas interações, foi estabelecido o seguinte cronograma de execução:
-        \par
-         \textcolor{red}{
-            <<TODO: adicionar diagrama de Gantt>>
-        }
-        \par No cronograma referido, definimos o tempo e os intervenientes nas           várias fases do projeto.
+        Para assegurar uma implementação eficiente e eficaz do sistema de gestão de bases de dados, foram realizadas reuniões com a Sra$.$ Christie, detetives e estagiários, da CDC, envolvidos no projeto. Com base nessas interações, foi estabelecido um cronograma de execução, sendo este, no nosso caso, um Diagrama de Gantt (figura [\ref{fig:1.1}], página [\pageref{fig:1.1}]).
 
-    \section{Estrutura do Relatório}
-        \textcolor{red}{
-            <<Após a leitura da introdução de um relatório é "simpático" apresentar uma breve descrição daquilo que se vai encontrar nos demais capítulos do relatório.>>
-        }
-    Após a introdução, é pertinente fornecer uma visão geral da metodologia de trabalho e das estratégias utilizadas no levantamento e análise de requisitos. Além disso, será apresentada uma esquematização do modelo da base de dados, levando em consideração os requisitos levantados.
-
-Esta secção do relatório destina-se a oferecer uma compreensão clara da abordagem adotada ao longo do projeto, bem como dos passos seguidos para desenvolver e implementar a solução proposta. Aqui está uma oportunidade para destacar a organização e o planeamento do trabalho, bem como a estruturação do processo de recolha e análise de requisitos.
-
+        No Diagrama de Gantt referido na figura [\ref{fig:1.1}], definimos as várias fases do projeto e os intervenientes para cada uma, assim como uma estimativa do tempo necessário a concluir cada fase.
         
-        \textcolor{red}{[isto faz-se no fim]}
+        \textbf{Nota}: Consultar anexo \nameref{anexo:1} para a visualização do Diagrama de Gantt original.
+        \newgeometry{top=0.5cm,left=0cm,right=0cm,bottom=0.5cm}
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.99, angle=270]{images/gantt.pdf}
+            \caption{Diagrama de Gantt}
+            \label{fig:1.1}
+        \end{figure}
+        \loadgeometry{default}
+
+
+    \clearpage
+    
+    \section{Estrutura do Relatório}
+    O presente relatório é composto por 5 capítulos.
+    
+    No primeiro capítulo, \textbf{contextualizamos} o projeto que iremos desenvolver, definindo a \textbf{motivação e objetivos} por detrás deste, bem como a sua \textbf{viabilidade}. Também listamos os \textbf{recursos necessários} para a execução deste projeto, bem como o seu \textbf{planeamento}, fazendo uma análise das várias etapas deste trabalho.
+
+    No segundo capítulo, descrevemos o \textbf{método de levantamento e de análise de requisitos adotado}, detalhando as estratégias de levantamento, organização e categorização de requisitos. Seguidamente, apresentamos os requisitos organizados por \textbf{requisitos de descrição}, de \textbf{manipulação} e de \textbf{controlo}. Por fim, \textbf{validamos} todos os requisitos levantados.
+
+    No capítulo três, introduzimos a \textbf{modelação conceptual} desenvolvida, começando pela \textbf{identificação e caracterização das entidades}, \textbf{dos relacionamentos} e \textbf{dos atributos das entidades e dos relacionamentos} do modelo. Posto isto, é feita uma \textbf{apresentação do diagrama ER produzido}, bem como uma explicação do processo de construção do mesmo.
+
+    No capítulo quatro, apresentamos a \textbf{modelação lógica} desenvolvida através do modelo conceptual. Aprofundamos o seu processo de \textbf{construção e validação}, e, após realizarmos o processo de conversão, apresentamos e explicamos o \textbf{modelo lógico produzido}.
+    Por fim, e ainda no quarto capítulo, entramos em detalhe sobre a \textbf{validação do modelo com interrogações do utilizador}, utilizando álgebra relacional para exemplos de manipulação de dados.
+
 %==========================================================================
 % END INTRODUCTION
 %==========================================================================
@@ -367,26 +427,342 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
 %==========================================================================
 
 \chapter{Levantamento e Análise de Requisitos}
+    \label{requisitos}
     \section{Método de Levantamento e de Análise de Requisitos Adotado}
+        \label{sec:2.1}
             O processo de definição de requisitos começa com uma reunião com a equipa para selecionar diversas estratégias de levantamento, de modo a captar toda a informação necessária para sustentar adequadamente e logicamente uma melhor esquematização e composição de requisitos. Das várias estratégias discutidas, assumimos que utilizamos estas:
             \begin{itemize}
-            \item \textbf{Reuniões} presenciais ou onlines com a Sra. Christie e os seus Detetives, tanto em grupo quanto individualmente com o propósito de identificar os diversos processos operacionais que ocorrem na consultoria e classificá-los.
+            \item \textbf{Reuniões} presenciais ou em regime \textit{online} com a Sra. Christie e os seus Detetives, tanto em grupo quanto individualmente com o propósito de identificar os diversos processos operacionais que ocorrem na consultoria e classificá-los.
             \item \textit{\textbf{Emails}}, às vezes as melhores ideias podem surgir subitamente, e como os funcionários têm uma vida bastante atarefada, deste modo podemos comunicar de maneira mais ágil.
             \item \textbf{Análise de Documentação} como \textbf{artigos de jornais} sobre casos resolvidos pela consultoria, para a equipa estar mais contextualizada acerca da mesma.
             \textbf{Relatórios de casos resolvidos} são recursos escassos infelizmente, pelo que também recorremos à \textbf{leitura de entrevistas dos detetives} para uma melhor compreensão das estratégias e métodos que estes têm por hábito utilizar na sua resolução dos seus casos. Analisámos igualmente a \textbf{documentação} da própria consultoria, mais especificamente relatórios relacionados com os ganhos e custos ao longo dos anos da empresa.
             \end{itemize}
             
-            \par Durante a reunião foi levantada a possibilidade de acompanhar uma investigação de perto, infelizmente foi negada por questões de segurança e de confidencialidade das informações dos participantes da investigação. 
-
+            Durante a reunião foi levantada a possibilidade de acompanhar uma investigação de perto, infelizmente foi negada por questões de segurança e de confidencialidade das informações dos participantes da investigação. 
             
+    \newgeometry{top=2cm,left=2cm,right=2cm,bottom=3cm}
     \section{Organização dos Requisitos Levantados}
-        \textcolor{red}{
-            >> Explicação do processo de levantamento realizado e exposição da organização de requisitos adotada. Enumeração e organização dos requisitos levantados, de acordo com a sua categorização (descrição, manipulação e controlo). Caracterização dos requisitos tendo em consideração os seguintes elementos: tipo, número, data, descrição do requisito, fonte de informação e analista.
-        }
+        \label{sec:2.2}
+        \subsection{Requisitos de Descrição}
+            \begin{table}[!ht]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                
+                \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+                \Header{green!20!white}
+
+                1 & \multicolumn{4}{c|}{\pbox{15cm}{Cada caso tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                \cline{2-5}
+                & 2024/03/20 18:05:00 & Casos & Equipa de Projeto & Carlos Ferreira \\
+                \hline
+                
+                2 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um caso deve incluir os seguintes atributos: identificador único, identificador de cliente, identificador (número inteiro) do estado, categoria, descrição, data de abertura, data de fechamento (opcional), um atributo composto multivalorado “pagamentos” - constituído por valor, descrição e data -, e um atributo composto multivalorado “despesas” - constituído por valor, descrição e data.}}\\
+                \cline{2-5}
+                & 2024/03/20 18:05:00 & Casos & Equipa de Projeto & Miguel Carvalho \\
+                \hline
+
+                3 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “estado” de um caso é mapeado por um dos seguintes valores: 1 (“aberto”), 2 (“resolvido”) ou 3 (“arquivado”).}}\\
+                \cline{2-5}
+                & 2024/03/10 09:20:00 & Casos & Gerência & Miguel Carvalho\\
+                \hline
+
+                4 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “categoria” de um caso é mapeado por um dos seguintes valores: 1 (“Criminal”), 2 (“Civil”), 3 (“Financeiro”), 4 (“Cibernético”), 5 (“Laboral”), 6 (“Administrativo”) ou 7 (“Ético”).}}\\
+                \cline{2-5}
+                & 2024/03/25 21:40:00 & Casos & Gerência & Miguel Carvalho \\
+                \hline
+
+                6 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os casos abertos têm vinculados pelo menos um detetive.}}\\
+                \cline{2-5}
+                & 2024/03/20 18:25:00 & Casos & Equipa de Projeto & Flávia Araújo\\
+                \hline
+
+                7 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os casos têm associado um único cliente.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:25 & Casos & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                8 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os casos têm zero ou mais testemunhas.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:25 & Casos & Equipa de Projeto & Flávia Araújo\\
+                \hline
+
+                9 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os casos têm zero ou mais suspeitos.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:25 & Casos & Equipa de Projeto & Flávia Araújo\\
+                \hline
+
+                10 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os casos têm zero ou mais evidências.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:25 & Casos & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+                
+                14 & \multicolumn{4}{c|}{\pbox{15cm}{Cada detetive tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:40 & Detetives & Equipa de Projeto & Flávia Araújo\\
+                \hline
+                
+                15 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um detetive deve incluir os seguintes atributos: identificador único, nome completo, telefone (único), email (único), data de nascimento, endereço de morada (opcional), salário, data de contratação, data de fim de contrato (opcional), área de especialidade, efetivo (valor booleano) e estado.}}\\
+                \cline{2-5}
+                & 10/03/2024 10:20 & Detetives & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                \end{tabular}
+            \caption{Requisitos de Descrição I}
+        \end{table}
+
+            \begin{table}[!ht]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+                \Header{green!20!white}
+
+                16 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “área de especialidade” de um detetive é mapeado por um dos seguinte valores: 1 (“Investigação e descoberta de esquemas de fraude”), 2 (“Investigações de natureza jurídica”), 3 (“Busca e apreensão”), 4 (“Serviços corporativos”), 5 (“Aplicativo espião sobre identidades particulares”), 6 (“Aplicativo espião sobre identidades cooperativas”), 7 (“Detetive particular criminalista”) ou 8 (“Investigações cibernéticas”).}}\\
+                \cline{2-5}
+                & 20/03/2024 18:25 & Detetives & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                17 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “estado” de um detetive é mapeado por um dos seguintes valores: 1 (“contratado”), 2 (“demitido”) ou 3 (“aposentado”).}}\\
+                \cline{2-5}
+                & 10/03/2024 10:42 & Detetives & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                18 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os detetives têm vinculado zero ou mais casos.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:25 & Detetives & Equipa de Projeto & Flávia Araújo\\
+                \hline
+
+                22 & \multicolumn{4}{c|}{\pbox{15cm}{Cada cliente tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:38 & Clientes & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                23 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um cliente deve incluir os seguintes atributos: identificador único, nome completo, telefone, email (opcional), e endereço de morada (opcional).}}\\
+                \cline{2-5}
+                & 10/03/2024 12:37 & Clientes & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                24 & \multicolumn{4}{c|}{\pbox{15cm}{Cada testemunha tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:39 & Testemunhas & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                25 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma testemunha deve incluir os seguintes atributos: identificador único, nome completo, telefone (único), email (único), endereço de morada (opcional) e data de registo.}}\\
+                \cline{2-5}
+                & 10/03/2024 11:00 & Testemunhas & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                26 & \multicolumn{4}{c|}{\pbox{15cm}{Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha.}}\\
+                \cline{2-5}
+                & 10/03/2024 13:20 & Testemunhas & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                27 & \multicolumn{4}{c|}{\pbox{15cm}{Cada suspeito tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:40 & Suspeitos & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                28 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um suspeito deve incluir os seguintes atributos: identificador único, nome completo, telefone (opcional), email (opcional), data de nascimento (opcional), sexo (opcional), endereço de morada (opcional), descrição (opcional) e data de registo.}}\\
+                \cline{2-5}
+                & 10/03/2024 11:01 & Suspeitos & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                29 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “descrição” de um suspeito contém informações sobre o mesmo, desde o porquê da suspeita, histórico criminal, etc.}}\\
+                \cline{2-5}
+                & 25/03/2024 21:45 & Suspeitos & Funcionários & Miguel Carvalho\\
+                \hline
+
+                30 & \multicolumn{4}{c|}{\pbox{15cm}{Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito.}}\\
+                \cline{2-5}
+                & 10/03/2024 13:25 & Suspeitos & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                \end{tabular}
+            \caption{Requisitos de Descrição II}
+        \end{table}
+
+            \begin{table}[!ht]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+                \Header{green!20!white}
+
+                31 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:30 & Vinculações & Gerência & Miguel Carvalho\\
+                \hline
+
+                33 & \multicolumn{4}{c|}{\pbox{15cm}{Cada evidência tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:50 & Evidências & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                34 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma evidência deve incluir os seguintes atributos: identificador único, identificador do caso, data de coleta, descrição, tipo e arquivo (opcional).}}\\
+                \cline{2-5}
+                & 10/03/2024 12:50 & Evidências & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                35 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “tipo” de uma evidência é mapeado por um dos seguintes valores: 1 (“testemunhal”), 2 (“documental”), 3 (“pericial”), 4 (“indicial”) ou 5 (“real”).}}\\
+                \cline{2-5}
+                & 10/03/2024 12:57 & Evidências & Funcionários & Miguel Carvalho\\
+                \hline
+
+                36 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “arquivo” de uma evidência representa a localização de um ficheiro digital ou um link, podendo este ser uma foto, vídeo, áudio ou documento.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:59 & Evidências & Funcionários & Miguel Carvalho\\
+                \hline
+
+                37 & \multicolumn{4}{c|}{\pbox{15cm}{Todos as evidências têm associadas um único caso.}}\\
+                \cline{2-5}
+                & 25/03/2024 21:45 & Evidências & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                \end{tabular}
+            \caption{Requisitos de Descrição III}
+        \end{table}
+
+        \clearpage
+
+         \subsection{Requisitos de Manipulação}
+            \begin{table}[!ht]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+                \Header{blue!20!white}
+
+                5 & \multicolumn{4}{c|}{\pbox{15cm}{Quando um caso é resolvido ou arquivado o seu estado é atualizado respectivamente, assim como a data de fechamento.}}\\
+                \cline{2-5}
+                & 10/03/2024 09:22 & Casos & Gerência & Miguel Carvalho\\
+                \hline
+
+                11 & \multicolumn{4}{c|}{\pbox{15cm}{Os dados relativos de cada caso - evidências, suspeitos e testemuhas - devem ser apresentados por ordem cronológica.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:07 & Casos & Funcionários & Miguel Carvalho\\
+                \hline
+
+                12 & \multicolumn{4}{c|}{\pbox{15cm}{Dado o identificador do caso, deve ser possível aceder a todos os detetives que já estiveram envolvidos, bem como detetives envolvidos no momento.}}\\
+                \cline{2-5}
+                & 12/03/2024 19:40 & Casos & Gerência & Miguel Carvalho\\
+                \hline
+
+                13 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema permite a pesquisa de características comuns entre casos, através da pesquisa de descrições nas seguintes entidades: casos, evidências, suspeitos e testemunhas.}}\\
+                \cline{2-5}
+                & 25/03/2024 21:50 & Casos & Funcionários & Miguel Carvalho\\
+                \hline
+
+                19 & \multicolumn{4}{c|}{\pbox{15cm}{Dado o identificador de um detetive, deve ser possível aceder a todos os casos em que esteve/está envolvido.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:35 & Detetives & Gerência & Miguel Carvalho\\
+                \hline
+
+                20 & \multicolumn{4}{c|}{\pbox{15cm}{Quando um detetive é demitido ou se aposenta o seu atributo “estado” deve ser atualizado respetivamente, assim como o atributo “data de desvinculação” de todas as suas vinculações a casos.}}\\
+                \cline{2-5}
+                & 10/03/2024 13:10 & Detetives & Gerência & Miguel Carvalho\\
+                \hline
+
+                21 & \multicolumn{4}{c|}{\pbox{15cm}{Os dados relativos a um detetive devem ser acedidos através do seu identificador único.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:30 & Detetives & Equipa de Projeto & Carlos Ferreira\\
+                \hline
+
+                32 & \multicolumn{4}{c|}{\pbox{15cm}{Uma desvinculação de um detetive a um caso, sejam os motivos aposentamento/demissão/remoção do detetive, deve atualizar o atributo “data de desvinculção”.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:35 & Vinculações & Gerência & Miguel Carvalho\\
+                \hline
+
+                41 & \multicolumn{4}{c|}{\pbox{15cm}{Os administradores devem ser capazes de ler, adicionar, atualizar e remover as informações armazenadas na base de dados.}}\\
+                \cline{2-5}
+                & 11/03/2024 20:05 & Permissões & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                42 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o custo total de um caso, através da soma de todas as despesas relativas ao mesmo. Salários de detetives não estão incluídos.}}\\
+                \cline{2-5}
+                & 10/03/2024 16:25 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                \end{tabular}
+            \caption{Requisitos de Manipulação I}
+        \end{table}
+
+            \begin{table}[!ht]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+                \Header{blue!20!white}
+
+                43 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o rendimento total de um caso, através da soma de todos os pagamentos relativos ao mesmo.}}\\
+                \cline{2-5}
+                & 10/03/2024 16:25 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                44 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o lucro/prejuízo de um caso, através da subtração do valor obtido em R43 (rendimento) pelo valor obtido em R42 (custo).}}\\
+                \cline{2-5}
+                & 10/03/2024 16:26 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                45 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter todas as despesas efetuadas por um detetive em diferentes casos em que este participou.}}\\
+                \cline{2-5}
+                & 10/03/2024 16:40 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                46 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter todos os pagamentos efetuados por um cliente em diferentes casos.}}\\
+                \cline{2-5}
+                & 10/03/2024 16:50 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                47 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada dia, o sistema deverá gerar um relatório que inclua todas as despesas e pagamentos efetuados. Este deve apresentar individualmente cada despesa e pagamento, se existirem, por caso. Adicionalmente, o relatório deve fornecer o somatório total de despesas, pagamentos, bem como os lucros ou prejuízos acumulados nesse dia.}}\\
+                \cline{2-5}
+                & 11/03/2024 19:40 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                48 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada dia, o sistema deverá gerar um relatório para cada caso que inclua novas evidências, testemunhas e suspeitos.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:40 & Casos & Gerência & Miguel Carvalho\\
+                \hline
+
+                \end{tabular}
+            \caption{Requisitos de Manipulação II}
+        \end{table}
+        \clearpage
+
+         \subsection{Requisitos de Controlo}         
+            \begin{table}[!ht]
+                \centering
+                \renewcommand{\arraystretch}{1.3}
+                \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
+                \Header{red!20!white}
+
+                37 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve estar operacional durante 24 horas por dia, 7 dias por semana, sem interrupções.}}\\
+                \cline{2-5}
+                & 11/03/2024 20:10 & Sistema & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                38 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve garantir que apenas os detetives que estão vinculados a um determinado caso, podem alterar os dados relativos ao mesmo.}}\\
+                \cline{2-5}
+                & 10/03/2024 11:20 & Permissões & Gerência & Carlos Ferreira\\
+                \hline
+
+                39 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve garantir que os detetives estagiários apenas podem ler dados relativos a casos não abertos, ou seja, casos fechados e arquivados.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:35 & Permissões & Gerência & Miguel Carvalho\\
+                \hline
+
+                40 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve oferecer acesso aos dados de um caso aberto apenas aos detetives a si associados e a Agatha Christie.}}\\
+                \cline{2-5}
+                & 11/03/2024 20:02 & Permissões & Gerência & Carlos Ferreira\\
+                \hline
+
+                \end{tabular}
+            \caption{Requisitos de Controlo I}
+        \end{table}
+        \loadgeometry{default}
+        
     \section{Análise e Validação Geral dos Requisitos}
-        \textcolor{red}{
-            >> Validação dos requisitos apresentados com os diversos intervenientes do processo. Relatar eventuais anomalias e ações corretivas desenvolvidas.
-        }
+        
+        Após o levantamento e a recolha dos requisitos através dos métodos apresentados no subcapítulo [\ref{sec:2.1}] do presente relatório, foi necessário fazer a qualificação dos mesmos. Para isso, o pessoal externo da equipa de trabalho procedeu à separação dos requisitos recolhidos nas três categorias apresentadas no subcapítulo [\ref{sec:2.2}].
+        
+        Numa última fase, a equipa de trabalho, não podendo prosseguir o desenvolvimento do projeto sem a revisão, por parte do cliente, dos requisitos já tratados, reuniu com a gerente da empresa, Agatha Christie. Esta, por sua vez, fez alguns reparos a alguns requisitos, que prontamente, em coordenação com a equipa de trabalho, foram reajustados. Por fim, foi aprovada a lista final de requisitos podendo, assim, o projeto entrar numa nova fase de desenvolvimento.
+
+        \textbf{Nota}: Consultar anexo \nameref{anexo:2} para a visualização do Documento Geral de Recolha, bem como os documentos de Requisitos de Descrição, Requisitos de Manipulação e Requisitos de Controlo originais.
 
 %==========================================================================
 % END LEVANTAMENTO E ANÁLISE DE REQUISITOS
@@ -399,16 +775,20 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
 \chapter{Modelação Conceptual}
     \section{Apresentação da Abordagem de Modelação Realizada}
         {
-            Após o levantamento dos requisitos com a informação obtida, iniciámos o processo de planeamento da estrutura da Base de Dados que almejamos implementar.
+            Após o levantamento dos requisitos com a informação obtida, iniciámos o processo de planeamento da estrutura do Sistema de Gestão de Bases de Dados que almejamos implementar.
             Posto isto, começámos pela modelação conceptual do nosso projeto através da construção de um Diagrama ER, de modo a podermos visualizar como as entidades (caso, detetive, cliente, etc.) relacionar-se-iam entre si, bem como os atributos que ambos (entidades e relacionamentos) possam ter. Para a caracterização das entidades, atributos e relacionamentos nos subcapítulos seguintes, recorremos à caracterização sugerida em  \cite{DatabaseSystems} (Connolly \& Begg, 2015).
-            \par 
-            Para a construção do diagrama em si, recorremos à ferramenta BrModelo, que utiliza notação baseada na de Dr. Heuser (sendo esta fortemente alicerçada na notação de Peter Chen).
+
+            Para a construção do diagrama em si, recorremos à ferramenta BR Modelo, que utiliza notação baseada na de Dr. Heuser (sendo esta fortemente alicerçada na notação de Peter Chen, como consultado em \cite{Aprendizagem em Banco de Dados} (Cândido, 2005)).
         }
+
+    \clearpage
+        
     \section{Identificação e Caracterização das Entidades}
         Avaliando o funcionamento da agência de detetives de Agatha, concluímos que as entidades seriam caracterizadas pelo conjunto: Caso, Detetive, Evidência, Cliente, Suspeito e Testemunha.
-        Para cumprir os requisitos levantados anteriormente, estas entidades possuem os seguintes atributos:
-        \begin{itemize}
 
+        Para cumprir os requisitos levantados anteriormente, estas entidades possuem os seguintes atributos:
+
+        \begin{itemize}
         \item \textbf{Caso:} Representa cada caso registado na agência, trazido por um cliente e investigado por detetives.
             \begin{itemize}
             \item\textbf{Sinónimos:} Investigação, Processo, Arquivo. 
@@ -433,6 +813,8 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
             \item\textbf{Atributos:} ID, Nome, \textit{Email}, Telefone e Morada. 
             \end{itemize}
 
+        \clearpage
+
         \item \textbf{Suspeito:} Representa cada indivíduo considerado suspeito aquando a investigação de um caso por detetives.
             \begin{itemize}
             \item\textbf{Sinónimos:} Acusado, Culpado, Réu, Arguido. 
@@ -446,9 +828,11 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
             \end{itemize}
         \end{itemize}
 
-
+\pagebreak
     \section{Identificação e Caracterização dos Relacionamentos}
         Na nossa modelação, englobámos cinco tipos de relacionamentos entre as entidades - três dos quais originam uma entidade. Devido a estas diferenças, aprofundaremos de forma individual cada um deles neste subcapítulo.
+
+        \vspace{0.5cm}
 
         \begin{itemize}
         \item\textbf{Relacionamento Detetive-Caso}
@@ -458,28 +842,33 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
             \item\textbf{Multiplicidade:} Detetive (0,n) - Caso (1,n): Todos os detetives têm pelo menos zero ou mais casos vinculados, e todos os casos têm pelo menos um detetive vinculado.
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
-                \item [R6]: "Todos os casos têm vinculados pelo menos um detetive."
-                \item [R18]: "Todos os detetives têm vinculado zero ou mais casos."
-                \item [R31]: "Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição."
+                \item [R6]: “Todos os casos têm vinculados pelo menos um detetive.”
+                \item [R18]: “Todos os detetives têm vinculado zero ou mais casos.”
+                \item [R31]: “Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.”
             \end{itemize}
             \item\textbf{Atributos:} Data de Vinculação, Data de Desvinculação e Descrição.
             \item\textbf{Entidade Gerada:} Vinculação.
         \end{itemize}
         
+        %%\vspace{0.5cm}
+        \clearpage
+
         \item\textbf{Relacionamento Evidência-Caso}
         \begin{itemize}
             \item\textbf{Relacionamento:} Evidência referente a Caso
             \item\textbf{Descrição:} Visto que evidências são fatores cruciais num caso, é importante o armazenamento das informações desta maneira de forma a poder facilmente aceder a todas as evidências encontradas referentes a um caso em específico, deste modo garante-se um acesso mais eficiente à informação desejada.
-            \item\textbf{Multiplicidade:} Evidência (1,1) - Caso (0,n): Uma evidência tem sempre apenas um caso associado, e um caso pode ter entre zero a várias evidências associadas.
+            \item\textbf{Multiplicidade:} Evidência (1,1) - Caso (0,n): Uma evidência está sempre associada a apenas um caso, e um caso pode ter zero ou mais evidências associadas.
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
-                \item [R10]: "Todos os casos têm zero ou mais evidências."
-                \item [R37]: "Todos as evidências têm associadas um único caso."
+                \item [R10]: “Todos os casos têm zero ou mais evidências.”
+                \item [R37]: “Todos as evidências têm associadas um único caso.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} Nenhuma.
         \end{itemize}
-        
+
+        \vspace{0.75cm}
+
         \item\textbf{Relacionamento Cliente-Caso}
         \begin{itemize}
             \item\textbf{Relacionamento:} Cliente requisita Caso.
@@ -487,58 +876,334 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
             \item\textbf{Multiplicidade:} Cliente (1,n) - Caso (1,1): Um cliente pode estar associado a vários casos, porém um caso só pode estar associado a um cliente.
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
-                \item [R7]: "Todos os casos têm associados um único cliente."
-                \item [R47]: "É permitido pelo sistema obter todos os pagamentos efetuados por um cliente em diferentes casos."
+                \item [R7]: “Todos os casos têm associados um único cliente.”
+                \item [R47]: “É permitido pelo sistema obter todos os pagamentos efetuados por um       cliente em diferentes casos.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} Nenhuma.   
         \end{itemize}
+
+        %%\vspace{0.5cm}
+        \clearpage
         
         \item\textbf{Relacionamento Caso-Suspeito}
         \begin{itemize}
-            \item\textbf{Relacionamento:} Caso \textit{"CasoSuspeito"} Suspeito.
+            \item\textbf{Relacionamento:} Caso “\textit{CasoSuspeito}” Suspeito.
             \item\textbf{Descrição:} De forma a poder registar devidamente todos os suspeitos encontrados pelos detetives relativamente a um caso que estão a investigar, é importante armazenar a informação desta forma para tal ser feito. Assim, sempre que encontrar em uma nova pista, podem voltar a rever a sua lista de suspeitos com detalhe.
-            \item\textbf{Multiplicidade:} Caso (0,n) - Suspeito (1,n): Todos os casos têm, pelo menos, zero ou mais suspeitos associados, e todos os suspeitos têm, pelo menos, um caso vinculado.
+            \item\textbf{Multiplicidade:} Caso (0,n) - Suspeito (1,n): Todos os casos têm zero ou mais suspeitos associados, e todos os suspeitos têm, pelo menos, um caso vinculado.
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
-                \item [R9]: "Todos os casos têm zero ou mais suspeitos."
-                \item [R30]: "Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito."
+                \item [R9]: “Todos os casos têm zero ou mais suspeitos.”
+                \item [R30]: “Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} CasoSuspeito.
         \end{itemize}
+
+        \vspace{0.75cm}
     
         \item\textbf{Relacionamento Caso-Testemunha}
         \begin{itemize}
-            \item\textbf{Relacionamento:} Caso \textit{"CasoTestemunha"} Testemunha.
-            \item\textbf{Descrição:} Para garantir uma investigação eficaz, é crucial documentar organizadamente todas as testemunhas encontradas relativamente a um caso, incluindo os seus detalhes e relatos para referência futura e análise detalhada.
-            \item\textbf{Multiplicidade:} Caso (0,n) - Suspeito (1,n): Todos os casos têm, pelo menos, zero ou mais testemunhas associadas, e todas as testemunhas têm, pelo menos, um caso vinculado.
+            \item\textbf{Relacionamento:} Caso “\textit{CasoTestemunha}” Testemunha.
+            \item\textbf{Descrição:} Para garantir uma investigação eficaz, é crucial documentar organizadamente todas as testemunhas encontradas relativamente a um caso, incluindo os todos os detalhes e relatos que forneceu, para referência futura e análise detalhada.
+            \item\textbf{Multiplicidade:} Caso (0,n) - Testemunha (1,n): Todos os casos têm zero ou mais testemunhas associadas, e todas as testemunhas têm, pelo menos, um caso vinculado.
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
-                \item [R8]: "Todos os casos têm zero ou mais testemunhas."
-                \item [R26]: "Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha."
+                \item [R8]: “Todos os casos têm zero ou mais testemunhas.”
+                \item [R26]: “Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} CasoTestemunha.
         \end{itemize}
         \end{itemize}
-       
+
+    \clearpage
     \section{Identificação e Caracterização dos Atributos das Entidades e dos Relacionamentos}
-        \textcolor{red}{
-            <<Explicação do processo de identificação dos vários atributos das entidades e dos relacionamentos. Enumeração e fundamentação de cada atributo, organizando-os por entidades e relacionamentos identificados, tendo em conta a caracterização sugerida em [Connolly e Begg, 2015]. Indicar os requisitos que originaram cada um dos atributos enumerados.>>
-        }
+        
+        \textbf{Entidade: \textit{Caso}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        ID                  & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Descrição           & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Estado              & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Categoria           & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        DataAbertura        & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        DataFechamento      & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Despesa             & \Nao & \Sim & \Nao & \Sim & \Sim \\
+        Despesa.Valor       & \Nao & \Nao & \Sim & \Sim & \Nao \\
+        Despesa.Data        & \Nao & \Nao & \Sim & \Sim & \Nao \\
+        Despesa.Descrição   & \Nao & \Nao & \Sim & \Sim & \Nao \\
+        Pagamento           & \Nao & \Sim & \Nao & \Sim & \Sim \\
+        Pagamento.Valor     & \Nao & \Nao & \Sim & \Sim & \Nao \\
+        Pagamento.Data      & \Nao & \Nao & \Sim & \Sim & \Nao \\
+        Pagamento.Descrição & \Nao & \Nao & \Sim & \Sim & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos da Entidade \textit{Caso}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos da entidade: \textit{Caso}}
+        \begin{itemize}
+            \item \textbf{ID}: É único e identifica cada caso existente na agência, desde abertos, resolvidos, a arquivados;
+            \item \textbf{Descrição}: Um relatório acerca do caso em questão; 
+            \item \textbf{Estado}: O estado do caso, isto é, se ele se encontra aberto, fechado, ou arquivado; 
+            \item \textbf{Categoria}: A categoria em que o caso incide - criminal, civil, financeiro, cibernético, laboral, administrativo ou ético;
+            \item \textbf{DataAbertura}: A data de abertura do caso; 
+            \item \textbf{DataFechamento}: A data de encerramento do caso, se este já tiver sido fechado;
+
+        \clearpage
+            
+            \item \textbf{Despesa}: A despesa relativa ao caso (salários de detetives não incluídos). Este atributo composto multivalorado é constituído por: 
+            \begin{itemize}
+                \item \textbf{Caso}: Identificador do caso relativo à despesa;
+                \item \textbf{Valor}: Valor monetário da despesa do caso;
+                \item \textbf{Data}: Data em que esta despesa foi registada;
+                \item \textbf{Descrição}: Uma explanação relativa ao motivo de certa despesa.
+            \end{itemize}
+            \item \textbf{Pagamento}: Pagamento efetuado pelo cliente para a investigação do caso. Este atributo composto multivalorado é constituído por: 
+            \begin{itemize}
+                \item \textbf{Caso}: Identificador do caso relativo ao pagamento;
+                \item \textbf{Valor}: Valor monetário do pagamento do cliente;
+                \item \textbf{Data}: Data em que este pagamento foi registado;
+                \item \textbf{Descrição}: Descrição relativa ao pagamento realizado.
+            \end{itemize}
+        \end{itemize}
+
+        \clearpage
+        
+        \newgeometry{top=2.5cm}
+        
+        \textbf{Entidade: \textit{Detetive}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        ID                 & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Nome               & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Email              & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Telefone           & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        DataNascimento     & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Morada             & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Salário            & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        DataContratação    & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        DataFimContratação & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Efetivo            & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Estado             & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Especialidade      & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos da Entidade \textit{Detetive}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos da entidade: \textit{Detetive}}
+        \begin{itemize}
+            \item \textbf{ID}: É único e identifica cada detetive existente na agência - tanto contratados, como demitidos e aposentados;
+            \item \textbf{Nome}: O nome do detetive;
+            \item \textbf{\textit{Email}}: O endereço de \textit{email} do detetive;
+            \item \textbf{Telefone}: O número de telefone do detetive;
+            \item \textbf{DataNascimento}: A data de nascimento do detetive;
+            \item \textbf{Morada}: A morada do detetive;
+            \item \textbf{Salário}: O salário do detetive, em euros;
+            \item \textbf{DataContratação}: A data de contratação do detetive;
+            \item \textbf{DataFimContratação}: A data de fim de contratação do detetive, caso ele seja demitido ou aposentado;
+            \item \textbf{Efetivo}: Representa se o detetive é efetivo ou estagiário;
+            \item \textbf{Estado}: O estado de um detetive, que pode ser contratado, demitido ou aposentado;
+            \item \textbf{Especialidade}: A especialidade do detetive, que pode ser: Investigação e descoberta de esquemas de fraude, Investigações de natureza jurídica, Busca e apreensão, Serviços corporativos, Aplicativo espião sobre identidades particulares, Aplicativo espião sobre identidades corporativas, Detetive particular criminalista ou Investigações cibernéticas. 
+        \end{itemize}
+
+        \loadgeometry{default}
+
+        \pagebreak
+        \textbf{Entidade: \textit{Suspeito}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        ID                  & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Nome                & \Nao & \Nao & \Nao & \Nao & \Nao \\  
+        Email               & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Telefone            & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        DataNascimento      & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Sexo                & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Morada              & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Descrição           & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        DataRegisto         & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos da Entidade \textit{Suspeito}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos da entidade: \textit{Suspeito}}
+        \begin{itemize}
+            \item \textbf{ID}: É único e identifica cada suspeito alguma vez registado na agência;
+            \item \textbf{Nome}: Nome do suspeito;
+            \item \textbf{\textit{Email}}: Endereço de \textit{email} do suspeito;
+            \item \textbf{Telefone}: Número de telefone do suspeito;
+            \item \textbf{DataNascimento}: Data de nascimento do suspeito;
+            \item \textbf{Sexo}: Género do suspeito;
+            \item \textbf{Morada}: Morada do suspeito;
+            \item \textbf{Descrição}: Descrição do suspeito, isto é, daquilo que o torna um suspeito no caso a ser investigado e/ou o seu histórico criminal;
+            \item \textbf{DataRegisto}: Data de registo do suspeito.
+        \end{itemize}
+
+        \clearpage
+    \newgeometry{top=2cm}
+        
+        \textbf{Entidade: \textit{Testemunha}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        ID                  & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Nome                & \Nao & \Nao & \Nao & \Nao & \Nao \\  
+        Email               & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Telefone            & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Morada              & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        DataRegisto         & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos da Entidade \textit{Testemunha}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos da entidade: \textit{Testemunha}}
+        \begin{itemize}
+            \item \textbf{ID}: É único e identifica cada testemunha alguma vez registada na agência;
+            \item \textbf{Nome}: Nome da testemunha;
+            \item \textbf{\textit{Email}}: Endereço de \textit{email} da testemunha; 
+            \item \textbf{Telefone}: Número de telefone da testemunha;
+            \item \textbf{Morada}: Morada da testemunha;
+            \item \textbf{DataRegisto}: Data de registo da testemunha.
+        \end{itemize}
+
+        \vspace{1cm}
+        
+        \textbf{Entidade: \textit{Cliente}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        ID                  & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Nome                & \Nao & \Nao & \Nao & \Nao & \Nao \\  
+        Email               & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        Telefone            & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Morada              & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos da Entidade \textit{Cliente}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos da entidade: \textit{Cliente}}
+        \begin{itemize}
+            \item \textbf{ID}: É único e identifica cada cliente alguma vez registado na agência;
+            \item \textbf{Nome}: Nome do cliente;
+            \item \textbf{\textit{Email}}: Endereço de \textit{email} do cliente; 
+            \item \textbf{Telefone}: Número de telefone do cliente;
+            \item \textbf{Morada}: Morada do cliente;
+        \end{itemize}
+
+    \loadgeometry{default}
+
+        \clearpage
+        \newgeometry{top=2cm}
+
+        \textbf{Entidade: \textit{Evidência}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        ID         & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        DataColeta & \Nao & \Nao & \Nao & \Nao & \Nao \\  
+        Descrição  & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Tipo       & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        Arquivo    & \Sim & \Nao & \Nao & \Nao & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos da Entidade \textit{Evidência}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos da entidade: \textit{Evidência}}
+        \begin{itemize}
+            \item \textbf{ID}: É único e identifica cada evidência alguma vez registada na agência relativa a um caso; 
+            \item \textbf{DataColeta}: Data de quando obtiveram e registaram a evidência; 
+            \item \textbf{Descrição}: Descrição referente à evidência conseguida;
+            \item \textbf{Tipo}: Tipo da evidência - esta pode ser testemunhal, documental, pericial, indicial ou real;
+            \item \textbf{Arquivo}: O arquivo, caso exista, representa a localização de um ficheiro digital ou \textit{link}, podendo este ser uma foto, vídeo, áudio ou documento.
+        \end{itemize}
+
+        \vspace{1cm}
+
+        \textbf{Relacionamento: \textit{Vinculado}}
+        \begin{table}[!ht]
+        \centering
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+        \rowcolor{gray!20!white}
+        \textbf{Atributos} & \textbf{Nulo} & \textbf{Composto} & \textbf{Derivado} & \textbf{Multivalorado} & \textbf{Candidato} \\
+        \hline
+        Detetive          & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        Caso              & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        DataVinculação    & \Nao & \Nao & \Nao & \Nao & \Sim \\
+        DataDesvinculação & \Sim & \Nao & \Nao & \Nao & \Nao \\  
+        Descrição         & \Nao & \Nao & \Nao & \Nao & \Nao \\
+        \hline
+        \end{tabular}
+        \caption{Identificação e Caracterização dos Atributos do Relacionamento \textit{Vinculado}}
+        \end{table}
+
+        \textbf{Caracterização dos atributos do relacionamento: \textit{Vinculado}}
+        \begin{itemize}
+            \item \textbf{DataVinculação}: Data em que o detetive se vinculou ao caso;
+            \item \textbf{DataDesvinculação}: Data em que o detetive se desvinculou do caso, se tal tiver acontecido;
+            \item \textbf{Descrição}: Descrição da vinculação do detetive ao caso.
+        \end{itemize}
+
+    \loadgeometry{default}
+
+    \clearpage
+
     \section{Apresentação e Explicação do Diagrama ER Produzido}
-        \textcolor{red}{
-            <<Apresentação do diagrama concetual produzido. Explicação do seu processo de construção, tendo em conta as entidades e os relacionamentos identificados anteriormente, bem com as suas caracterizações em termos de atributos.>>
-        }
+        Após o trabalho dos capítulos anteriores e através da ferramenta BR-Modelo, fomos capazes de construir o modelo conceptual apresentado na figura [\ref{fig:3.1}].
+
+        Em um estudo mais aprofundado do desenvolvimento do modelo, decidimos partir da entidade Caso, devido à sua centralidade neste SGBD.
+        De seguida, foram adicionadas as restantes entidades, partindo dos seus relacionamentos com a entidade Caso.
+
+        A entidade Caso é central neste modelo, tendo cinco relacionamentos binários com as restantes entidades. Esta tem grau 7 em relação aos seus atributos. Algo digno de nota é que esta entidade é constituída por dois atributos multivalorados compostos.
+
+        A entidade com maior grau do modelo conceptual é a Detetive, possuindo um grau de nível 12, e as de menor grau, 5, são as entidades Cliente e Testemunha.
+
+        Como supramencionado, este modelo consiste em cinco relacionamentos, dos quais dois são de multiplicidade (1:N) - Caso e Cliente; Evidência e Caso - e os restantes três de (N:M) - Detetive e Caso; Caso e Suspeito; Caso e Testemunha.
+
+        \textbf{Nota}: Consultar anexo \nameref{anexo:3} para uma melhor visualização deste modelo.
+
         \newgeometry{top=0.5cm,left=0cm,right=0cm,bottom=0.5cm}
         \clearpage
         \begin{figure}[!ht]
             \centering
             \includegraphics[scale=0.65, angle=270]{images/conceptual.png}
             \caption{Diagrama ER Conceptual}
+            \label{fig:3.1}
         \end{figure}
-        \newgeometry{top=3cm,left=3cm,right=3cm,bottom=4cm}
+        \loadgeometry{default}
 
 %==========================================================================
 % END MODELAÇÃO CONCEPTUAL
@@ -550,13 +1215,341 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
 
 \chapter{Modelação Lógica}
     \section{Construção e Validação do Modelo de Dados Lógico}
-        \textcolor{red}{
-            <<Apresentação e explicação do processo de modelação lógica adotado, com referência à ferramenta adotada.>>
-        }
+
+               Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o BR-Modelo para traduzir esses conceitos em tabelas e estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
+
+        Além de corrigir incoerências, também ajustámos detalhes para otimizar a estrutura do banco de dados e garantir a sua eficiência e escalabilidade. Isso pode envolver a normalização de dados, a definição de chaves primárias e estrangeiras, e a revisão de tipos de dados e índices.
+    
+        No final do processo, o modelo lógico representa uma versão refinada e detalhada do sistema, pronta para ser implementada numa base de dados relacional. No entanto, é importante ressaltar que o modelo lógico não é uma representação final e imutável do sistema, mas sim uma etapa intermédia no processo de desenvolvimento de software, sujeita a revisões e ajustes conforme novos requisitos surgem ou são identificados.
+        
+    \clearpage
+        
     \section{Apresentação e Explicação do Modelo Lógico Produzido}
-        \textcolor{red}{
-            <<Apresentação do processo de conversão realizado, expondo e justificando a origem de cada uma das tabelas que foram criadas. Apresentação do modelo lógico produzido.>>
-        }
+        
+        A construção do modelo lógico baseou-se intrinsecamente no modelo conceptual desenvolvido no capítulo anterior. Para tal, é necessário aplicar as regras de derivação do modelo de dados relacional.
+
+        Primeiramente, cada entidade é convertida numa tabela. Deste processo, obtemos as seguintes seis tabelas:
+
+        \textbf{Caso}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chaves estrangeiras:
+                \begin{itemize}
+                    \item Cliente : INT
+                    \item Categoria : INT
+                    \item Estado : INT
+                \end{itemize}
+            \item Atributos:
+                \begin{itemize}
+                    \item Descrição : TEXT(2000)
+                    \item DataAbertura : DATE
+                    \item DataFechamento : DATE (Nulo)
+                \end{itemize}
+        \end{itemize}
+
+        \clearpage
+
+        \textbf{Detetive}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chaves estrangeiras:
+                \begin{itemize}
+                    \item Especialidade : INT
+                    \item Estado : INT
+                \end{itemize}
+            \item Atributos:
+                \begin{itemize}
+                    \item Nome : VARCHAR(150)
+                    \item Email : VARCHAR(320)
+                    \item Telefone : VARCHAR(20)
+                    \item DataNascimento : DATE
+                    \item Morada : VARCHAR(250) (Nulo)
+                    \item Salário : DECIMAL(10,2)
+                    \item DataContratação : DATE
+                    \item DataFimContratação : DATE (Nulo)
+                    \item Efetivo : BIT
+                \end{itemize}
+        \end{itemize}
+
+        \vspace{0.5cm}
+
+        \textbf{Cliente}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chaves estrangeiras: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Nome : VARCHAR(150)
+                    \item Telefone : VARCHAR(20)
+                    \item Email : VARCHAR(320) (Nulo)
+                    \item Morada : VARCHAR(250) (Nulo)
+                \end{itemize}
+        \end{itemize}
+
+        \clearpage
+
+        \textbf{Suspeito}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chaves estrangeiras: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Nome : VARCHAR(150)
+                    \item Email : VARCHAR(320) (Nulo)
+                    \item Telefone : VARCHAR(20) (Nulo)
+                    \item DataNascimento : DATE (Nulo)
+                    \item Sexo : CHAR(1) (Nulo)
+                    \item Morada : VARCHAR(250) (Nulo)
+                    \item Descrição : TEXT(1000) (Nulo)                    
+                \end{itemize}
+        \end{itemize}
+
+        \vspace{0.5cm}
+
+        \textbf{Testemunha}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chaves estrangeiras: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Nome : VARCHAR(150)
+                    \item Email : VARCHAR(320) (Nulo)
+                    \item Telefone : VARCHAR(20) (Nulo)
+                    \item Morada : VARCHAR(250) (Nulo)
+                \end{itemize}
+        \end{itemize}
+
+        \clearpage
+        \newgeometry{top=2.5cm}
+
+        \textbf{Evidência}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chave estrangeira:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Tipo : INT
+                \end{itemize}
+            \item Atributos:
+                \begin{itemize}
+                    \item DataColeta : DATE
+                    \item Descrição : TEXT(1000)
+                    \item Arquivo : VARCHAR(300) (Nulo)
+                \end{itemize}
+        \end{itemize}
+
+        \vspace{0.5cm}
+        
+        Para a conversão de um \textbf{Relacionamento Binário de grau N:M}, a chave primária de cada entidade é utilizada para a composição da chave primária composta da entidade originada do relacionamento, e esta deve incluir os seus atributos, se existentes.
+
+        Para os restantes relacionamentos é necessário a atribuição das chaves estrangeiras respetivas. Para tal, a chave primária da entidade do lado N é usada como chave estrangeira na entidade correspondente do lado 1.
+
+        A regra de conversão do relacionamento de grau N:M originou as seguintes entidades:
+        
+        \textbf{Vinculação}:
+        \begin{itemize}
+            \item Chave primária composta:
+                \begin{itemize}
+                    \item Detetive : INT
+                    \item Caso : INT
+                    \item DataVinculação : DATETIME
+                \end{itemize}
+            \item Chaves estrangeiras:
+                \begin{itemize}
+                    \item Detetive : INT
+                    \item Caso : INT
+                \end{itemize}
+            \item Atributos:
+                \begin{itemize} 
+                    \item DataDesvinculação : DATETIME (Nulo)
+                    \item Descrição : TEXT(400)
+                \end{itemize}
+        \end{itemize}
+
+        \loadgeometry{default}
+
+        \clearpage
+
+        \textbf{\textit{CasoSuspeito}}:
+        \begin{itemize}
+            \item Chave primária composta:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Suspeito : INT
+                \end{itemize}
+            \item Chaves estrangeiras:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Suspeito : INT
+                \end{itemize}
+            \item Atributos: Nenhum
+        \end{itemize}
+
+        \vspace{0.5cm}            
+        
+        \textbf{\textit{CasoTestemunha}}:
+        \begin{itemize}
+            \item Chave primária composta:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Testemunha : INT
+                \end{itemize}
+            \item Chaves estrangeiras:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Testemunha : INT
+                \end{itemize}
+            \item Atributos: Nenhum
+        \end{itemize}
+
+        \clearpage
+
+        No modelo conceptual, foram utilizado dois \textbf{atributos compostos multivalorados} na entidade “Caso”, de forma a registar pagamentos e despesas relativas ao mesmo. Estes atributos especiais resultam na formação de duas entidades lógicas, cujas características são derivadas dos subatributos do atributo composto e os mesmos formam a chave primária composta da respetiva entidade. As quais:
+        
+        \textbf{Pagamento}:
+        \begin{itemize}
+            \item Chave primária composta:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Descrição : TEXT(300)
+                    \item Valor : DECIMAL(10,2)
+                    \item Data : DATE
+                \end{itemize}
+            \item Chave estrangeira:
+                \begin{itemize}
+                    \item Caso : INT
+                \end{itemize}
+            \item Atributos: Nenhum
+        \end{itemize}
+
+        \vspace{0.5cm}
+
+        \textbf{Despesa}:
+        \begin{itemize}
+            \item Chave primária composta:
+                \begin{itemize}
+                    \item Caso : INT
+                    \item Descrição : TEXT(300)
+                    \item Valor : DECIMAL(10,2)
+                    \item Data : DATE
+                \end{itemize}
+            \item Chave estrangeira:
+                \begin{itemize}
+                    \item Caso : INT
+                \end{itemize}
+            \item Atributos: Nenhum
+        \end{itemize}
+
+        \clearpage
+
+        No processo de modelação lógica foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas entidades, utilizamos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes seis entidades lógicas:
+
+        \textbf{\textit{CasoCategoria}}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chave estrangeira: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Designação : VARCHAR(75)
+                \end{itemize}
+        \end{itemize}
+
+        \vspace{0.5cm}
+        
+        \textbf{\textit{CasoEstado}}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chave estrangeira: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Designação : VARCHAR(20)
+                \end{itemize}
+        \end{itemize}
+
+        \vspace{0.5cm}
+        
+        \textbf{\textit{DetetiveEspecialidade}}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chave estrangeira: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Designação : VARCHAR(75)
+                \end{itemize}
+        \end{itemize}
+
+        \clearpage
+        
+        \textbf{\textit{DetetiveEstado}}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chave estrangeira: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Designação : VARCHAR(20)
+                \end{itemize}
+        \end{itemize}
+
+        \vspace{0.5cm}
+        
+        \textbf{\textit{EvidênciaTipo}}:
+        \begin{itemize}
+            \item Chave primária:
+                \begin{itemize}
+                    \item ID : INT
+                \end{itemize}
+            \item Chave estrangeira: Nenhuma
+            \item Atributos:
+                \begin{itemize}
+                    \item Designação : VARCHAR(20)
+                \end{itemize}
+        \end{itemize}
+
+    Após a aplicação das regras de derivação do modelo de dados relacional, obtemos o modelo lógico apresentado na figura [\ref{fig:4.1}].
+
+    \textbf{Nota}: Consultar anexo \nameref{anexo:4} para uma melhor visualização deste modelo.
+    \newgeometry{top=0.1cm,left=0cm,right=0cm,bottom=0.1cm}
+    \clearpage
+    \begin{figure}[!ht]
+        \centering
+        \includegraphics[scale=0.70, angle=270]{images/logico.png}
+        \caption{Diagrama ER Lógico}
+        \label{fig:4.1}
+    \end{figure}
+    \loadgeometry{default}
+
+    \clearpage
+    \newgeometry{top=2.5cm,bottom=3cm}
     \section{Normalização de Dados}
         De forma a garantir a normalização dos dados, é necessário considerar os seguintes pontos: \cite{DatabaseSystems} (Connolly \& Begg, 2015)
         \begin{itemize}
@@ -575,12 +1568,16 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
 
         Em suma, o sistema demonstra um compromisso firme com a normalização de dados, garantindo eficiência, integridade e segurança. Ao evitar redundâncias, estabelecer relações claras entre entidades e implementar medidas de controlo de acesso, o sistema promove uma operação suave e escalável. Essa abordagem não apenas otimiza as operações atuais, mas também prepara a plataforma para um crescimento sustentável e contínuo.
 
+    \loadgeometry{default}
+
     \clearpage
     \section{Validação do Modelo com Interrogações do Utilizador}
         Para assegurar a completa validade do modelo lógico de ER, foram selecionadas um conjunto de expressões algébricas derivadas dos requisitos relativos à manipulação de dados, de forma a permitirem a validação de uma grande totalidade das relações e relacionamentos estipulados no modelo. Estas serão aprofundadas nos parágrafos seguintes.
 
+        \textbf{Nota}: Consultar anexos \nameref{anexo:5} e \nameref{anexo:6} para a visualização das entidades e expressões utilizadas na ferramenta ReLaX.
+
 \vspace{0.5cm}
-{\large 1. Aceder a identificadores de detetives que estão vinculados a um caso em específico (exemplo: ID do caso = 1), nessa instância.}
+{\large\textbf{4.4.1 Aceder a identificadores de detetives que estão vinculados a um caso em específico (exemplo: ID do caso = 1), nessa instância.}}
 
 \vspace{0.2cm}
 \begin{lstlisting}[escapechar=*]
@@ -590,18 +1587,18 @@ Esta secção do relatório destina-se a oferecer uma compreensão clara da abor
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.9]{images/relax/1.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 1.}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 1.}
  \end{figure}
 \vspace{0.2cm}
 
-Esta expressão efetua uma seleção através do identificador único do caso e da data de desvinculação na entidade "vinculação" , desta forma é permitido aceder a detetives vinculados a um caso em específico nessa instância.
+Esta expressão efetua uma seleção através do identificador único do caso e da data de desvinculação na entidade “vinculação”, desta forma é permitido aceder a detetives vinculados a um caso em específico nessa instância.
 
 Ao substituir o sinal de igual pelo seu inverso em `\textit{dataDesvinculacao = 'NULL'}`, seria possível obter detetives que já estiveram vinculados ao caso, mas entretanto foram desvinculados deste.
 
 Ao remover o termo da condição - `\textit{dataDesvinculacao = 'NULL'}` - originava uma expressão que retornava todos detetives que estão e estiveram associados a um caso em específico, ou seja todos os detetives envolvidos em um caso.
 
 \clearpage %%\vspace{0.5cm}
-{\large 2. Aceder a casos onde um detetive em específico (exemplo: ID do detetive = 1) está ativamente vinculado, nessa instância.}
+{\large\textbf{4.1.2 Aceder a casos onde um detetive em específico (exemplo: ID do detetive = 1) está ativamente vinculado, nessa instância.}}
 
 \vspace{0.2cm}
 \begin{lstlisting}[escapechar=*]
@@ -611,7 +1608,7 @@ Ao remover o termo da condição - `\textit{dataDesvinculacao = 'NULL'}` - origi
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.9]{images/relax/2.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 2.}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 2.}
 \end{figure}
 \vspace{0.2cm}
 
@@ -620,7 +1617,7 @@ Similarmente à expressão analisada anteriormente, é possível, através do id
 A obtenção de resultados conforme a atividade do detetive na investigação de um caso varia de acordo com as modificações do segundo termo da condição abordadas na primeira expressão algébrica estudada.
 
 \clearpage %%\vspace{0.5cm}
-{\large 3. Relatório completo de pagamentos com data, descrição e valor para um caso em específico (exemplo: ID do caso = 1).}
+{\large\textbf{4.1.3 Relatório completo de pagamentos com data, descrição e valor para um caso em específico (exemplo: ID do caso = 1).}}
 
 \vspace{0.2cm}
 \begin{lstlisting}[escapechar=*]
@@ -631,16 +1628,16 @@ A obtenção de resultados conforme a atividade do detetive na investigação de
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.9]{images/relax/3.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 3.}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 3.}
 \end{figure}
 \vspace{0.2cm}
 
-A expressão algébrica número 3 permite a obtenção de todos os pagamentos efetuados relativos a um caso em específico, realizando uma projeção dos atributos data, valor e descrição, seguida de uma seleção da entidade "pagamento" através do identificador do caso.
+A expressão algébrica número 3 permite a obtenção de todos os pagamentos efetuados relativos a um caso em específico, realizando uma projeção dos atributos data, valor e descrição, seguida de uma seleção da entidade “pagamento” através do identificador do caso.
 
-Uma expressão algébrica para a obtenção de todas as despesas efetuadas relativas a um caso seria semelhante a expressão apresentada, com a diferença do acesso à entidade "despesa" em vez de "pagamento", isto deve-se a conveniente similaridade dos atributos dessas entidades. 
+Uma expressão algébrica para a obtenção de todas as despesas efetuadas relativas a um caso seria semelhante a expressão apresentada, com a diferença do acesso à entidade “despesa” em vez de “pagamento”, isto deve-se a conveniente similaridade dos atributos dessas entidades. 
 
 \clearpage %%\vspace{0.5cm}
-{\large 4. Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).}
+{\large\textbf{4.1.4 Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).}}
 
 \vspace{0.2cm}
 \begin{lstlisting}[escapechar=*]
@@ -652,16 +1649,16 @@ Uma expressão algébrica para a obtenção de todas as despesas efetuadas relat
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.77]{images/relax/4.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 4.}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 4.}
 \end{figure}
 \vspace{0.2cm}
 
-A expressão algébrica número 4 obtém os identificadores de casos e o seu respetivo estado atual, onde estes são inicializados numa determinada semana. Esta serve para demonstrar o uso de entidades de mapeamento de valores, que, neste caso, foi utilizada a entidade "casoestado" para mapear o atributo estado de um caso, representado por um número inteiro com a sua respetiva designação ("aberto", "fechado" ou "arquivado").
+A expressão algébrica número 4 obtém os identificadores de casos e o seu respetivo estado atual, onde estes são inicializados numa determinada semana. Esta serve para demonstrar o uso de entidades de mapeamento de valores, que, neste caso, foi utilizada a entidade “\textit{casoestado}” para mapear o atributo estado de um caso, representado por um número inteiro com a sua respetiva designação (“aberto”, “fechado” ou “arquivado”).
 
-Uma otimização possível a esta expressão seria a truncação dos atributos \textit{id} e \textit{dataAbertura} da entidade "caso" antes da seleção através da data de abertura, desta forma, era aumentada a eficiência da expressão. A equipa de trabalho decidiu não incluir esta otimização de forma a manter a simplificação da expressão algébrica apresentada. 
+Uma otimização possível a esta expressão seria a truncação dos atributos \textit{id} e \textit{dataAbertura} da entidade “caso” antes da seleção através da data de abertura, desta forma, era aumentada a eficiência da expressão. A equipa de trabalho decidiu não incluir esta otimização de forma a manter a simplificação da expressão algébrica apresentada. 
 
 \clearpage %%\vspace{0.5cm}
-{\large 5. Apresentar os dados de um caso (exemplo: ID do caso = 1) - evidências, suspeitos e testemunhas - por ordem cronológica.}
+{\large\textbf{4.1.5 Apresentar os dados de um caso (exemplo: ID do caso = 1) - evidências, suspeitos e testemunhas - por ordem cronológica.}}
 
 \vspace{0.2cm}
 \begin{lstlisting}[escapechar=*]
@@ -685,7 +1682,8 @@ Uma otimização possível a esta expressão seria a truncação dos atributos \
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.9]{images/relax/5-a.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 5.a)}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 5.a)}
+    \label{fig:4.5}
 \end{figure}
 
 \clearpage
@@ -693,7 +1691,8 @@ Uma otimização possível a esta expressão seria a truncação dos atributos \
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.7]{images/relax/5-b.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 5.b)}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 5.b)}
+    \label{fig:4.6}
 \end{figure}
 
 \clearpage
@@ -701,21 +1700,23 @@ Uma otimização possível a esta expressão seria a truncação dos atributos \
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.65]{images/relax/5-c.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 5.c)}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 5.c)}
+    \label{fig:4.7}
 \end{figure}
 
 Para apresentar os dados relativos a um caso em específico por ordem cronológica, as expressões foram divididas em três partes - a, b e c, respetivamente.
 
-A primeira expressão (a) (figura 4.5) é responsável por apresentar todos os registos de evidências relativo a um caso, através da seleção do identificador do caso. De seguida efetua-se a ordenação crescente pela data de coleta de evidência, de forma a garantir a ordem cronológica das evidências apresentadas.
+A primeira expressão (a) (figura [\ref{fig:4.5}]) é responsável por apresentar todos os registos de evidências relativo a um caso, através da seleção do identificador do caso. De seguida efetua-se a ordenação crescente pela data de coleta de evidência, de forma a garantir a ordem cronológica das evidências apresentadas.
 
-Seguidamente, a expressão (b) (figura 4.6) apresenta os dados das testemunhas de um determinado caso. Esta faz uma seleção através do identificador no caso na entidade "casotestemunha", obtendo assim todos os identificadores das testemunhas em questão. Após a truncação dos atributos relevantes às testemunhas, é feito a sua ordenação de forma crescente, através do atributo data de registo das testemunhas.
+Seguidamente, a expressão (b) (figura [\ref{fig:4.6}]) apresenta os dados das testemunhas de um determinado caso. Esta faz uma seleção através do identificador no caso na entidade “\textit{casotestemunha}”, obtendo assim todos os identificadores das testemunhas em questão. Após a truncação dos atributos relevantes às testemunhas, é feito a sua ordenação de forma crescente, através do atributo data de registo das testemunhas.
 
-Por fim, a expressão (c) (figura 4.7) apresenta os dados dos suspeitos de um determinado caso, similarmente à expressão (b) abordada no parágrafo anterior.
+Por fim, a expressão (c) (figura [\ref{fig:4.7}]) apresenta os dados dos suspeitos de um determinado caso, similarmente à expressão (b) abordada no parágrafo anterior.
 
 Seria possível a combinação das três expressões abordadas anteriormente de forma a obter uma única tabela como resultado. Para tal, era necessário unir as expressões anteriores e renomear os atributos \textit{testemunha.dataRegisto}, \textit{suspeito.dataRegisto} e \textit{evidencia.dataColeta} para um só para a reorganização dos registos através deste novo atributo unificado.
 
 \clearpage %%\vspace{0.5cm}
-{\large 6. Relatório diário de novas evidências, suspeitos e testemunhas de um caso em específico (exemplo: ID do caso = 1 e data = 20/03/2024).}
+\newgeometry{top=2.5cm}
+{\large\textbf{4.1.6 Relatório diário de novas evidências, suspeitos e testemunhas de um caso em específico (exemplo: ID do caso = 1 e data = 20/03/2024).}}
 
 \vspace{0.2cm}
 \begin{lstlisting}[escapechar=*]
@@ -737,24 +1738,60 @@ Seria possível a combinação das três expressões abordadas anteriormente de 
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.9]{images/relax/6-a.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 6.a)}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 6.a)}
+    \label{fig:4.8}
 \end{figure}
 
-Similarmente à interrogação anterior (5), esta foi dividida em três expressões algébricas, onde, em vez de uma ordenação cronológica, são apresentados dados através da seleção da data de coleta/registo relativa a cada entidade (evidências, suspeitos e testemunhas).
+Similarmente à interrogação anterior (5), esta foi dividida em três expressões algébricas (figuras [\ref{fig:4.8}], [\ref{fig:4.9}] e [\ref{fig:4.10}]), onde, em vez de uma ordenação cronológica, são apresentados dados através da seleção da data de coleta/registo relativa a cada entidade (evidências, suspeitos e testemunhas).
 
-De modo semelhante à combinação descrita anteriormente, estas três expressões poderiam ser unificadas de forma a apresentar uma única tabela como resultado, através da operação $\fullouterjoin$ - "\textit{full outer join}".
+\loadgeometry{default}
 
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.692]{images/relax/6-b.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 6.b)}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 6.b)}
+    \label{fig:4.9}
 \end{figure}
 \vspace{0cm}
 \begin{figure}[!ht]
     \centering
     \includegraphics[scale=0.692]{images/relax/6-c.png}
-    \caption{Representação visual da expressão em Álgebra Relacional 6.c)}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 6.c)}
+    \label{fig:4.10}
 \end{figure}
+
+\clearpage
+
+De modo semelhante à unificação de expressões descrita anteriormente, estas três expressões da interrogação anterior podem ser unificadas de forma a apresentar uma única tabela como resultado, da seguinte maneira (figura [\ref{fig:4.11}]):
+
+\vspace{0.2cm}
+\begin{lstlisting}[escapechar=*]
+*$\pi$* evidencia.caso, evidencia.id, evidencia.dataColeta, evidencia.descricao
+*$\sigma$* (caso *$=$* 1 AND dataColeta *$=$* '20/03/2024') (evidencia)
+
+*$\bowtie$* evidencia.caso *$=$* casosuspeito.caso
+
+*$\pi$* casosuspeito.caso, suspeito.nome, suspeito.telefone, suspeito.email, suspeito.dataNascimento, suspeito.sexo, suspeito.morada, suspeito.descricao, suspeito.dataRegisto
+*$\sigma$* (casosuspeito.caso *$=$* 1 AND suspeito.dataRegisto *$=$* '20/03/2024')
+(casosuspeito *$\bowtie$* casosuspeito.suspeito *$=$* suspeito.id (suspeito))
+
+*$\bowtie$* casosuspeito.caso *$=$* casotestemunha.caso
+
+*$\pi$* casotestemunha.caso, testemunha.nome, testemunha.telefone, testemunha.email, testemunha.morada, testemunha.dataRegisto
+*$\sigma$* (casotestemunha.caso *$=$* 1 AND testemunha.dataRegisto *$=$* '20/03/2024')
+(casotestemunha *$\bowtie$* casotestemunha.testemunha *$=$* testemunha.id (testemunha))
+\end{lstlisting}
+
+\newgeometry{top=1cm,right=0cm,left=0cm,bottom=1cm}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=16, angle=270]{images/relax/6-example.png}
+    \caption{Representação gráfica da expressão em Álgebra Relacional 6 (alternativa)}
+    \label{fig:4.11}
+\end{figure}
+
+\loadgeometry{default}
 
 %==========================================================================
 % END MODELAÇÃO LÓGICA
@@ -764,15 +1801,27 @@ De modo semelhante à combinação descrita anteriormente, estas três expressõ
 % BEGIN CONCLUSÕES DE TRABALHO FUTURO
 %==========================================================================
 
+\newgeometry{top=2.5cm}
 \chapter{Conclusões e Trabalho Futuro}
-    \textcolor{red}{
-        <<Elaborar uma apreciação crítica sobre o trabalho realizado, apontando os seus pontos fortes e fracos. Adicionalmente, caso se aplique, enunciar eventuais tarefas a realizar futuramente ou novas opções para estender o trabalho realizado.>> \\
-        <<Resumo breve do trabalho realizado e das ações desenvolvidas. Enumeração e análise de aspetos positivos e negativos identificados durante o processo de desenvolvimento do sistema de bases de dados. Exposição das próximas linhas de desenvolvimento do projeto.>>
-    }
 
-    \textcolor{red}{
-        <<Aqui podemos falar da entidade comunicações que não implementamos devido a sua natureza complexa e as vantagens que esta poderia trazer ao SBD>>
-    }
+    Em suma, a equipa de trabalho concluiu todas as etapas planeadas na fase inicial do projeto, conforme detalhado no diagrama de Gantt, com a exceção da etapa \textit{[\ref{requisitos}] Levantamento e Análise de Requisitos}, que acabou por requerer dois dias adicionais além do previsto. Foi assim criado um novo diagrama de Gantt na conclusão do projeto, que expressa a realidade cronológica das etapas do desenvolvimento do trabalho (consultar anexo \nameref{anexo:7}).
+
+    No que diz respeito ao trabalho realizado, foram concluídos os seguintes pontos:
+    \begin{itemize}
+        \item \textbf{Definição do Sistema}: Estabelecimento do escopo e dos objetivos do sistema a ser desenvolvido. Identificação das necessidades dos utilizadores finais e definição dos requisitos iniciais do projeto;
+        \item \textbf{Levantamento e Análise de Requisitos}: Recolha de informações detalhadas sobre as necessidades e preferências da CDC;
+        \item \textbf{Modelação Conceptual}: Criação de um modelo de alto nível que representa os conceitos e relações principais do sistema. Nesta etapa realizou-se identificação das principais entidades, atributos e relacionamentos, bem como a elaboração do diagrama
+        Entidade-Relacionamento conceptual;
+        \item \textbf{Modelação Lógica}: O modelo conceptual foi refinado e convertido em um modelo lógico de menor nível, o que envolveu a inclusão de mais metadata e a criação de entidades adicionais para garantir a uniformidade do domínio de dados. Além disso, foram aplicadas técnicas de normalização à arquitetura para assegurar a eficiência e integridade dos dados no sistema.
+    \end{itemize}
+
+    Um dos pontos fortes do projeto foi a manutenção da simplicidade da solução apresentada, garantindo simultaneamente o cumprimento de todos os requisitos definidos com a CDC.
+
+    No entanto, durante o processo, surgiu a consideração de implementar uma entidade denominada “Comunicações” para o registo das interações entre detetives e partes envolvidas nos casos. Contudo, devido à complexidade adicional que a sua implementação e integração no Sistema de Base de Dados trariam, a equipa, juntamente com a CDC, optou por não prosseguir com esta adição.
+
+    A próxima fase do projeto concentrar-se-á na implementação física do Sistema de Base de Dados através da tradução do modelo lógico realizado, na avaliação do armazenamento, na implementação de um sistema de recolha de dados para a transição dos dados da CDC para o novo SBD desenvolvido.
+
+\loadgeometry{default}
 
 %==========================================================================
 % END CONCLUSÕES DE TRABALHO FUTURO
@@ -783,8 +1832,8 @@ De modo semelhante à combinação descrita anteriormente, estas três expressõ
 %==========================================================================
 
 %% Changes biblibography name
-%% Portuguese babel default : "Bibliografia"
-%% Personally I prefer "Referências"
+%% Portuguese babel default : “Bibliografia”
+%% Personally I prefer “Referências”
 % \renewcommand\bibname{Referências}
 
 %% https://www.overleaf.com/learn/latex/bibliography_management_with_bibtex
@@ -792,8 +1841,11 @@ De modo semelhante à combinação descrita anteriormente, estas três expressõ
 \bibitem{DatabaseSystems}
 Connolly, T., \& Begg, C. (2015). Database Systems: A Practical Approach to Design, Implementation, and Management (6th ed.). Pearson Education. London, UK.
 \bibitem{Aprendizagem em Banco de Dados}
-Carlos Henrique Cândido
+Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferramenta de Modelagem E.R. Monografia de Especialização. Universidade Federal de Santa Catarina, Brasil.
 \end{thebibliography}
+
+%% Add bibliografia to index
+\addcontentsline{toc}{chapter}{Bibliografia}
 
 %==========================================================================
 % END BIBLIOGRAFIA
@@ -817,10 +1869,10 @@ Carlos Henrique Cândido
 \nomenclature[01]{\textbf{CDC}}{Consultoria de Detetives Christie}
 \nomenclature[02]{\textbf{SIM}}{Soluções Informáticas Minho}
 \nomenclature[03]{\textbf{BD}}{Base de Dados}
-\nomenclature[06]{\textbf{ER}}{Entidade-Relacionamento}
 \nomenclature[04]{\textbf{SBD}}{Sistema de Base de Dados}
 \nomenclature[05]{\textbf{ER}}{Entidade-Relacionamento}
 \nomenclature[06]{\textbf{ID}}{Identificador}
+\nomenclature[07]{\textbf{AR}}{Álgebra Relacional}
 
 %% Show acronyms
 \printnomenclature
@@ -832,21 +1884,47 @@ Carlos Henrique Cândido
 %==========================================================================
 % BEGIN ANEXOS
 %==========================================================================
-
+%
 %% Why \addchap, instead of \chapter?
 %% \addchap has no numbering but appears in table of contents.
 \addchap{Anexos}
 
-    \textcolor{red}{
-        <<Os anexos deverão ser utilizados para a inclusão de informação adicional necessária para uma melhor compreensão do relatório o para complementar tópicos, secções ou assuntos abordados. Os anexos criados deverão ser numerados e possuir uma designação. Estes dados permitirão complementar o Índice geral do relatório relativamente à enumeração e apresentação dos diversos anexos.>>
+    \addsec{
+        \href{https://drive.google.com/file/d/1agTd5YEz52V7wCNFIrlbNgWCyI8yPJf1/view?usp=sharing}{\small [I] Diagrama de Gantt}
+        \label{anexo:1}
+    }
+    
+    \addsec{
+        \href{https://docs.google.com/spreadsheets/d/1fe0qM1BRolL9VpDwkwYJ8-H2jR_JmQkdMciH0ri9ANc/edit?usp=sharing}{\small [II] Documentos de Requisitos}
+        \label{anexo:2}
+    }
+    
+    \addsec{
+        \href{https://drive.google.com/file/d/1sBiFGwm6gOL_odOlY_IXcbbDkU8ZvKsC/view?usp=sharing}{\small [III] Modelo Conceptual}
+        \label{anexo:3}
     }
 
-    %% section version of \addchap
-    \addsec{Anexo 1}
+    \addsec{
+        \href{https://drive.google.com/file/d/1WCVEVx54g5WdHCTaMYi2YOkwK56RDnAg/view?usp=sharing}{\small [IV] Modelo Lógico}
+        \label{anexo:4}
+    }
 
+    \addsec{
+        \href{https://drive.google.com/file/d/1AuuAQxwBL63ALrXJo416Q9tukYyG0qn6/view?usp=sharing}{\small [V] Ficheiro para a criação de relações/grupos para \textit{ReLaX}}
+        \label{anexo:5}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1td6NRYSttnLRIKJZYQeEwMVnIf1fl5sn/view?usp=sharing}{\small [VI] Ficheiro com expressões em AR para \textit{ReLaX}}
+        \label{anexo:6}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/13TvAYIQOglJ_Wpz7RWt_ZgIu_MXA9gk9/view?usp=sharing}{\small [VII] Diagrama de Gantt na Realidade}
+        \label{anexo:7}
+    }
 
 %==========================================================================
 % END ANEXOS
 %==========================================================================
 \end{document}
-
