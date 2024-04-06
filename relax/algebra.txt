@@ -38,3 +38,19 @@
 π testemunha.nome, testemunha.telefone, testemunha.email, testemunha.morada, testemunha.dataRegisto
 σ (casotestemunha.caso = 1 ∧ testemunha.dataRegisto = '20/03/2024')
 (casotestemunha ⨝ casotestemunha.testemunha = testemunha.id (testemunha))
+
+-- 6. (Unificada)
+π evidencia.caso, evidencia.id, evidencia.dataColeta, evidencia.descricao
+σ (caso = 1 ∧ dataColeta = '20/03/2024') (evidencia)
+
+⨝ evidencia.caso = casosuspeito.caso
+
+π casosuspeito.caso, suspeito.nome, suspeito.telefone, suspeito.email, suspeito.dataNascimento, suspeito.sexo, suspeito.morada, suspeito.descricao, suspeito.dataRegisto
+σ (casosuspeito.caso = 1 ∧ suspeito.dataRegisto = '20/03/2024')
+(casosuspeito ⨝ casosuspeito.suspeito = suspeito.id (suspeito))
+
+⨝ casosuspeito.caso = casotestemunha.caso
+
+π casotestemunha.caso, testemunha.nome, testemunha.telefone, testemunha.email, testemunha.morada, testemunha.dataRegisto
+σ (casotestemunha.caso = 1 ∧ testemunha.dataRegisto = '20/03/2024')
+(casotestemunha ⨝ casotestemunha.testemunha = testemunha.id (testemunha))
