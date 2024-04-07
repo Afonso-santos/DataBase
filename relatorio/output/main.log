@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  6 APR 2024 19:10
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  7 APR 2024 22:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1287,7 +1287,7 @@ File: images/gantt.pdf Graphic file (type pdf)
 ]
 chapter 2.
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 436.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 435.
 
 [10
 
@@ -1325,137 +1325,137 @@ LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10.95> not available
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 452--452
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 451--451
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 494--494
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 493--493
 []|\TU/lmss/m/n/12 10| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 499--499
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 498--498
 []|\TU/lmss/m/n/12 14| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 504--504
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 503--503
 []|\TU/lmss/m/n/12 15| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 451--510
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 450--509
  [][] 
  []
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 517--517
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 516--516
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 519--519
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 518--518
 []|\TU/lmss/m/n/12 16| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 524--524
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 523--523
 []|\TU/lmss/m/n/12 17| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 529--529
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 528--528
 []|\TU/lmss/m/n/12 18| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 534--534
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 533--533
 []|\TU/lmss/m/n/12 22| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 539--539
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 538--538
 []|\TU/lmss/m/n/12 23| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 544--544
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 543--543
 []|\TU/lmss/m/n/12 24| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 549--549
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 548--548
 []|\TU/lmss/m/n/12 25| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 554--554
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 553--553
 []|\TU/lmss/m/n/12 26| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 559--559
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 558--558
 []|\TU/lmss/m/n/12 27| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 564--564
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 563--563
 []|\TU/lmss/m/n/12 28| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 569--569
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 568--568
 []|\TU/lmss/m/n/12 29| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 574--574
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 573--573
 []|\TU/lmss/m/n/12 30| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 516--580
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 515--579
  [][] 
  []
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 587--587
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 586--586
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 589--589
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 588--588
 []|\TU/lmss/m/n/12 31| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 594--594
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 593--593
 []|\TU/lmss/m/n/12 33| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 599--599
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 598--598
 []|\TU/lmss/m/n/12 34| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 604--604
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 603--603
 []|\TU/lmss/m/n/12 35| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 609--609
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 608--608
 []|\TU/lmss/m/n/12 36| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 614--614
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 613--613
 []|\TU/lmss/m/n/12 37| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 586--620
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 585--619
  [][] 
  []
 
@@ -1470,129 +1470,129 @@ Overfull \vbox (5.32716pt too high) has occurred while \output is active []
 
 
 [12] [13]
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 630--630
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 629--629
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 637--637
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 636--636
 []|\TU/lmss/m/n/12 11| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 642--642
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 641--641
 []|\TU/lmss/m/n/12 12| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 647--647
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 646--646
 []|\TU/lmss/m/n/12 13| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 652--652
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 651--651
 []|\TU/lmss/m/n/12 19| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 657--657
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 656--656
 []|\TU/lmss/m/n/12 20| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 662--662
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 661--661
 []|\TU/lmss/m/n/12 21| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 667--667
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 666--666
 []|\TU/lmss/m/n/12 32| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 672--672
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 671--671
 []|\TU/lmss/m/n/12 41| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 677--677
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 676--676
 []|\TU/lmss/m/n/12 42| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 629--683
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 628--682
  [][] 
  []
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 690--690
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 689--689
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 692--692
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 691--691
 []|\TU/lmss/m/n/12 43| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 697--697
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 696--696
 []|\TU/lmss/m/n/12 44| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 702--702
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 701--701
 []|\TU/lmss/m/n/12 45| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 707--707
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 706--706
 []|\TU/lmss/m/n/12 46| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 712--712
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 711--711
 []|\TU/lmss/m/n/12 47| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 717--717
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 716--716
 []|\TU/lmss/m/n/12 48| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 689--723
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 688--722
  [][] 
  []
 
 [14
 
 ] [15]
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 732--732
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 731--731
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 734--734
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 733--733
 []|\TU/lmss/m/n/12 37| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 739--739
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 738--738
 []|\TU/lmss/m/n/12 38| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 744--744
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 743--743
 []|\TU/lmss/m/n/12 39| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 749--749
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 748--748
 []|\TU/lmss/m/n/12 40| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 731--755
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 730--754
  [][] 
  []
 
@@ -1755,14 +1755,14 @@ Overfull \hbox (15.41039pt too wide) in paragraph at lines 1158--1170
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(0.0pt, 597.50787pt, 0.0pt)
-* v-part:(T,H,B)=(14.22636pt, 816.59412pt, 14.22636pt)
+* v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=597.50787pt
-* \textheight=816.59412pt
+* \textheight=788.14136pt
 * \oddsidemargin=-72.26999pt
 * \evensidemargin=-72.26999pt
-* \topmargin=-97.91862pt
+* \topmargin=-83.69225pt
 * \headheight=18.125pt
 * \headsep=21.75pt
 * \topskip=12.0pt
@@ -2088,10 +2088,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29330 strings out of 478174
- 602960 string characters out of 5854282
+ 29331 strings out of 478174
+ 602971 string characters out of 5854282
  1270447 words of memory out of 5000000
- 49412 multiletter control sequences out of 15000+600000
+ 49413 multiletter control sequences out of 15000+600000
  474417 words of font info for 76 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  108i,17n,106p,10620b,1283s stack positions out of 5000i,500n,10000p,200000b,80000s

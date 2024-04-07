@@ -2,6 +2,7 @@
 \nomenclatureentry{02\textbf{SIM}@[{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {5.0}|nompageref}{55}
 \nomenclatureentry{03\textbf{BD}@[{\textbf{BD}}]\begingroup Base de Dados\nomeqref {5.0}|nompageref}{55}
 \nomenclatureentry{04\textbf{SBD}@[{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{05\textbf{ER}@[{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{06\textbf{ID}@[{\textbf{ID}}]\begingroup Identificador\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{07\textbf{AR}@[{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {5.0}|nompageref}{55}
+\nomenclatureentry{05\textbf{SGBD}@[{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {5.0}|nompageref}{55}
+\nomenclatureentry{06\textbf{ER}@[{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {5.0}|nompageref}{55}
+\nomenclatureentry{07\textbf{ID}@[{\textbf{ID}}]\begingroup Identificador\nomeqref {5.0}|nompageref}{55}
+\nomenclatureentry{08\textbf{AR}@[{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {5.0}|nompageref}{55}

@@ -177,8 +177,7 @@
     
     Tendo em consideração o tema deste ano - uma agência de detetives -, decidimos explorar
     uma agência liderada por Agatha Christie, de nome CDC - Consultoria de Detetives Christie.
-    Relativamente à modelação e desenvolvimento do nosso projeto, iremos dividi-lo em partes: começaremos de forma abstrata e de alto nível, transformando os factos em requisitos e fazendo uma progressão sucessiva para o baixo nível à medida que convertemos estes num modelo conceptual, e, por conseguinte, o conceptual num modelo lógico. Para esta fase de modelação, recorremos ao BR-Modelo e ao \textit{MySQL Workbench}.
-    
+    Relativamente à modelação e desenvolvimento do nosso projeto, iremos dividi-lo em partes: começaremos de forma abstrata e de alto nível, transformando os factos em requisitos e fazendo uma progressão sucessiva para um baixo nível à medida que convertemos estes num modelo conceptual, e, por conseguinte, o conceptual num modelo lógico. Para esta fase de modelação, recorremos às ferramentas BR-Modelo e \textit{MySQL Workbench}.
     
     Posteriormente, numa fase seguinte, desenvolveremos este modelo numa Base de Dados que cumpra o que a CDC necessita após a sua implementação.
     
@@ -292,7 +291,7 @@
             
         \item \textbf{Centralização dos Dados:} Com um Sistema de Gestão de Bases de Dados, os dados relacionados a
             casos, clientes, evidências e investigações podem ser acedidos rapidamente num local centralizado de
-            forma rápida e eficiente, o que permite uma colaboração mais eficaz entre os detetives e facilita a
+            forma eficiente, o que permite uma colaboração mais eficaz entre os detetives e facilita a
             tomada de decisões informadas.
             
         \item\textbf{Eficiência Operacional:} Com o aumento do volume de casos, os métodos manuais de organização de informações tornaram-se cada vez mais ineficientes. Um Sistema de Gestão de Bases de Dados pode automatizar diversas tarefas, como armazenamento, recuperação e atualização de dados, libertando tempo e recursos dos funcionários para se concentrarem na própria investigação.
@@ -300,7 +299,7 @@
             
         \item \textbf{Precisão e Consistência:} Os registos físicos estão sujeitos a erros humanos, como duplicação e perda de dados. Um Sistema de Gestão de Bases de Dados garante precisão e consistência nas informações, ajudando assim a evitar erros e inconsistências que possam comprometer a qualidade do trabalho da CDC.
 
-        \item \textbf{Segurança de dados:} Os registos físicos podem ser facilmente acedidos por qualquer pessoa
+        \item \textbf{Segurança de Dados:} Os registos físicos podem ser facilmente acedidos por qualquer pessoa
             que os encontre. Isso inclui funcionários não autorizados ou intrusos, provocando falsificações, destruição
             acidental e intencional de provas. Com a implementação de Sistema de Gestão de Bases de Dados, existe um maior
             controlo de acesso.
@@ -311,7 +310,7 @@
     \clearpage
 
     \section{Análise da Viabilidade do Processo}
-        A viabilidade de um projeto de desenvolvimento de software depende da habilidade de compreender e satisfazer a procura do mercado e dos utilizadores. Isto requer um planeamento cuidadoso e eficiente para garantir a
+        A viabilidade de um projeto de desenvolvimento de \textit{software} depende da habilidade de compreender e satisfazer a procura do mercado e dos utilizadores. Isto requer um planeamento cuidadoso e eficiente para garantir a
         entrega de um produto confiável e de alta qualidade. E, ao seguir uma abordagem metódica, o projeto pode
         maximizar as suas chances de sucesso ao atender às expectativas e necessidades do público-alvo de forma eficaz.
         
@@ -389,11 +388,11 @@
     \clearpage
 
     \section{Plano de Execução do Projeto}
-        Para assegurar uma implementação eficiente e eficaz do sistema de gestão de bases de dados, foram realizadas reuniões com a Sra$.$ Christie, detetives e estagiários, da CDC, envolvidos no projeto. Com base nessas interações, foi estabelecido um cronograma de execução, sendo este, no nosso caso, um Diagrama de Gantt (figura [\ref{fig:1.1}], página [\pageref{fig:1.1}]).
+        Para assegurar uma implementação eficiente e eficaz do SGBD, foram realizadas reuniões com a Sra$.$ Christie, detetives e estagiários, da CDC, envolvidos no projeto. Com base nessas interações, foi estabelecido um cronograma de execução, sendo este, no nosso caso, um Diagrama de Gantt (figura [\ref{fig:1.1}], página [\pageref{fig:1.1}]).
 
         No Diagrama de Gantt referido na figura [\ref{fig:1.1}], definimos as várias fases do projeto e os intervenientes para cada uma, assim como uma estimativa do tempo necessário a concluir cada fase.
         
-        \textbf{Nota}: Consultar anexo \nameref{anexo:1} para a visualização do Diagrama de Gantt original.
+        \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:1}} para a visualização do Diagrama de Gantt original.
         \newgeometry{top=0.5cm,left=0cm,right=0cm,bottom=0.5cm}
         \begin{figure}
             \centering
@@ -416,7 +415,7 @@
     No capítulo três, introduzimos a \textbf{modelação conceptual} desenvolvida, começando pela \textbf{identificação e caracterização das entidades}, \textbf{dos relacionamentos} e \textbf{dos atributos das entidades e dos relacionamentos} do modelo. Posto isto, é feita uma \textbf{apresentação do diagrama ER produzido}, bem como uma explicação do processo de construção do mesmo.
 
     No capítulo quatro, apresentamos a \textbf{modelação lógica} desenvolvida através do modelo conceptual. Aprofundamos o seu processo de \textbf{construção e validação}, e, após realizarmos o processo de conversão, apresentamos e explicamos o \textbf{modelo lógico produzido}.
-    Por fim, e ainda no quarto capítulo, entramos em detalhe sobre a \textbf{validação do modelo com interrogações do utilizador}, utilizando álgebra relacional para exemplos de manipulação de dados.
+    Por fim, e ainda no quarto capítulo, entramos em detalhe sobre a \textbf{normalização de dados} e \textbf{validação do modelo com interrogações do utilizador}, utilizando álgebra relacional para exemplos de acesso a dados.
 
 %==========================================================================
 % END INTRODUCTION
@@ -432,7 +431,7 @@
         \label{sec:2.1}
             O processo de definição de requisitos começa com uma reunião com a equipa para selecionar diversas estratégias de levantamento, de modo a captar toda a informação necessária para sustentar adequadamente e logicamente uma melhor esquematização e composição de requisitos. Das várias estratégias discutidas, assumimos que utilizamos estas:
             \begin{itemize}
-            \item \textbf{Reuniões} presenciais ou em regime \textit{online} com a Sra. Christie e os seus Detetives, tanto em grupo quanto individualmente com o propósito de identificar os diversos processos operacionais que ocorrem na consultoria e classificá-los.
+            \item \textbf{Reuniões} presenciais ou em regime \textit{online} com a Sra$.$ Christie e os seus Detetives, tanto em grupo quanto individualmente com o propósito de identificar os diversos processos operacionais que ocorrem na consultoria e classificá-los.
             \item \textit{\textbf{Emails}}, às vezes as melhores ideias podem surgir subitamente, e como os funcionários têm uma vida bastante atarefada, deste modo podemos comunicar de maneira mais ágil.
             \item \textbf{Análise de Documentação} como \textbf{artigos de jornais} sobre casos resolvidos pela consultoria, para a equipa estar mais contextualizada acerca da mesma.
             \textbf{Relatórios de casos resolvidos} são recursos escassos infelizmente, pelo que também recorremos à \textbf{leitura de entrevistas dos detetives} para uma melhor compreensão das estratégias e métodos que estes têm por hábito utilizar na sua resolução dos seus casos. Analisámos igualmente a \textbf{documentação} da própria consultoria, mais especificamente relatórios relacionados com os ganhos e custos ao longo dos anos da empresa.
@@ -629,12 +628,12 @@
                 \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
                 \Header{blue!20!white}
 
-                5 & \multicolumn{4}{c|}{\pbox{15cm}{Quando um caso é resolvido ou arquivado o seu estado é atualizado respectivamente, assim como a data de fechamento.}}\\
+                5 & \multicolumn{4}{c|}{\pbox{15cm}{Quando um caso é resolvido ou arquivado o seu estado é atualizado respetivamente, assim como a data de fechamento e é feita a desvinculação dos seus detetives.}}\\
                 \cline{2-5}
                 & 10/03/2024 09:22 & Casos & Gerência & Miguel Carvalho\\
                 \hline
 
-                11 & \multicolumn{4}{c|}{\pbox{15cm}{Os dados relativos de cada caso - evidências, suspeitos e testemuhas - devem ser apresentados por ordem cronológica.}}\\
+                11 & \multicolumn{4}{c|}{\pbox{15cm}{Os dados relativos de cada caso - evidências, suspeitos e testemunhas - devem ser apresentados por ordem cronológica.}}\\
                 \cline{2-5}
                 & 20/03/2024 18:07 & Casos & Funcionários & Miguel Carvalho\\
                 \hline
@@ -754,15 +753,16 @@
                 \end{tabular}
             \caption{Requisitos de Controlo I}
         \end{table}
+
         \loadgeometry{default}
+
+        \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:2}} para a visualização do Documento Geral de Recolha, bem como os documentos de Requisitos de Descrição, Requisitos de Manipulação e Requisitos de Controlo originais.
         
     \section{Análise e Validação Geral dos Requisitos}
         
         Após o levantamento e a recolha dos requisitos através dos métodos apresentados no subcapítulo [\ref{sec:2.1}] do presente relatório, foi necessário fazer a qualificação dos mesmos. Para isso, o pessoal externo da equipa de trabalho procedeu à separação dos requisitos recolhidos nas três categorias apresentadas no subcapítulo [\ref{sec:2.2}].
         
         Numa última fase, a equipa de trabalho, não podendo prosseguir o desenvolvimento do projeto sem a revisão, por parte do cliente, dos requisitos já tratados, reuniu com a gerente da empresa, Agatha Christie. Esta, por sua vez, fez alguns reparos a alguns requisitos, que prontamente, em coordenação com a equipa de trabalho, foram reajustados. Por fim, foi aprovada a lista final de requisitos podendo, assim, o projeto entrar numa nova fase de desenvolvimento.
-
-        \textbf{Nota}: Consultar anexo \nameref{anexo:2} para a visualização do Documento Geral de Recolha, bem como os documentos de Requisitos de Descrição, Requisitos de Manipulação e Requisitos de Controlo originais.
 
 %==========================================================================
 % END LEVANTAMENTO E ANÁLISE DE REQUISITOS
@@ -778,7 +778,7 @@
             Após o levantamento dos requisitos com a informação obtida, iniciámos o processo de planeamento da estrutura do Sistema de Gestão de Bases de Dados que almejamos implementar.
             Posto isto, começámos pela modelação conceptual do nosso projeto através da construção de um Diagrama ER, de modo a podermos visualizar como as entidades (caso, detetive, cliente, etc.) relacionar-se-iam entre si, bem como os atributos que ambos (entidades e relacionamentos) possam ter. Para a caracterização das entidades, atributos e relacionamentos nos subcapítulos seguintes, recorremos à caracterização sugerida em  \cite{DatabaseSystems} (Connolly \& Begg, 2015).
 
-            Para a construção do diagrama em si, recorremos à ferramenta BR Modelo, que utiliza notação baseada na de Dr. Heuser (sendo esta fortemente alicerçada na notação de Peter Chen, como consultado em \cite{Aprendizagem em Banco de Dados} (Cândido, 2005)).
+            Para a construção do diagrama em si, recorremos à ferramenta BR Modelo, que utiliza notação baseada na de Dr$.$ Heuser (sendo esta fortemente alicerçada na notação de Peter Chen, como consultado em \cite{Aprendizagem em Banco de Dados} (Cândido, 2005)).
         }
 
     \clearpage
@@ -839,10 +839,10 @@
         \begin{itemize}
             \item\textbf{Relacionamento:} Detetive vinculado a Caso.
             \item\textbf{Descrição:} Com o intuito de poder estabelecer as vinculações dos detetives aos casos, é importante armazenar a informação desta forma para saber que detetives estão vinculados a quais casos, e durante quanto tempo foi a sua vinculação a estes. Saberemos, deste modo, se um caso tem os detetives necessários e/ou se certos detetives estão livres para serem encaminhados para novos casos.
-            \item\textbf{Multiplicidade:} Detetive (0,n) - Caso (1,n): Todos os detetives têm pelo menos zero ou mais casos vinculados, e todos os casos têm pelo menos um detetive vinculado.
+            \item\textbf{Multiplicidade:} Detetive (0,n) - Caso (0,n): Todos os detetives têm pelo menos zero ou mais casos vinculados, e todos os casos abertos têm pelo menos um detetive vinculado, porém casos arquivados ou fechados não têm detetives vinculados.
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
-                \item [R6]: “Todos os casos têm vinculados pelo menos um detetive.”
+                \item [R6]: “Todos os casos abertos têm vinculados pelo menos um detetive.”
                 \item [R18]: “Todos os detetives têm vinculado zero ou mais casos.”
                 \item [R31]: “Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.”
             \end{itemize}
@@ -1172,8 +1172,8 @@
 
         \textbf{Caracterização dos atributos do relacionamento: \textit{Vinculado}}
         \begin{itemize}
-            \item \textbf{DataVinculação}: Data em que o detetive se vinculou ao caso;
-            \item \textbf{DataDesvinculação}: Data em que o detetive se desvinculou do caso, se tal tiver acontecido;
+            \item \textbf{DataVinculação}: Data e hora em que o detetive foi vinculado ao caso;
+            \item \textbf{DataDesvinculação}: Data e hora em que o detetive foi desvinculado do caso, se tal tiver acontecido;
             \item \textbf{Descrição}: Descrição da vinculação do detetive ao caso.
         \end{itemize}
 
@@ -1193,13 +1193,13 @@
 
         Como supramencionado, este modelo consiste em cinco relacionamentos, dos quais dois são de multiplicidade (1:N) - Caso e Cliente; Evidência e Caso - e os restantes três de (N:M) - Detetive e Caso; Caso e Suspeito; Caso e Testemunha.
 
-        \textbf{Nota}: Consultar anexo \nameref{anexo:3} para uma melhor visualização deste modelo.
+        \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:3}} para uma melhor visualização deste modelo.
 
-        \newgeometry{top=0.5cm,left=0cm,right=0cm,bottom=0.5cm}
+        \newgeometry{top=1cm,left=0cm,right=0cm,bottom=1cm}
         \clearpage
         \begin{figure}[!ht]
             \centering
-            \includegraphics[scale=0.65, angle=270]{images/conceptual.png}
+            \includegraphics[scale=1.05, angle=270]{images/conceptual.png}
             \caption{Diagrama ER Conceptual}
             \label{fig:3.1}
         \end{figure}
@@ -1216,11 +1216,11 @@
 \chapter{Modelação Lógica}
     \section{Construção e Validação do Modelo de Dados Lógico}
 
-               Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o BR-Modelo para traduzir esses conceitos em tabelas e estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
+               Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o \textit{MySQL Workbench} para traduzir esses conceitos em tabelas e estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
 
-        Além de corrigir incoerências, também ajustámos detalhes para otimizar a estrutura do banco de dados e garantir a sua eficiência e escalabilidade. Isso pode envolver a normalização de dados, a definição de chaves primárias e estrangeiras, e a revisão de tipos de dados e índices.
+        Foram ajustados detalhes para otimizar a estrutura do banco de dados e garantir a sua eficiência e escalabilidade. Desde técnicas para garantir a normalização de dados, a definição de chaves primárias e estrangeiras, e a revisão de tipos de dados.
     
-        No final do processo, o modelo lógico representa uma versão refinada e detalhada do sistema, pronta para ser implementada numa base de dados relacional. No entanto, é importante ressaltar que o modelo lógico não é uma representação final e imutável do sistema, mas sim uma etapa intermédia no processo de desenvolvimento de software, sujeita a revisões e ajustes conforme novos requisitos surgem ou são identificados.
+        No final do processo, o modelo lógico representa uma versão refinada e detalhada do sistema, pronta para ser implementada numa Base de Dados relacional. No entanto, é importante ressaltar que o modelo lógico não é uma representação final e imutável do sistema, mas sim uma etapa intermédia no processo de desenvolvimento de \textit{software}, sujeita a revisões e ajustes conforme novos requisitos são identificados.
         
     \clearpage
         
@@ -1422,7 +1422,7 @@
 
         \clearpage
 
-        No modelo conceptual, foram utilizado dois \textbf{atributos compostos multivalorados} na entidade “Caso”, de forma a registar pagamentos e despesas relativas ao mesmo. Estes atributos especiais resultam na formação de duas entidades lógicas, cujas características são derivadas dos subatributos do atributo composto e os mesmos formam a chave primária composta da respetiva entidade. As quais:
+        No modelo conceptual, foram utilizados dois \textbf{atributos compostos multivalorados} na entidade “Caso”, de forma a registar pagamentos e despesas relativas ao mesmo. Estes atributos especiais resultam na formação de duas entidades lógicas, cujas características são derivadas dos subatributos do atributo composto, e os mesmos formam a chave primária composta da respetiva entidade juntamente com a chave primária da entidade “Caso”. As quais:
         
         \textbf{Pagamento}:
         \begin{itemize}
@@ -1460,7 +1460,7 @@
 
         \clearpage
 
-        No processo de modelação lógica foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas entidades, utilizamos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes seis entidades lógicas:
+        No processo de modelação lógica foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas entidades, utilizámos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes cinco entidades lógicas:
 
         \textbf{\textit{CasoCategoria}}:
         \begin{itemize}
@@ -1535,9 +1535,11 @@
                 \end{itemize}
         \end{itemize}
 
+    \vspace{1cm}
+
     Após a aplicação das regras de derivação do modelo de dados relacional, obtemos o modelo lógico apresentado na figura [\ref{fig:4.1}].
 
-    \textbf{Nota}: Consultar anexo \nameref{anexo:4} para uma melhor visualização deste modelo.
+    \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:4}} para uma melhor visualização deste modelo.
     \newgeometry{top=0.1cm,left=0cm,right=0cm,bottom=0.1cm}
     \clearpage
     \begin{figure}[!ht]
@@ -1558,7 +1560,7 @@
             \item Facilidade de Manutenção
             \item Desempenho Aprimorado
         \end{itemize}
-        O sistema de base de dados implementado visa a redução de redundância ao evitar a duplicação desnecessária de informações, proporcionando níveis de armazenamento mais económicos e evitando incongruências entre diferentes instâncias dos mesmos dados. Um exemplo da aplicação desta redução originou do relacionamento caso e suspeito, que, numa fase inicial de desenvolvimento, um suspeito estava associado a um único caso, no entanto, em um aprofundamento com os membros da CDC, concluiu-se que um suspeito tinha uma maior probabilidade de estar associado a vários casos. Após esta conclusão, o modelo foi amplificado para incluir uma relação derivada deste relacionamento, o que permite a associação de um suspeito a vários casos, evitando assim duplicações de suspeitos. O mesmo se aplicou com as entidades caso e testemunha, devido ao seu relacionamento similar ao exemplo anterior.
+        O sistema de base de dados implementado visa a redução de redundância ao evitar a duplicação desnecessária de informações, proporcionando níveis de armazenamento mais económicos e evitando incongruências entre diferentes instâncias dos mesmos dados. Um exemplo da aplicação desta redução originou do relacionamento Caso e Suspeito, que, numa fase inicial de desenvolvimento, um suspeito estava associado a um único caso, no entanto, em um aprofundamento com os membros da CDC, concluiu-se que um suspeito tinha uma maior probabilidade de estar associado a vários casos. Após esta conclusão, o modelo foi amplificado para incluir uma relação derivada deste relacionamento, o que permite a associação de um suspeito a vários casos, evitando assim duplicações de suspeitos. O mesmo se aplicou com as entidades caso e testemunha, devido ao seu relacionamento similar ao exemplo anterior.
 
         Esta solução exemplificada promoveu a integridade dos dados e tornou mais fácil garantir que os dados estejam sempre corretos e atualizados, confirmando a consistência dos dados, que é fulcral à normalização destes.
 
@@ -1574,7 +1576,7 @@
     \section{Validação do Modelo com Interrogações do Utilizador}
         Para assegurar a completa validade do modelo lógico de ER, foram selecionadas um conjunto de expressões algébricas derivadas dos requisitos relativos à manipulação de dados, de forma a permitirem a validação de uma grande totalidade das relações e relacionamentos estipulados no modelo. Estas serão aprofundadas nos parágrafos seguintes.
 
-        \textbf{Nota}: Consultar anexos \nameref{anexo:5} e \nameref{anexo:6} para a visualização das entidades e expressões utilizadas na ferramenta ReLaX.
+        \textbf{Nota}: Consultar anexos \textit{\nameref{anexo:5}} e \textit{\nameref{anexo:6}} para a visualização das entidades e expressões utilizadas na ferramenta ReLaX.
 
 \vspace{0.5cm}
 {\large\textbf{4.4.1 Aceder a identificadores de detetives que estão vinculados a um caso em específico (exemplo: ID do caso = 1), nessa instância.}}
@@ -1634,7 +1636,7 @@ A obtenção de resultados conforme a atividade do detetive na investigação de
 
 A expressão algébrica número 3 permite a obtenção de todos os pagamentos efetuados relativos a um caso em específico, realizando uma projeção dos atributos data, valor e descrição, seguida de uma seleção da entidade “pagamento” através do identificador do caso.
 
-Uma expressão algébrica para a obtenção de todas as despesas efetuadas relativas a um caso seria semelhante a expressão apresentada, com a diferença do acesso à entidade “despesa” em vez de “pagamento”, isto deve-se a conveniente similaridade dos atributos dessas entidades. 
+Uma expressão algébrica para a obtenção de todas as despesas efetuadas relativas a um caso seria semelhante a expressão apresentada, com a diferença do acesso à entidade “despesa” em vez de “pagamento”, isto deve-se à conveniente similaridade dos atributos dessas entidades. 
 
 \clearpage %%\vspace{0.5cm}
 {\large\textbf{4.1.4 Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).}}
@@ -1804,13 +1806,13 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
 \newgeometry{top=2.5cm}
 \chapter{Conclusões e Trabalho Futuro}
 
-    Em suma, a equipa de trabalho concluiu todas as etapas planeadas na fase inicial do projeto, conforme detalhado no diagrama de Gantt, com a exceção da etapa \textit{[\ref{requisitos}] Levantamento e Análise de Requisitos}, que acabou por requerer dois dias adicionais além do previsto. Foi assim criado um novo diagrama de Gantt na conclusão do projeto, que expressa a realidade cronológica das etapas do desenvolvimento do trabalho (consultar anexo \nameref{anexo:7}).
+    Em suma, a equipa de trabalho concluiu todas as etapas planeadas na fase inicial do projeto, conforme detalhado no diagrama de Gantt, com a exceção da etapa \textit{[\ref{requisitos}] Levantamento e Análise de Requisitos}, que acabou por requerer dois dias adicionais além do previsto. Foi assim criado um novo diagrama de Gantt na conclusão do projeto, que expressa a realidade cronológica das etapas do desenvolvimento do trabalho (consultar anexo \textit{\nameref{anexo:7}}).
 
     No que diz respeito ao trabalho realizado, foram concluídos os seguintes pontos:
     \begin{itemize}
         \item \textbf{Definição do Sistema}: Estabelecimento do escopo e dos objetivos do sistema a ser desenvolvido. Identificação das necessidades dos utilizadores finais e definição dos requisitos iniciais do projeto;
         \item \textbf{Levantamento e Análise de Requisitos}: Recolha de informações detalhadas sobre as necessidades e preferências da CDC;
-        \item \textbf{Modelação Conceptual}: Criação de um modelo de alto nível que representa os conceitos e relações principais do sistema. Nesta etapa realizou-se identificação das principais entidades, atributos e relacionamentos, bem como a elaboração do diagrama
+        \item \textbf{Modelação Conceptual}: Criação de um modelo de alto nível que representa os conceitos e relações principais do sistema. Nesta etapa realizou-se a identificação das principais entidades, atributos e relacionamentos, bem como a elaboração do diagrama
         Entidade-Relacionamento conceptual;
         \item \textbf{Modelação Lógica}: O modelo conceptual foi refinado e convertido em um modelo lógico de menor nível, o que envolveu a inclusão de mais metadata e a criação de entidades adicionais para garantir a uniformidade do domínio de dados. Além disso, foram aplicadas técnicas de normalização à arquitetura para assegurar a eficiência e integridade dos dados no sistema.
     \end{itemize}
@@ -1870,9 +1872,10 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
 \nomenclature[02]{\textbf{SIM}}{Soluções Informáticas Minho}
 \nomenclature[03]{\textbf{BD}}{Base de Dados}
 \nomenclature[04]{\textbf{SBD}}{Sistema de Base de Dados}
-\nomenclature[05]{\textbf{ER}}{Entidade-Relacionamento}
-\nomenclature[06]{\textbf{ID}}{Identificador}
-\nomenclature[07]{\textbf{AR}}{Álgebra Relacional}
+\nomenclature[05]{\textbf{SGBD}}{Sistema de Gestão de Base de Dados}
+\nomenclature[06]{\textbf{ER}}{Entidade-Relacionamento}
+\nomenclature[07]{\textbf{ID}}{Identificador}
+\nomenclature[08]{\textbf{AR}}{Álgebra Relacional}
 
 %% Show acronyms
 \printnomenclature
@@ -1900,7 +1903,7 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
     }
     
     \addsec{
-        \href{https://drive.google.com/file/d/1sBiFGwm6gOL_odOlY_IXcbbDkU8ZvKsC/view?usp=sharing}{\small [III] Modelo Conceptual}
+        \href{https://drive.google.com/file/d/1084xVZarPI6u3KQIRwekRc_K8rdQbNAs/view?usp=sharing}{\small [III] Modelo Conceptual}
         \label{anexo:3}
     }
 
