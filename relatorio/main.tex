@@ -379,7 +379,6 @@
                 \begin{itemize}
                     \item \textbf{Afonso Santos:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica;
                     \item \textbf{Ana Pinto:} Levantamento de Requisitos, Modelação Conceptual e Lógica;
-                    \item \textbf{Carlos Ferreira:} Levantamento de Requisitos, Modelação Conceptual e Lógica;
                     \item \textbf{Flávia Araújo:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica;
                     \item \textbf{Miguel Carvalho:} Levantamento de Requisitos, Modelação Conceptual e Lógica, Normalização de Dados, Álgebra Relacional. 
                 \end{itemize}
@@ -394,14 +393,15 @@
         
         \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:1}} para a visualização do Diagrama de Gantt original.
         \newgeometry{top=0.5cm,left=0cm,right=0cm,bottom=0.5cm}
+
         \begin{figure}
             \centering
             \includegraphics[scale=0.99, angle=270]{images/gantt.pdf}
             \caption{Diagrama de Gantt}
             \label{fig:1.1}
         \end{figure}
-        \loadgeometry{default}
 
+        \loadgeometry{default}
 
     \clearpage
     
@@ -440,6 +440,7 @@
             Durante a reunião foi levantada a possibilidade de acompanhar uma investigação de perto, infelizmente foi negada por questões de segurança e de confidencialidade das informações dos participantes da investigação. 
             
     \newgeometry{top=2cm,left=2cm,right=2cm,bottom=3cm}
+
     \section{Organização dos Requisitos Levantados}
         \label{sec:2.2}
         \subsection{Requisitos de Descrição}
@@ -452,7 +453,7 @@
 
                 1 & \multicolumn{4}{c|}{\pbox{15cm}{Cada caso tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
                 \cline{2-5}
-                & 2024/03/20 18:05:00 & Casos & Equipa de Projeto & Carlos Ferreira \\
+                & 2024/03/20 18:05:00 & Casos & Equipa de Projeto & Miguel Carvalho \\
                 \hline
                 
                 2 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um caso deve incluir os seguintes atributos: identificador único, identificador de cliente, identificador (número inteiro) do estado, categoria, descrição, data de abertura, data de fechamento (opcional), um atributo composto multivalorado “pagamentos” - constituído por valor, descrição e data -, e um atributo composto multivalorado “despesas” - constituído por valor, descrição e data.}}\\
@@ -540,37 +541,42 @@
                 & 10/03/2024 12:37 & Clientes & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                24 & \multicolumn{4}{c|}{\pbox{15cm}{Cada testemunha tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                24 & \multicolumn{4}{c|}{\pbox{15cm}{Todos os clientes têm um ou mais casos associados.}}\\
+                \cline{2-5}
+                & 10/03/2024 12:39 & Clientes & Equipa de Projeto & Miguel Carvalho\\
+                \hline
+
+                25 & \multicolumn{4}{c|}{\pbox{15cm}{Cada testemunha tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:39 & Testemunhas & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                25 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma testemunha deve incluir os seguintes atributos: identificador único, nome completo, telefone (único), email (único), endereço de morada (opcional) e data de registo.}}\\
+                26 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma testemunha deve incluir os seguintes atributos: identificador único, nome completo, telefone (único), email (único), endereço de morada (opcional) e data de registo.}}\\
                 \cline{2-5}
                 & 10/03/2024 11:00 & Testemunhas & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                26 & \multicolumn{4}{c|}{\pbox{15cm}{Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha.}}\\
+                27 & \multicolumn{4}{c|}{\pbox{15cm}{Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha.}}\\
                 \cline{2-5}
                 & 10/03/2024 13:20 & Testemunhas & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                27 & \multicolumn{4}{c|}{\pbox{15cm}{Cada suspeito tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                28 & \multicolumn{4}{c|}{\pbox{15cm}{Cada suspeito tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:40 & Suspeitos & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                28 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um suspeito deve incluir os seguintes atributos: identificador único, nome completo, telefone (opcional), email (opcional), data de nascimento (opcional), sexo (opcional), endereço de morada (opcional), descrição (opcional) e data de registo.}}\\
+                29 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de um suspeito deve incluir os seguintes atributos: identificador único, nome completo, telefone (opcional), email (opcional), data de nascimento (opcional), sexo (opcional), endereço de morada (opcional), descrição (opcional) e data de registo.}}\\
                 \cline{2-5}
                 & 10/03/2024 11:01 & Suspeitos & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                29 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “descrição” de um suspeito contém informações sobre o mesmo, desde o porquê da suspeita, histórico criminal, etc.}}\\
+                30 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “descrição” de um suspeito contém informações sobre o mesmo, desde o porquê da suspeita, histórico criminal, etc.}}\\
                 \cline{2-5}
                 & 25/03/2024 21:45 & Suspeitos & Funcionários & Miguel Carvalho\\
                 \hline
 
-                30 & \multicolumn{4}{c|}{\pbox{15cm}{Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito.}}\\
+                31 & \multicolumn{4}{c|}{\pbox{15cm}{Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito.}}\\
                 \cline{2-5}
                 & 10/03/2024 13:25 & Suspeitos & Equipa de Projeto & Miguel Carvalho\\
                 \hline
@@ -585,32 +591,32 @@
                 \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
                 \Header{green!20!white}
 
-                31 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.}}\\
+                32 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:30 & Vinculações & Gerência & Miguel Carvalho\\
                 \hline
 
-                33 & \multicolumn{4}{c|}{\pbox{15cm}{Cada evidência tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
+                34 & \multicolumn{4}{c|}{\pbox{15cm}{Cada evidência tem um identificador único, representado por um número inteiro, numerado sequencialmente.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:50 & Evidências & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                34 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma evidência deve incluir os seguintes atributos: identificador único, identificador do caso, data de coleta, descrição, tipo e arquivo (opcional).}}\\
+                35 & \multicolumn{4}{c|}{\pbox{15cm}{Um registo de uma evidência deve incluir os seguintes atributos: identificador único, identificador do caso, data de coleta, descrição, tipo e arquivo (opcional).}}\\
                 \cline{2-5}
                 & 10/03/2024 12:50 & Evidências & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                35 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “tipo” de uma evidência é mapeado por um dos seguintes valores: 1 (“testemunhal”), 2 (“documental”), 3 (“pericial”), 4 (“indicial”) ou 5 (“real”).}}\\
+                36 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “tipo” de uma evidência é mapeado por um dos seguintes valores: 1 (“testemunhal”), 2 (“documental”), 3 (“pericial”), 4 (“indicial”) ou 5 (“real”).}}\\
                 \cline{2-5}
                 & 10/03/2024 12:57 & Evidências & Funcionários & Miguel Carvalho\\
                 \hline
 
-                36 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “arquivo” de uma evidência representa a localização de um ficheiro digital ou um link, podendo este ser uma foto, vídeo, áudio ou documento.}}\\
+                37 & \multicolumn{4}{c|}{\pbox{15cm}{O atributo “arquivo” de uma evidência representa a localização de um ficheiro digital ou um link, podendo este ser uma foto, vídeo, áudio ou documento.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:59 & Evidências & Funcionários & Miguel Carvalho\\
                 \hline
 
-                37 & \multicolumn{4}{c|}{\pbox{15cm}{Todos as evidências têm associadas um único caso.}}\\
+                38 & \multicolumn{4}{c|}{\pbox{15cm}{Todos as evidências têm associadas um único caso.}}\\
                 \cline{2-5}
                 & 25/03/2024 21:45 & Evidências & Equipa de Projeto & Miguel Carvalho\\
                 \hline
@@ -660,22 +666,12 @@
 
                 21 & \multicolumn{4}{c|}{\pbox{15cm}{Os dados relativos a um detetive devem ser acedidos através do seu identificador único.}}\\
                 \cline{2-5}
-                & 20/03/2024 18:30 & Detetives & Equipa de Projeto & Carlos Ferreira\\
+                & 20/03/2024 18:30 & Detetives & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                32 & \multicolumn{4}{c|}{\pbox{15cm}{Uma desvinculação de um detetive a um caso, sejam os motivos aposentamento/demissão/remoção do detetive, deve atualizar o atributo “data de desvinculção”.}}\\
+                33 & \multicolumn{4}{c|}{\pbox{15cm}{Uma desvinculação de um detetive a um caso, sejam os motivos aposentamento/demissão/remoção do detetive, deve atualizar o atributo “data de desvinculção”.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:35 & Vinculações & Gerência & Miguel Carvalho\\
-                \hline
-
-                41 & \multicolumn{4}{c|}{\pbox{15cm}{Os administradores devem ser capazes de ler, adicionar, atualizar e remover as informações armazenadas na base de dados.}}\\
-                \cline{2-5}
-                & 11/03/2024 20:05 & Permissões & Equipa de Projeto & Miguel Carvalho\\
-                \hline
-
-                42 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o custo total de um caso, através da soma de todas as despesas relativas ao mesmo. Salários de detetives não estão incluídos.}}\\
-                \cline{2-5}
-                & 10/03/2024 16:25 & Financeiro & Gerência & Miguel Carvalho\\
                 \hline
 
                 \end{tabular}
@@ -688,32 +684,42 @@
                 \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
                 \Header{blue!20!white}
 
-                43 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o rendimento total de um caso, através da soma de todos os pagamentos relativos ao mesmo.}}\\
+                44 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o custo total de um caso, através da soma de todas as despesas relativas ao mesmo. Salários de detetives não estão incluídos.}}\\
                 \cline{2-5}
                 & 10/03/2024 16:25 & Financeiro & Gerência & Miguel Carvalho\\
                 \hline
 
-                44 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o lucro/prejuízo de um caso, através da subtração do valor obtido em R43 (rendimento) pelo valor obtido em R42 (custo).}}\\
+                45 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o rendimento total de um caso, através da soma de todos os pagamentos relativos ao mesmo.}}\\
+                \cline{2-5}
+                & 10/03/2024 16:25 & Financeiro & Gerência & Miguel Carvalho\\
+                \hline
+
+                46 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter o lucro/prejuízo de um caso, através da subtração do valor obtido em \textbf{R45} (rendimento) pelo valor obtido em \textbf{R44} (custo).}}\\
                 \cline{2-5}
                 & 10/03/2024 16:26 & Financeiro & Gerência & Miguel Carvalho\\
                 \hline
 
-                45 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter todas as despesas efetuadas por um detetive em diferentes casos em que este participou.}}\\
+                47 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter todas as despesas efetuadas por um detetive em diferentes casos em que este participou.}}\\
                 \cline{2-5}
                 & 10/03/2024 16:40 & Financeiro & Gerência & Miguel Carvalho\\
                 \hline
 
-                46 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter todos os pagamentos efetuados por um cliente em diferentes casos.}}\\
+                48 & \multicolumn{4}{c|}{\pbox{15cm}{É permitido pelo sistema obter todos os pagamentos efetuados por um cliente em diferentes casos.}}\\
                 \cline{2-5}
                 & 10/03/2024 16:50 & Financeiro & Gerência & Miguel Carvalho\\
                 \hline
 
-                47 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada dia, o sistema deverá gerar um relatório que inclua todas as despesas e pagamentos efetuados. Este deve apresentar individualmente cada despesa e pagamento, se existirem, por caso. Adicionalmente, o relatório deve fornecer o somatório total de despesas, pagamentos, bem como os lucros ou prejuízos acumulados nesse dia.}}\\
+                49 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada dia, o sistema deverá gerar um relatório que inclua todas as despesas e pagamentos efetuados. Este deve apresentar individualmente cada despesa e pagamento, se existirem, por caso. Adicionalmente, o relatório deve fornecer o somatório total de despesas, pagamentos, bem como os lucros ou prejuízos acumulados nesse dia.}}\\
                 \cline{2-5}
                 & 11/03/2024 19:40 & Financeiro & Gerência & Miguel Carvalho\\
                 \hline
 
-                48 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada dia, o sistema deverá gerar um relatório para cada caso que inclua novas evidências, testemunhas e suspeitos.}}\\
+                50 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada dia, o sistema deverá gerar um relatório para cada caso que inclua novas evidências, testemunhas e suspeitos.}}\\
+                \cline{2-5}
+                & 20/03/2024 18:40 & Casos & Gerência & Miguel Carvalho\\
+                \hline
+
+                51 & \multicolumn{4}{c|}{\pbox{15cm}{No encerramento de cada semana, o sistema deverá gerar um relatório com informações e estatísticas relativas a novos casos abertos, fechados e/ou arquivados.}}\\
                 \cline{2-5}
                 & 20/03/2024 18:40 & Casos & Gerência & Miguel Carvalho\\
                 \hline
@@ -730,24 +736,29 @@
                 \begin{tabular}{|p{0.3cm}|p{4cm}|p{3cm}|p{4.5cm}|p{3cm}|}
                 \Header{red!20!white}
 
-                37 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve estar operacional durante 24 horas por dia, 7 dias por semana, sem interrupções.}}\\
+                39 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve estar operacional durante 24 horas por dia, 7 dias por semana, sem interrupções.}}\\
                 \cline{2-5}
                 & 11/03/2024 20:10 & Sistema & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                38 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve garantir que apenas os detetives que estão vinculados a um determinado caso, podem alterar os dados relativos ao mesmo.}}\\
+                40 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve garantir que apenas os detetives que estão vinculados a um determinado caso, podem alterar os dados relativos ao mesmo.}}\\
                 \cline{2-5}
-                & 10/03/2024 11:20 & Permissões & Gerência & Carlos Ferreira\\
+                & 10/03/2024 11:20 & Permissões & Gerência & Miguel Carvalho\\
                 \hline
 
-                39 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve garantir que os detetives estagiários apenas podem ler dados relativos a casos não abertos, ou seja, casos fechados e arquivados.}}\\
+                41 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve garantir que os detetives estagiários apenas podem ler dados relativos a casos não abertos, ou seja, casos fechados e arquivados.}}\\
                 \cline{2-5}
                 & 20/03/2024 18:35 & Permissões & Gerência & Miguel Carvalho\\
                 \hline
 
-                40 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve oferecer acesso aos dados de um caso aberto apenas aos detetives a si associados e a Agatha Christie.}}\\
+                42 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema deve oferecer acesso aos dados de um caso aberto apenas aos detetives a si associados e a Agatha Christie.}}\\
                 \cline{2-5}
-                & 11/03/2024 20:02 & Permissões & Gerência & Carlos Ferreira\\
+                & 11/03/2024 20:02 & Permissões & Gerência & Miguel Carvalho\\
+                \hline
+
+                43 & \multicolumn{4}{c|}{\pbox{15cm}{Os administradores devem ser capazes de ler, adicionar, atualizar e remover as informações armazenadas na base de dados.}}\\
+                \cline{2-5}
+                & 11/03/2024 20:05 & Permissões & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
                 \end{tabular}
@@ -844,7 +855,7 @@
             \begin{itemize}
                 \item [R6]: “Todos os casos abertos têm vinculados pelo menos um detetive.”
                 \item [R18]: “Todos os detetives têm vinculado zero ou mais casos.”
-                \item [R31]: “Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.”
+                \item [R32]: “Um registo de uma vinculação efetua a ligação entre um caso e os seus detetives, e deve incluir os seguintes atributos: data de vinculação, data de desvinculação (opcional) e descrição.”
             \end{itemize}
             \item\textbf{Atributos:} Data de Vinculação, Data de Desvinculação e Descrição.
             \item\textbf{Entidade Gerada:} Vinculação.
@@ -861,7 +872,7 @@
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
                 \item [R10]: “Todos os casos têm zero ou mais evidências.”
-                \item [R37]: “Todos as evidências têm associadas um único caso.”
+                \item [R38]: “Todos as evidências têm associadas um único caso.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} Nenhuma.
@@ -877,7 +888,7 @@
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
                 \item [R7]: “Todos os casos têm associados um único cliente.”
-                \item [R47]: “É permitido pelo sistema obter todos os pagamentos efetuados por um       cliente em diferentes casos.”
+                \item [R24]: “Todos os clientes têm um ou mais casos associados.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} Nenhuma.   
@@ -894,7 +905,7 @@
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
                 \item [R9]: “Todos os casos têm zero ou mais suspeitos.”
-                \item [R30]: “Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito.”
+                \item [R31]: “Devido a natureza do relacionamento entre suspeitos e casos (N:M) é feito um mapeamento entre os identificadores de caso e de suspeito.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} CasoSuspeito.
@@ -910,7 +921,7 @@
             \item\textbf{Baseado nos Requisitos:}
             \begin{itemize}
                 \item [R8]: “Todos os casos têm zero ou mais testemunhas.”
-                \item [R26]: “Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha.”
+                \item [R27]: “Devido a natureza do relacionamento entre testemunhas e casos (N:M) é feito um mapeamento entre os identificadores de caso e de testemunha.”
             \end{itemize}
             \item\textbf{Atributos:} Nenhum.
             \item\textbf{Entidade Gerada:} CasoTestemunha.
@@ -1120,8 +1131,9 @@
 
     \loadgeometry{default}
 
-        \clearpage
-        \newgeometry{top=2cm}
+    \clearpage
+    
+    \newgeometry{top=2cm}
 
         \textbf{Entidade: \textit{Evidência}}
         \begin{table}[!ht]
@@ -1196,6 +1208,7 @@
         \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:3}} para uma melhor visualização deste modelo.
 
         \newgeometry{top=1cm,left=0cm,right=0cm,bottom=1cm}
+        
         \clearpage
         \begin{figure}[!ht]
             \centering
@@ -1203,6 +1216,7 @@
             \caption{Diagrama ER Conceptual}
             \label{fig:3.1}
         \end{figure}
+        
         \loadgeometry{default}
 
 %==========================================================================
@@ -1216,7 +1230,7 @@
 \chapter{Modelação Lógica}
     \section{Construção e Validação do Modelo de Dados Lógico}
 
-               Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o \textit{MySQL Workbench} para traduzir esses conceitos em tabelas e estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
+               Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o \textit{MySQL Workbench} para traduzir esses conceitos em estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
 
         Foram ajustados detalhes para otimizar a estrutura do banco de dados e garantir a sua eficiência e escalabilidade. Desde técnicas para garantir a normalização de dados, a definição de chaves primárias e estrangeiras, e a revisão de tipos de dados.
     
@@ -1228,7 +1242,7 @@
         
         A construção do modelo lógico baseou-se intrinsecamente no modelo conceptual desenvolvido no capítulo anterior. Para tal, é necessário aplicar as regras de derivação do modelo de dados relacional.
 
-        Primeiramente, cada entidade é convertida numa tabela. Deste processo, obtemos as seguintes seis tabelas:
+        Primeiramente, cada entidade é convertida numa tabela e são definidos o tipo de dados dos atributos. Deste processo, obtemos as seguintes seis tabelas:
 
         \textbf{Caso}:
         \begin{itemize}
@@ -1335,7 +1349,7 @@
         \end{itemize}
 
         \clearpage
-        \newgeometry{top=2.5cm}
+        \newgeometry{top=2cm}
 
         \textbf{Evidência}:
         \begin{itemize}
@@ -1356,13 +1370,27 @@
                 \end{itemize}
         \end{itemize}
 
-        \vspace{0.5cm}
+        \vspace{0.2cm}
+
+        A aplicação da regra de conversão de uma entidade conceptual em uma tabela deu origem ao seguinte modelo lógico (figura \ref{fig:4.1}):
+
+        \vspace{0.1cm}
+
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[scale=0.995]{images/modelo_logico/regra1.pdf}
+            \caption{Diagrama ER Lógico após a aplicação da primeira regra de derivação}
+            \label{fig:4.1}
+        \end{figure}
+
+        \loadgeometry{default}
+        \clearpage
         
-        Para a conversão de um \textbf{Relacionamento Binário de grau N:M}, a chave primária de cada entidade é utilizada para a composição da chave primária composta da entidade originada do relacionamento, e esta deve incluir os seus atributos, se existentes.
+        Para a conversão de um \textbf{Relacionamento Binário de grau N:M}, a chave primária de cada entidade é utilizada para a composição da chave primária composta da tabela originada do relacionamento, e esta deve incluir os seus atributos, se existentes.
 
         Para os restantes relacionamentos é necessário a atribuição das chaves estrangeiras respetivas. Para tal, a chave primária da entidade do lado N é usada como chave estrangeira na entidade correspondente do lado 1.
 
-        A regra de conversão do relacionamento de grau N:M originou as seguintes entidades:
+        A regra de conversão do relacionamento de grau N:M originou as seguintes três tabelas:
         
         \textbf{Vinculação}:
         \begin{itemize}
@@ -1384,9 +1412,7 @@
                 \end{itemize}
         \end{itemize}
 
-        \loadgeometry{default}
-
-        \clearpage
+        \vspace{0.5cm}
 
         \textbf{\textit{CasoSuspeito}}:
         \begin{itemize}
@@ -1403,7 +1429,7 @@
             \item Atributos: Nenhum
         \end{itemize}
 
-        \vspace{0.5cm}            
+        \clearpage           
         
         \textbf{\textit{CasoTestemunha}}:
         \begin{itemize}
@@ -1420,9 +1446,22 @@
             \item Atributos: Nenhum
         \end{itemize}
 
-        \clearpage
+        \vspace{0.2cm}
 
-        No modelo conceptual, foram utilizados dois \textbf{atributos compostos multivalorados} na entidade “Caso”, de forma a registar pagamentos e despesas relativas ao mesmo. Estes atributos especiais resultam na formação de duas entidades lógicas, cujas características são derivadas dos subatributos do atributo composto, e os mesmos formam a chave primária composta da respetiva entidade juntamente com a chave primária da entidade “Caso”. As quais:
+        No fim desta conversão de relacionamentos binários de grau N:M e atribuição de chaves estrangeiras para os restantes relacionamentos obtemos o modelo lógico apresentado na figura \ref{fig:4.2}.
+
+        \newgeometry{right=0.5cm,left=0.5cm,top=3cm,bottom=4cm}
+
+        \begin{figure}
+            \centering
+            \includegraphics[scale=1,angle=0]{images/modelo_logico/regra2.pdf}
+            \caption{Diagrama ER Lógico após a aplicação da segunda regra de derivação}
+            \label{fig:4.2}
+        \end{figure}
+
+        \loadgeometry{default}
+
+        No modelo conceptual, foram utilizados dois \textbf{atributos compostos multivalorados} na entidade “Caso”, de forma a registar pagamentos e despesas relativas ao mesmo. Estes atributos especiais resultam na formação de duas tabelas, cujas características são derivadas dos subatributos do atributo composto, e os mesmos formam a chave primária composta da respetiva tabela juntamente com a chave primária da tabela “Caso”. As quais:
         
         \textbf{Pagamento}:
         \begin{itemize}
@@ -1458,9 +1497,24 @@
             \item Atributos: Nenhum
         \end{itemize}
 
+        \vspace{0.5cm}
+
+        Dada a conversão dos atributos multivalorados definidos no modelo conceptual obtivemos o seguinte modelo lógico (figura \ref{fig:4.3}) com a adição de duas tabelas:
+        \newgeometry{top=2cm,left=0cm,right=0cm,bottom=4cm}
+
+        \clearpage
+        \begin{figure}[!ht]
+            \centering
+            \includegraphics[scale=1, angle=270]{images/modelo_logico/regra3.pdf}
+            \caption{Diagrama ER Lógico após a aplicação da terceira regra de derivação}
+            \label{fig:4.3}
+        \end{figure}
+    
+        \loadgeometry{default}
+
         \clearpage
 
-        No processo de modelação lógica foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas entidades, utilizámos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes cinco entidades lógicas:
+        No processo de modelação lógica foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas tabelas, utilizámos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes cinco tabelas:
 
         \textbf{\textit{CasoCategoria}}:
         \begin{itemize}
@@ -1541,13 +1595,15 @@
 
     \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:4}} para uma melhor visualização deste modelo.
     \newgeometry{top=0.1cm,left=0cm,right=0cm,bottom=0.1cm}
+
     \clearpage
     \begin{figure}[!ht]
         \centering
-        \includegraphics[scale=0.70, angle=270]{images/logico.png}
+        \includegraphics[scale=0.70, angle=270]{images/modelo_logico/final.png}
         \caption{Diagrama ER Lógico}
-        \label{fig:4.1}
+        \label{fig:4.4}
     \end{figure}
+
     \loadgeometry{default}
 
     \clearpage
@@ -1578,10 +1634,16 @@
 
         \textbf{Nota}: Consultar anexos \textit{\nameref{anexo:5}} e \textit{\nameref{anexo:6}} para a visualização das entidades e expressões utilizadas na ferramenta ReLaX.
 
-\vspace{0.5cm}
+\clearpage
+
 {\large\textbf{4.4.1 Aceder a identificadores de detetives que estão vinculados a um caso em específico (exemplo: ID do caso = 1), nessa instância.}}
 
 \vspace{0.2cm}
+
+A interrogação 1 baseou-se no requisito de manipulação número 12: \textit{“Dado o identificador do caso, deve ser possível aceder a todos os detetives que já estiveram envolvidos, bem como detetives envolvidos no momento.”}.
+
+\vspace{0.2cm}
+
 \begin{lstlisting}[escapechar=*]
 *$\sigma$* (caso *$=$* 1 AND dataDesvinculacao *$=$* 'NULL') (vinculacao)
 \end{lstlisting}
@@ -1603,6 +1665,11 @@ Ao remover o termo da condição - `\textit{dataDesvinculacao = 'NULL'}` - origi
 {\large\textbf{4.1.2 Aceder a casos onde um detetive em específico (exemplo: ID do detetive = 1) está ativamente vinculado, nessa instância.}}
 
 \vspace{0.2cm}
+
+A interrogação 2 baseou-se no requisito de manipulação número 19: \textit{“Dado o identificador de um detetive, deve ser possível aceder a todos os casos em que esteve/está envolvido.”}.
+
+\vspace{0.2cm}
+
 \begin{lstlisting}[escapechar=*]
 *$\sigma$* (detetive *$=$* 1 AND dataDesvinculacao *$=$* 'NULL') (vinculacao)
 \end{lstlisting}
@@ -1622,6 +1689,11 @@ A obtenção de resultados conforme a atividade do detetive na investigação de
 {\large\textbf{4.1.3 Relatório completo de pagamentos com data, descrição e valor para um caso em específico (exemplo: ID do caso = 1).}}
 
 \vspace{0.2cm}
+
+A interrogação 3 baseou-se no requisito de manipulação número 49: \textit{“No encerramento de cada dia, o sistema deverá gerar um relatório que inclua todas as despesas e pagamentos efetuados. Este deve apresentar individualmente cada despesa e pagamento, se existirem, por caso. Adicionalmente, o relatório deve fornecer o somatório total de despesas, pagamentos, bem como os lucros ou prejuízos acumulados nesse dia.”}.
+
+\vspace{0.2cm}
+
 \begin{lstlisting}[escapechar=*]
 *$\pi$* data, valor, descricao
 *$\sigma$* (caso *$=$* 1) (pagamento)
@@ -1642,15 +1714,21 @@ Uma expressão algébrica para a obtenção de todas as despesas efetuadas relat
 {\large\textbf{4.1.4 Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).}}
 
 \vspace{0.2cm}
+
+A interrogação 4 baseou-se no requisito de manipulação número 51: \textit{“No encerramento de cada semana, o sistema deverá gerar um relatório com informações e estatísticas relativas a novos casos abertos, fechados e/ou arquivados.”}.
+
+\vspace{0.2cm}
+
 \begin{lstlisting}[escapechar=*]
-*$\pi$* caso.id, caso.dataAbertura, casoestado.designacao
-((*$\sigma$* (dataAbertura *$\geq$* '14/03/2024' AND dataAbertura *$\leq$* '20/04/2024') (caso))
+*$\pi$* caso.id, caso.dataAbertura, caso.dataFechamento, casoestado.designacao
+((*$\sigma$* (dataAbertura *$\geq$* '14/03/2024' AND dataAbertura *$\leq$* '20/04/2024') OR
+(dataFechamento *$\geq$* '14/03/2024' AND dataFechamento *$\leq$* '20/04/2024') (caso))
 *$\bowtie$* caso.estado *$=$* casoestado.id (casoestado))
 \end{lstlisting}
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.77]{images/relax/4.png}
+    \includegraphics[scale=0.73]{images/relax/4.png}
     \caption{Representação gráfica da expressão em Álgebra Relacional 4.}
 \end{figure}
 \vspace{0.2cm}
@@ -1663,6 +1741,11 @@ Uma otimização possível a esta expressão seria a truncação dos atributos \
 {\large\textbf{4.1.5 Apresentar os dados de um caso (exemplo: ID do caso = 1) - evidências, suspeitos e testemunhas - por ordem cronológica.}}
 
 \vspace{0.2cm}
+
+A interrogação 5 baseou-se no requisito de manipulação número 11: \textit{“Os dados relativos de cada caso - evidências, suspeitos e testemunhas - devem ser apresentados por ordem cronológica.”}.
+
+\vspace{0.2cm}
+
 \begin{lstlisting}[escapechar=*]
 -- a) Obter todas as evidências relativas a um caso por ordem cronológica
 *$\tau$* evidencia.dataColeta ASC
@@ -1717,10 +1800,15 @@ Por fim, a expressão (c) (figura [\ref{fig:4.7}]) apresenta os dados dos suspei
 Seria possível a combinação das três expressões abordadas anteriormente de forma a obter uma única tabela como resultado. Para tal, era necessário unir as expressões anteriores e renomear os atributos \textit{testemunha.dataRegisto}, \textit{suspeito.dataRegisto} e \textit{evidencia.dataColeta} para um só para a reorganização dos registos através deste novo atributo unificado.
 
 \clearpage %%\vspace{0.5cm}
-\newgeometry{top=2.5cm}
+
 {\large\textbf{4.1.6 Relatório diário de novas evidências, suspeitos e testemunhas de um caso em específico (exemplo: ID do caso = 1 e data = 20/03/2024).}}
 
 \vspace{0.2cm}
+
+A interrogação 6 baseou-se no requisito de manipulação número 50: \textit{“No encerramento de cada dia, o sistema deverá gerar um relatório para cada caso que inclua novas evidências, testemunhas e suspeitos.”}
+
+\vspace{0.2cm}
+
 \begin{lstlisting}[escapechar=*]
 -- a) Obter as novas evidências relativas a um caso
 *$\pi$* evidencia.id, evidencia.dataColeta, evidencia.descricao
@@ -1744,20 +1832,20 @@ Seria possível a combinação das três expressões abordadas anteriormente de 
     \label{fig:4.8}
 \end{figure}
 
-Similarmente à interrogação anterior (5), esta foi dividida em três expressões algébricas (figuras [\ref{fig:4.8}], [\ref{fig:4.9}] e [\ref{fig:4.10}]), onde, em vez de uma ordenação cronológica, são apresentados dados através da seleção da data de coleta/registo relativa a cada entidade (evidências, suspeitos e testemunhas).
+\clearpage
 
-\loadgeometry{default}
+Similarmente à interrogação anterior (5), esta foi dividida em três expressões algébricas (figuras [\ref{fig:4.8}], [\ref{fig:4.9}] e [\ref{fig:4.10}]), onde, em vez de uma ordenação cronológica, são apresentados dados através da seleção da data de coleta/registo relativa a cada entidade (evidências, suspeitos e testemunhas).
 
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.692]{images/relax/6-b.png}
+    \includegraphics[scale=0.63]{images/relax/6-b.png}
     \caption{Representação gráfica da expressão em Álgebra Relacional 6.b)}
     \label{fig:4.9}
 \end{figure}
 \vspace{0cm}
 \begin{figure}[!ht]
     \centering
-    \includegraphics[scale=0.692]{images/relax/6-c.png}
+    \includegraphics[scale=0.63]{images/relax/6-c.png}
     \caption{Representação gráfica da expressão em Álgebra Relacional 6.c)}
     \label{fig:4.10}
 \end{figure}
@@ -1814,7 +1902,7 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
         \item \textbf{Levantamento e Análise de Requisitos}: Recolha de informações detalhadas sobre as necessidades e preferências da CDC;
         \item \textbf{Modelação Conceptual}: Criação de um modelo de alto nível que representa os conceitos e relações principais do sistema. Nesta etapa realizou-se a identificação das principais entidades, atributos e relacionamentos, bem como a elaboração do diagrama
         Entidade-Relacionamento conceptual;
-        \item \textbf{Modelação Lógica}: O modelo conceptual foi refinado e convertido em um modelo lógico de menor nível, o que envolveu a inclusão de mais metadata e a criação de entidades adicionais para garantir a uniformidade do domínio de dados. Além disso, foram aplicadas técnicas de normalização à arquitetura para assegurar a eficiência e integridade dos dados no sistema.
+        \item \textbf{Modelação Lógica}: O modelo conceptual foi refinado e convertido em um modelo lógico de menor nível, o que envolveu a inclusão de mais metadata e a criação de tabelas adicionais para garantir a uniformidade do domínio de dados. Além disso, foram aplicadas técnicas de normalização à arquitetura para assegurar a eficiência e integridade dos dados no sistema.
     \end{itemize}
 
     Um dos pontos fortes do projeto foi a manutenção da simplicidade da solução apresentada, garantindo simultaneamente o cumprimento de todos os requisitos definidos com a CDC.
@@ -1898,7 +1986,7 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
     }
     
     \addsec{
-        \href{https://docs.google.com/spreadsheets/d/1fe0qM1BRolL9VpDwkwYJ8-H2jR_JmQkdMciH0ri9ANc/edit?usp=sharing}{\small [II] Documentos de Requisitos}
+        \href{https://docs.google.com/spreadsheets/d/1ZYYOut1zsdGr3DZ1JqruOHxCBgM_EFV9JDmxPFWZpiY/edit?usp=sharing}{\small [II] Documentos de Requisitos}
         \label{anexo:2}
     }
     
