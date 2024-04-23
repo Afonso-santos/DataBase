@@ -1,8 +1,9 @@
-\nomenclatureentry{01\textbf{CDC}@[{\textbf{CDC}}]\begingroup Consultoria de Detetives Christie\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{02\textbf{SIM}@[{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{03\textbf{BD}@[{\textbf{BD}}]\begingroup Base de Dados\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{04\textbf{SBD}@[{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{05\textbf{SGBD}@[{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{06\textbf{ER}@[{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{07\textbf{ID}@[{\textbf{ID}}]\begingroup Identificador\nomeqref {5.0}|nompageref}{55}
-\nomenclatureentry{08\textbf{AR}@[{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {5.0}|nompageref}{55}
+\nomenclatureentry{01\textbf{CDC}@[{\textbf{CDC}}]\begingroup Consultoria de Detetives Christie\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{02\textbf{SIM}@[{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{03\textbf{BD}@[{\textbf{BD}}]\begingroup Base de Dados\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{04\textbf{SBD}@[{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{05\textbf{SGBD}@[{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{06\textbf{ER}@[{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{07\textbf{ID}@[{\textbf{ID}}]\begingroup Identificador\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{08\textbf{AR}@[{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{09\textbf{SQL}@[{\textbf{SQL}}]\begingroup \textit{Structured Query Language}\nomeqref {6.0}|nompageref}{62}

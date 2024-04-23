@@ -181,10 +181,11 @@
     
     Posteriormente, numa fase seguinte, desenvolveremos este modelo numa Base de Dados que cumpra o que a CDC necessita após a sua implementação.
     
-    
     \textbf{Área de Aplicação}: Desenvolvimento e Arquitetura de Sistema de Base de Dados.
 
     \textbf{Palavras-Chave}: Base de Dados Relacionais, Levantamento e Análise de Requisitos, Modelação Conceptual e Lógica, BR-Modelo, \textit{ReLaX}, \textit{MySQL}.
+
+    \textcolor{red}{>> Atualizar o resumo do relatório de acordo com as mudanças na segunda parte do trabalho.}
 
 \end{abstract}
 \end{flushleft}
@@ -206,9 +207,7 @@
 \renewcommand{\listfigurename}{Índice de Figuras}
 \renewcommand{\listtablename}{Índice de Tabelas}
 
-\newgeometry{top=2cm}
 \tableofcontents
-\loadgeometry{default}
 
 \pagebreak
 
@@ -406,7 +405,7 @@
     \clearpage
     
     \section{Estrutura do Relatório}
-    O presente relatório é composto por 5 capítulos.
+    O presente relatório é composto por \textcolor{red}{5} capítulos.
     
     No primeiro capítulo, \textbf{contextualizamos} o projeto que iremos desenvolver, definindo a \textbf{motivação e objetivos} por detrás deste, bem como a sua \textbf{viabilidade}. Também listamos os \textbf{recursos necessários} para a execução deste projeto, bem como o seu \textbf{planeamento}, fazendo uma análise das várias etapas deste trabalho.
 
@@ -416,6 +415,8 @@
 
     No capítulo quatro, apresentamos a \textbf{modelação lógica} desenvolvida através do modelo conceptual. Aprofundamos o seu processo de \textbf{construção e validação}, e, após realizarmos o processo de conversão, apresentamos e explicamos o \textbf{modelo lógico produzido}.
     Por fim, e ainda no quarto capítulo, entramos em detalhe sobre a \textbf{normalização de dados} e \textbf{validação do modelo com interrogações do utilizador}, utilizando álgebra relacional para exemplos de acesso a dados.
+
+    \textcolor{red}{>> Adicionar capítulo cinco. \textbf{Implementação Física}.}
 
 %==========================================================================
 % END INTRODUCTION
@@ -1448,7 +1449,7 @@
 
         \vspace{0.2cm}
 
-        No fim desta conversão de relacionamentos binários de grau N:M e atribuição de chaves estrangeiras para os restantes relacionamentos obtemos o modelo lógico apresentado na figura \ref{fig:4.2}.
+        No fim desta conversão de relacionamentos binários de grau N:M e atribuição de chaves estrangeiras para os restantes relacionamentos, obtemos o modelo lógico apresentado na figura \ref{fig:4.2}.
 
         \newgeometry{right=0.5cm,left=0.5cm,top=3cm,bottom=4cm}
 
@@ -1499,7 +1500,7 @@
 
         \vspace{0.5cm}
 
-        Dada a conversão dos atributos multivalorados definidos no modelo conceptual obtivemos o seguinte modelo lógico (figura \ref{fig:4.3}) com a adição de duas tabelas:
+        Dada a conversão dos atributos multivalorados definidos no modelo conceptual, obtivemos o seguinte modelo lógico (figura \ref{fig:4.3}) com a adição de duas tabelas:
         \newgeometry{top=2cm,left=0cm,right=0cm,bottom=4cm}
 
         \clearpage
@@ -1514,7 +1515,7 @@
 
         \clearpage
 
-        No processo de modelação lógica foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas tabelas, utilizámos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes cinco tabelas:
+        No processo de modelação lógica, foram adicionadas \textbf{entidades para o domínio de dados de atributos}, de forma a garantir uma uniformidade dos dados. Estas efetuam o mapeamento entre um identificador, representado por um número inteiro positivo, e uma designação, representado por um campo de texto. Para uma nomeação homogénea destas tabelas, utilizámos a seguinte nomenclatura: “\textit{EntidadeAtributo}”. Obtemos, assim, as seguintes cinco tabelas:
 
         \textbf{\textit{CasoCategoria}}:
         \begin{itemize}
@@ -1711,7 +1712,7 @@ A expressão algébrica número 3 permite a obtenção de todos os pagamentos ef
 Uma expressão algébrica para a obtenção de todas as despesas efetuadas relativas a um caso seria semelhante a expressão apresentada, com a diferença do acesso à entidade “despesa” em vez de “pagamento”, isto deve-se à conveniente similaridade dos atributos dessas entidades. 
 
 \clearpage %%\vspace{0.5cm}
-{\large\textbf{4.1.4 Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 12/03/2024 a 18/03/2024).}}
+{\large\textbf{4.1.4 Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 14/03/2024 a 20/04/2024).}}
 
 \vspace{0.2cm}
 
@@ -1888,11 +1889,46 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
 %==========================================================================
 
 %==========================================================================
+% BEGIN IMPLEMENTAÇÃO FÍSICA
+%==========================================================================
+
+\chapter{Implementação Física}
+\section{Apresentação e Explicação da Base de Dados Implementada}
+\textcolor{red}{>> Implementação do esquema lógico anteriormente desenvolvido em MySQL. Apresentação do processo de implementação realizado, expondo e justificando a forma como criaram cada uma das tabelas do esquema lógico. Apresentação do esquema físico produzido.}
+
+\section{Criação de Utilizadores da Base de Dados}
+\textcolor{red}{>> Apresentação e caracterização dos utilizadores (um ou dois exemplos) da base de dados. Criação dos perfis de utilização desses utilizadores no sistema de bases de dados, definindo, para cada um deles, as suas permissões de trabalho.}
+
+\section{Povoamento da Base de Dados}
+\textcolor{red}{>> Apresentação e descrição das diversas ações de povoamento realizadas. O povoamento da base de dados deve ser realizado de duas formas: 1) inserindo os dados na base de dados diretamente com instruções INSERT; 2) utilizar um pequeno programa (desenvolvido na linguagem que preferirem) que aceda à base de dados implementada e faça o povoamento de uma ou duas tabelas com “meia-dúzia” de registos. Explique sumariamente a conceção e implementação do programa utilizado.}
+
+\section{Cálculo do Espaço da Base de Dados}
+\textcolor{red}{>> Calcular a dimensão inicial da base de dados (1 registo por tabela) e depois indicar a sua taxa de crescimento anual, assumindo valores que acharem adequados para o vosso caso de aplicação. Devem ter em atenção o tipo de dados dos vários atributos das tabelas e o espaço que o MySQL reserva para cada um deles. Sugiro a utilização de uma folha de cálculo para realizarem este cálculo.}
+
+\section{Definição e Caracterização de Vistas de Utilização em SQL}
+\textcolor{red}{>> Desenvolver um conjunto de vistas (VIEW), que considerem necessárias ou úteis para a realização de algumas consultas dos utilizadores da base de dados implementada.}
+
+\section{Tradução das Interrogações do Utilizador para SQL}
+\textcolor{red}{>> Apresentação de queries SQL, que representem as interrogações previamente apresentadas aquando da validação do esquema lógico construído. Se acharem pertinente, poderão desenvolver outras queries.}
+
+\section{Indexação do Sistema de Dados}
+\textcolor{red}{>> Apresentação de eventuais razões para definir um conjunto de índices sobre uma ou mais tabelas da base de dados. Criação e explicação dos índices indicados.}
+
+\section{Implementação de procedimentos, funções e gatilhos}
+\textcolor{red}{>> Desenvolvimento de um procedimento, de uma função e de um gatilho, que trabalhem com alguns objetos de dados criados na base de dados. Apresentar a razão da sua criação e explicar o seu funcionamento. Um dos exemplos criados deverá incluir um caso concreto de aplicação de transações.}
+
+%==========================================================================
+% END IMPLEMENTAÇÃO FÍSICA
+%==========================================================================
+
+%==========================================================================
 % BEGIN CONCLUSÕES DE TRABALHO FUTURO
 %==========================================================================
 
 \newgeometry{top=2.5cm}
 \chapter{Conclusões e Trabalho Futuro}
+
+    \textcolor{red}{>> Resumo breve do trabalho realizado e das ações desenvolvidas. Enumeração e análise de aspetos positivos e negativos identificados durante o processo de desenvolvimento do sistema de bases de dados. Apresentação e explicação de melhorias a realizar, se justificáveis.}
 
     Em suma, a equipa de trabalho concluiu todas as etapas planeadas na fase inicial do projeto, conforme detalhado no diagrama de Gantt, com a exceção da etapa \textit{[\ref{requisitos}] Levantamento e Análise de Requisitos}, que acabou por requerer dois dias adicionais além do previsto. Foi assim criado um novo diagrama de Gantt na conclusão do projeto, que expressa a realidade cronológica das etapas do desenvolvimento do trabalho (consultar anexo \textit{\nameref{anexo:7}}).
 
@@ -1907,9 +1943,9 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
 
     Um dos pontos fortes do projeto foi a manutenção da simplicidade da solução apresentada, garantindo simultaneamente o cumprimento de todos os requisitos definidos com a CDC.
 
-    No entanto, durante o processo, surgiu a consideração de implementar uma entidade denominada “Comunicações” para o registo das interações entre detetives e partes envolvidas nos casos. Contudo, devido à complexidade adicional que a sua implementação e integração no Sistema de Base de Dados trariam, a equipa, juntamente com a CDC, optou por não prosseguir com esta adição.
+    \textcolor{red}{No entanto, durante o processo, surgiu a consideração de implementar uma entidade denominada “Comunicações” para o registo das interações entre detetives e partes envolvidas nos casos. Contudo, devido à complexidade adicional que a sua implementação e integração no Sistema de Base de Dados trariam, a equipa, juntamente com a CDC, optou por não prosseguir com esta adição.}
 
-    A próxima fase do projeto concentrar-se-á na implementação física do Sistema de Base de Dados através da tradução do modelo lógico realizado, na avaliação do armazenamento, na implementação de um sistema de recolha de dados para a transição dos dados da CDC para o novo SBD desenvolvido.
+    \textcolor{red}{A próxima fase do projeto concentrar-se-á na implementação física do Sistema de Base de Dados através da tradução do modelo lógico realizado, na avaliação do armazenamento, na implementação de um sistema de recolha de dados para a transição dos dados da CDC para o novo SBD desenvolvido.}
 
 \loadgeometry{default}
 
@@ -1964,6 +2000,7 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
 \nomenclature[06]{\textbf{ER}}{Entidade-Relacionamento}
 \nomenclature[07]{\textbf{ID}}{Identificador}
 \nomenclature[08]{\textbf{AR}}{Álgebra Relacional}
+\nomenclature[09]{\textbf{SQL}}{\textit{Structured Query Language}}
 
 %% Show acronyms
 \printnomenclature

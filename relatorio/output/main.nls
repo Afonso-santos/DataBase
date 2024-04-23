@@ -1,13 +1,14 @@
 
 \begin{thenomenclature} 
 \nomgroup{Symbols}
-  \item [{\textbf{CDC}}]\begingroup Consultoria de Detetives Christie\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{BD}}]\begingroup Base de Dados\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{ID}}]\begingroup Identificador\nomeqref {5.0}\nompageref{55}
-  \item [{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {5.0}\nompageref{55}
+  \item [{\textbf{CDC}}]\begingroup Consultoria de Detetives Christie\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{BD}}]\begingroup Base de Dados\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{ID}}]\begingroup Identificador\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {6.0}\nompageref{62}
+  \item [{\textbf{SQL}}]\begingroup \textit{Structured Query Language}\nomeqref {6.0}\nompageref{62}
 
 \end{thenomenclature}

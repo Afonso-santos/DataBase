@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  7 APR 2024 22:44
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2024.3.14)  23 APR 2024 23:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1162,41 +1162,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 (Font)              Font shape `TU/lmss/m/sl' tried instead on input line 180.
  [3
 
-]
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: xetex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
-* v-part:(T,H,B)=(56.9055pt, 686.7347pt, 101.40665pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=418.25368pt
-* \textheight=686.7347pt
-* \oddsidemargin=17.3571pt
-* \evensidemargin=17.3571pt
-* \topmargin=-55.23949pt
-* \headheight=18.125pt
-* \headsep=21.75pt
-* \topskip=12.0pt
-* \footskip=50.75pt
-* \marginparwidth=49.79233pt
-* \marginparsep=12.8401pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
- (output/main.toc [4
-
+] (output/main.toc [4
 
 ])
 \tf@toc=\write6
@@ -1207,7 +1173,6 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <10.95> not available
 \openout7 = `main.lof'.
 
  [6
-
 
 ]
 (output/main.lot)
@@ -1287,7 +1252,7 @@ File: images/gantt.pdf Graphic file (type pdf)
 ]
 chapter 2.
 LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 435.
+(Font)              Font shape `TU/lmss/bx/sl' tried instead on input line 436.
 
 [10
 
@@ -1325,274 +1290,279 @@ LaTeX Font Info:    Font shape `TU/lmss/bx/it' in size <10.95> not available
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 451--451
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 453--453
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 493--493
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 495--495
 []|\TU/lmss/m/n/12 10| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 498--498
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 500--500
 []|\TU/lmss/m/n/12 14| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 503--503
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 505--505
 []|\TU/lmss/m/n/12 15| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 450--509
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 452--511
  [][] 
  []
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 516--516
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 518--518
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 518--518
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 520--520
 []|\TU/lmss/m/n/12 16| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 523--523
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 525--525
 []|\TU/lmss/m/n/12 17| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 528--528
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 530--530
 []|\TU/lmss/m/n/12 18| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 533--533
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 535--535
 []|\TU/lmss/m/n/12 22| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 538--538
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 540--540
 []|\TU/lmss/m/n/12 23| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 543--543
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 545--545
 []|\TU/lmss/m/n/12 24| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 548--548
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 550--550
 []|\TU/lmss/m/n/12 25| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 553--553
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 555--555
 []|\TU/lmss/m/n/12 26| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 558--558
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 560--560
 []|\TU/lmss/m/n/12 27| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 563--563
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 565--565
 []|\TU/lmss/m/n/12 28| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 568--568
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 570--570
 []|\TU/lmss/m/n/12 29| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 573--573
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 575--575
 []|\TU/lmss/m/n/12 30| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 515--579
- [][] 
- []
-
-
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 586--586
-[]|\TU/lmss/m/n/12 Nr| 
- []
-
-
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 588--588
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 580--580
 []|\TU/lmss/m/n/12 31| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 593--593
-[]|\TU/lmss/m/n/12 33| 
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 517--586
+ [][] 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 598--598
+LaTeX Warning: Float too large for page by 16.12721pt on input line 587.
+
+
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 593--593
+[]|\TU/lmss/m/n/12 Nr| 
+ []
+
+
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 595--595
+[]|\TU/lmss/m/n/12 32| 
+ []
+
+
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 600--600
 []|\TU/lmss/m/n/12 34| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 603--603
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 605--605
 []|\TU/lmss/m/n/12 35| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 608--608
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 610--610
 []|\TU/lmss/m/n/12 36| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 613--613
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 615--615
 []|\TU/lmss/m/n/12 37| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 585--619
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 620--620
+[]|\TU/lmss/m/n/12 38| 
+ []
+
+
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 592--626
  [][] 
  []
 
 [11
 
-]
-
-LaTeX Warning: Text page 12 contains only floats.
-
-
-Overfull \vbox (5.32716pt too high) has occurred while \output is active []
-
-
-[12] [13]
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 629--629
+] [12] [13]
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 636--636
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 636--636
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 643--643
 []|\TU/lmss/m/n/12 11| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 641--641
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 648--648
 []|\TU/lmss/m/n/12 12| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 646--646
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 653--653
 []|\TU/lmss/m/n/12 13| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 651--651
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 658--658
 []|\TU/lmss/m/n/12 19| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 656--656
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 663--663
 []|\TU/lmss/m/n/12 20| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 661--661
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 668--668
 []|\TU/lmss/m/n/12 21| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 666--666
-[]|\TU/lmss/m/n/12 32| 
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 673--673
+[]|\TU/lmss/m/n/12 33| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 671--671
-[]|\TU/lmss/m/n/12 41| 
- []
-
-
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 676--676
-[]|\TU/lmss/m/n/12 42| 
- []
-
-
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 628--682
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 635--679
  [][] 
  []
 
 
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 689--689
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 686--686
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 691--691
-[]|\TU/lmss/m/n/12 43| 
- []
-
-
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 696--696
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 688--688
 []|\TU/lmss/m/n/12 44| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 701--701
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 693--693
 []|\TU/lmss/m/n/12 45| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 706--706
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 698--698
 []|\TU/lmss/m/n/12 46| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 711--711
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 703--703
 []|\TU/lmss/m/n/12 47| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 716--716
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 708--708
 []|\TU/lmss/m/n/12 48| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 688--722
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 713--713
+[]|\TU/lmss/m/n/12 49| 
+ []
+
+
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 718--718
+[]|\TU/lmss/m/n/12 50| 
+ []
+
+
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 723--723
+[]|\TU/lmss/m/n/12 51| 
+ []
+
+
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 685--729
  [][] 
  []
 
 [14
 
 ] [15]
-Overfull \hbox (3.6921pt too wide) in paragraph at lines 731--731
+Overfull \hbox (3.6921pt too wide) in paragraph at lines 738--738
 []|\TU/lmss/m/n/12 Nr| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 733--733
-[]|\TU/lmss/m/n/12 37| 
- []
-
-
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 738--738
-[]|\TU/lmss/m/n/12 38| 
- []
-
-
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 743--743
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 740--740
 []|\TU/lmss/m/n/12 39| 
  []
 
 
-Overfull \hbox (3.22409pt too wide) in paragraph at lines 748--748
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 745--745
 []|\TU/lmss/m/n/12 40| 
  []
 
 
-Overfull \hbox (4.00401pt too wide) in paragraph at lines 730--754
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 750--750
+[]|\TU/lmss/m/n/12 41| 
+ []
+
+
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 755--755
+[]|\TU/lmss/m/n/12 42| 
+ []
+
+
+Overfull \hbox (3.22409pt too wide) in paragraph at lines 760--760
+[]|\TU/lmss/m/n/12 43| 
+ []
+
+
+Overfull \hbox (4.00401pt too wide) in paragraph at lines 737--766
  [][] 
  []
 
@@ -1613,12 +1583,12 @@ chapter 3.
 ] [23
 
 ]
-Overfull \hbox (19.31671pt too wide) in paragraph at lines 926--947
+Overfull \hbox (19.31671pt too wide) in paragraph at lines 938--959
  [][] 
  []
 
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 947.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 959.
 [24
 
 ] [25
@@ -1657,7 +1627,7 @@ LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <12> not available
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (25.3344pt too wide) in paragraph at lines 984--1003
+Overfull \hbox (25.3344pt too wide) in paragraph at lines 996--1015
  [][] 
  []
 
@@ -1736,7 +1706,7 @@ Overfull \hbox (25.3344pt too wide) in paragraph at lines 984--1003
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (15.41039pt too wide) in paragraph at lines 1158--1170
+Overfull \hbox (15.41039pt too wide) in paragraph at lines 1171--1183
  [][] 
  []
 
@@ -1804,14 +1774,14 @@ chapter 4.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
 * h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
-* v-part:(T,H,B)=(71.13188pt, 672.50832pt, 101.40665pt)
+* v-part:(T,H,B)=(56.9055pt, 686.7347pt, 101.40665pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=418.25368pt
-* \textheight=672.50832pt
+* \textheight=686.7347pt
 * \oddsidemargin=17.3571pt
 * \evensidemargin=17.3571pt
-* \topmargin=-41.0131pt
+* \topmargin=-55.23949pt
 * \headheight=18.125pt
 * \headsep=21.75pt
 * \topskip=12.0pt
@@ -1829,6 +1799,8 @@ chapter 4.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
+File: images/modelo_logico/regra1.pdf Graphic file (type pdf)
+<use images/modelo_logico/regra1.pdf>
  [36
 
 
@@ -1837,9 +1809,85 @@ chapter 4.
 
 ] [38
 
-] [39
+]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 569.05515pt, 14.22636pt)
+* v-part:(T,H,B)=(85.35826pt, 645.87756pt, 113.81102pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=569.05515pt
+* \textheight=645.87756pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-26.78673pt
+* \headheight=18.125pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=49.79233pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-] [40
+File: images/modelo_logico/regra2.pdf Graphic file (type pdf)
+<use images/modelo_logico/regra2.pdf>
+ [39] [40
+
+
+]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: xetex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(0.0pt, 597.50787pt, 0.0pt)
+* v-part:(T,H,B)=(56.9055pt, 674.33032pt, 113.81102pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=597.50787pt
+* \textheight=674.33032pt
+* \oddsidemargin=-72.26999pt
+* \evensidemargin=-72.26999pt
+* \topmargin=-55.23949pt
+* \headheight=18.125pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=49.79233pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+File: images/modelo_logico/regra3.pdf Graphic file (type pdf)
+<use images/modelo_logico/regra3.pdf>
+ [41] [42
+
+
+
+
+] [43
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -1874,9 +1922,9 @@ chapter 4.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-File: images/logico.png Graphic file (type bmp)
-<images/logico.png>
- [41]
+File: images/modelo_logico/final.png Graphic file (type bmp)
+<images/modelo_logico/final.png>
+ [44]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: a4paper
@@ -1909,95 +1957,64 @@ File: images/logico.png Graphic file (type bmp)
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
- [42
+ [45
 
 
 
+
+
+] [46
 
 
 ]
 File: images/relax/1.png Graphic file (type bmp)
 <images/relax/1.png>
- [43
-
-
-]
-File: images/relax/2.png Graphic file (type bmp)
-<images/relax/2.png>
- [44
-
-]
-File: images/relax/3.png Graphic file (type bmp)
-<images/relax/3.png>
- [45
-
-]
-File: images/relax/4.png Graphic file (type bmp)
-<images/relax/4.png>
- [46
-
-]
-File: images/relax/5-a.png Graphic file (type bmp)
-<images/relax/5-a.png>
 
 [47
 
 ]
+File: images/relax/2.png Graphic file (type bmp)
+<images/relax/2.png>
+ [48
+
+]
+File: images/relax/3.png Graphic file (type bmp)
+<images/relax/3.png>
+ [49
+
+]
+File: images/relax/4.png Graphic file (type bmp)
+<images/relax/4.png>
+ [50
+
+]
+File: images/relax/5-a.png Graphic file (type bmp)
+<images/relax/5-a.png>
+ [51
+
+]
 File: images/relax/5-b.png Graphic file (type bmp)
 <images/relax/5-b.png>
- [48
+ [52
 
 ]
 File: images/relax/5-c.png Graphic file (type bmp)
 <images/relax/5-c.png>
- [49
+ [53
 
 ]
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: xetex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: 
-* h-part:(L,W,R)=(89.62709pt, 418.25368pt, 89.6271pt)
-* v-part:(T,H,B)=(71.13188pt, 672.50832pt, 101.40665pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=418.25368pt
-* \textheight=672.50832pt
-* \oddsidemargin=17.3571pt
-* \evensidemargin=17.3571pt
-* \topmargin=-41.0131pt
-* \headheight=18.125pt
-* \headsep=21.75pt
-* \topskip=12.0pt
-* \footskip=50.75pt
-* \marginparwidth=49.79233pt
-* \marginparsep=12.8401pt
-* \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
 File: images/relax/6-a.png Graphic file (type bmp)
 <images/relax/6-a.png>
- [50
-
+ [54
 
 ]
 File: images/relax/6-b.png Graphic file (type bmp)
 <images/relax/6-b.png>
 File: images/relax/6-c.png Graphic file (type bmp)
 <images/relax/6-c.png>
- [51
+ [55
 
-] [52
+] [56
 
 ]
 *geometry* verbose mode - [ newgeometry ] result:
@@ -2034,7 +2051,13 @@ File: images/relax/6-c.png Graphic file (type bmp)
 
 File: images/relax/6-example.png Graphic file (type bmp)
 <images/relax/6-example.png>
- [53]
+ [57]
+chapter 5.
+[58
+
+
+
+] [59]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: xetex
 * paper: a4paper
@@ -2068,32 +2091,30 @@ File: images/relax/6-example.png Graphic file (type bmp)
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-chapter 5.
-[54
+chapter 6.
+[60
 
 
+] [61] (output/main.nls [62
 
 
-] (output/main.nls [55
-
-
-]) [56
+]) [63
 
 ]
 chapter without number
-[57
+[64
 
 ] (output/main.aux (output/cover.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 29331 strings out of 478174
- 602971 string characters out of 5854282
- 1270447 words of memory out of 5000000
- 49413 multiletter control sequences out of 15000+600000
+ 29370 strings out of 478174
+ 604043 string characters out of 5854282
+ 1271447 words of memory out of 5000000
+ 49447 multiletter control sequences out of 15000+600000
  474417 words of font info for 76 fonts, out of 8000000 for 9000
  16 hyphenation exceptions out of 8191
  108i,17n,106p,10620b,1283s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on output/main.pdf (64 pages).
+Output written on output/main.pdf (71 pages).
