@@ -58,9 +58,6 @@ CREATE TABLE IF NOT EXISTS Caso (
     CONSTRAINT fk_Caso_Cliente
         FOREIGN KEY (Cliente)
         REFERENCES Cliente (ID)
-    -- INDEX fk_Caso_CasoCategoria1_idx (Categoria ASC) VISIBLE,
-    -- INDEX fk_Caso_CasoEstado1_idx (Estado ASC) VISIBLE,
-    -- INDEX fk_Caso_Cliente1_idx (Cliente ASC) VISIBLE
 );
 
 CREATE TABLE IF NOT EXISTS Pagamento (
@@ -99,8 +96,6 @@ CREATE TABLE IF NOT EXISTS Evidência (
     CONSTRAINT fk_Evidência_Caso
         FOREIGN KEY (Caso)
         REFERENCES Caso (ID)
-    -- INDEX fk_Evidência_EvidênciaTipo1_idx (Tipo ASC) VISIBLE,
-    -- INDEX fk_Evidência_Caso1_idx (Caso ASC) VISIBLE
 );
 
 CREATE TABLE IF NOT EXISTS Detetive (
@@ -123,8 +118,6 @@ CREATE TABLE IF NOT EXISTS Detetive (
     CONSTRAINT fk_Detetive_Estado
         FOREIGN KEY (Estado)
         REFERENCES DetetiveEstado (ID)
-    -- INDEX fk_Detetive_DetetiveEspecialidade1_idx (Especialidade ASC) VISIBLE,
-    -- INDEX fk_Detetive_DetetiveEstado1_idx (Estado ASC) VISIBLE
 );
 
 CREATE TABLE IF NOT EXISTS Vinculado (
@@ -165,7 +158,6 @@ CREATE TABLE IF NOT EXISTS CasoSuspeito (
     CONSTRAINT fk_CasoSuspeito_Caso
         FOREIGN KEY (Caso)
         REFERENCES Caso (ID)
-    -- INDEX fk_CasoSuspeito_Suspeito1_idx (Suspeito ASC) VISIBLE
 );
 
 CREATE TABLE IF NOT EXISTS Testemunha (
@@ -188,5 +180,4 @@ CREATE TABLE IF NOT EXISTS CasoTestemunha (
     CONSTRAINT fk_CasoTestemunha_Testemunha
         FOREIGN KEY (Testemunha)
         REFERENCES Testemunha (ID)
-    -- INDEX fk_CasoTestemunha_Caso1_idx (Caso ASC) VISIBLE
 );
