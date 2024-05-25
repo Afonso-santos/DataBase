@@ -97,9 +97,9 @@ INSERT INTO Vinculado (Detetive, Caso, DataVinculação, DataDesvinculação, De
     (2, 6, '2023-06-01 15:00:00', NULL, 'Detetive 2 vinculado ao Caso 6');
 
 -- Povoar tabela Suspeito
-INSERT INTO Suspeito (ID, Nome, Email, Telefone, DataNascimento, Sexo, Morada, Descrição) VALUES
-    (1, 'Suspeito 1', 'suspeito1@example.com', '666666666', '1990-06-06', 'M', 'Morada Suspeito 1', 'Descrição Suspeito 1'),
-    (2, 'Suspeito 2', 'suspeito2@example.com', '777777777', '1985-07-07', 'F', 'Morada Suspeito 2', 'Descrição Suspeito 2');
+INSERT INTO Suspeito (ID, Nome, Email, Telefone, DataNascimento, Sexo, Morada, Descrição, DataRegisto) VALUES
+    (1, 'Suspeito 1', 'suspeito1@example.com', '666666666', '1990-06-06', 'M', 'Morada Suspeito 1', 'Descrição Suspeito 1', CURRENT_DATE()),
+    (2, 'Suspeito 2', 'suspeito2@example.com', '777777777', '1985-07-07', 'F', 'Morada Suspeito 2', 'Descrição Suspeito 2', CURRENT_DATE());
 
 -- Povoar tabela CasoSuspeito
 INSERT INTO CasoSuspeito (Caso, Suspeito) VALUES
@@ -108,9 +108,9 @@ INSERT INTO CasoSuspeito (Caso, Suspeito) VALUES
     (2, 2);
 
 -- Povoar tabela Testemunha
-INSERT INTO Testemunha (ID, Nome, Email, Telefone, Morada) VALUES
-    (1, 'Testemunha 1', 'testemunha1@example.com', '888888888', 'Morada Testemunha 1'),
-    (2, 'Testemunha 2', 'testemunha2@example.com', '999999999', 'Morada Testemunha 2');
+INSERT INTO Testemunha (ID, Nome, Email, Telefone, Morada, DataRegisto) VALUES
+    (1, 'Testemunha 1', 'testemunha1@example.com', '888888888', 'Morada Testemunha 1', CURRENT_DATE()),
+    (2, 'Testemunha 2', 'testemunha2@example.com', '999999999', 'Morada Testemunha 2', CURRENT_DATE());
 
 -- Povoar tabela CasoTestemunha
 INSERT INTO CasoTestemunha (Caso, Testemunha) VALUES
