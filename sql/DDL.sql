@@ -89,7 +89,7 @@ CREATE TABLE IF NOT EXISTS Evidência (
     ID INT NOT NULL AUTO_INCREMENT,
     Caso INT NOT NULL,
     Tipo INT NOT NULL,
-    DataColeta DATE NOT NULL DEFAULT CURRENT_DATE,
+    DataColeta DATE NOT NULL,
     Descrição TEXT(1000) NOT NULL,
     Arquivo VARCHAR(300) NULL,
     PRIMARY KEY (ID),
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS Detetive (
     DataNascimento DATE NOT NULL,
     Morada VARCHAR(250) NULL,
     Salário DECIMAL(10,2) NOT NULL,
-    DataContratação DATE NOT NULL DEFAULT CURRENT_DATE,
+    DataContratação DATE NOT NULL,
     DataFimContratação DATE NULL,
     Efetivo BIT(1) NOT NULL DEFAULT 1,
     PRIMARY KEY (ID),
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS Suspeito (
     Sexo CHAR(1) NULL CHECK (Sexo IN ('M', 'F') OR Sexo IS NULL),
     Morada VARCHAR(250) NULL,
     Descrição TEXT(1000) NULL,
-    DataRegisto DATE NOT NULL DEFAULT CURRENT_DATE,
+    DataRegisto DATE NOT NULL,
     PRIMARY KEY (ID)
 );
 
@@ -174,7 +174,7 @@ CREATE TABLE IF NOT EXISTS Testemunha (
     Email VARCHAR(320) NULL,
     Telefone VARCHAR(20) NULL,
     Morada VARCHAR(250) NULL,
-    DataRegisto DATE NOT NULL DEFAULT CURRENT_DATE,
+    DataRegisto DATE NOT NULL,
     PRIMARY KEY (ID)
 );
 
