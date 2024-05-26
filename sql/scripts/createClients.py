@@ -38,7 +38,7 @@ def generateClients():
 def insertClients():
     try:
         con = connect()
-        print("Connected to MySQL server\n")
+        print("Connected to MySQL server as root\n")
     except:
         print("Couldn't connect to MySQL server\n")
         return
@@ -61,7 +61,7 @@ def insertClients():
             print(f"Client \"{cliente.nome}\" inserted")
         print()
     except:
-        print("Could not insert clients\n")
+        print("Couldn't insert clients\n")
         return
 
     try:
@@ -73,20 +73,20 @@ def insertClients():
             print(row)
         print()
     except:
-        print("Could not fetch last clients\n")
+        print("Couldn't fetch last clients\n")
         return
 
     try :
         cursor.close()
     except:
-        print("Could not close cursor")
+        print("Couldn't close cursor")
         return
 
     try:
         con.close()
-        print("Connection and cursor closed")
+        print("Cursor and connection closed successfully")
     except:
-        print("Could not close connection")
+        print("Couldn't close connection")
         return
 
 if __name__ == "__main__":
