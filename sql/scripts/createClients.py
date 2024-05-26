@@ -1,7 +1,7 @@
-# Connect to mysql server and create a new client
+# Connect to MySQL server and create 5 new clients
 import mysql.connector
 
-# Establish connection to mysql server
+# Establish connection to MySQL server
 def connect():
     return mysql.connector.connect(
         host="localhost",
@@ -26,16 +26,16 @@ class Cliente:
 def generateClients():
 
     clientes = []
-    clientes.append(Cliente("João Carvalho",      "912345678", "joao@example.com",  "NULL"))
+    clientes.append(Cliente("João Carvalho",      "912345678", "joao@example.com",  None))
     clientes.append(Cliente("Consultoria Macedo", "912345679", "geral@macedo.com",  "Avenida da Liberdade, 456"))
     clientes.append(Cliente("Maria Silva",        "912345670", "maria@example.com", "Rua do Ouro, 123"))
     clientes.append(Cliente("José Santos",        "912345671", "jose@example.com",  "Avenida da Liberdade, 456"))
-    clientes.append(Cliente("Joana Almeida",      "912345672", "joana@example.com", "NULL"))
+    clientes.append(Cliente("Joana Almeida",      "912345672", "joana@example.com", None))
 
     return clientes
 
 # Insert generated clients into the database
-def createClientes():
+def insertClients():
     try:
         con = connect()
         print("Connected to MySQL server\n")
@@ -54,9 +54,9 @@ def createClientes():
     try:
         clientes = generateClients()
         for cliente in clientes:
-            query = f"INSERT INTO Cliente (Nome, Telefone, Email, Morada)"
-            query += f" VALUES ('{cliente.nome}', '{cliente.telefone}', '{cliente.email}', '{cliente.morada}')"
-            cursor.execute(query)
+            query = "INSERT INTO Cliente (Nome, Telefone, Email, Morada) VALUES (%s, %s, %s, %s)"
+            values = (cliente.nome, cliente.telefone, cliente.email, cliente.morada)
+            cursor.execute(query, values)
             con.commit()
             print(f"Client \"{cliente.nome}\" inserted")
         print()
@@ -90,4 +90,4 @@ def createClientes():
         return
 
 if __name__ == "__main__":
-    createClientes()
+    insertClients()
