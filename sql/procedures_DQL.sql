@@ -1,5 +1,44 @@
 USE CDC;
 
+-- R5: Quando um caso é resolvido ou arquivado o seu estado é atualizado respetivamente, assim como a data de fechamento e é feita a desvinculação dos seus detetives
+
+DROP PROCEDURE AtualizarEstadoCaso
+DELIMITER //
+CREATE PROCEDURE AtualizarEstadoCaso (
+    IN pCasoID INT,
+    IN pNovoEstado INT
+)
+BEGIN
+    DECLARE vDataFechamento DATE;
+
+    -- Define a data de fechamento para hoje
+    SET vDataFechamento = CURDATE();
+
+    -- Inicia a transação
+    START TRANSACTION;
+
+    -- Atualiza o estado e a data de fechamento do caso
+    UPDATE Caso
+    SET Estado = pNovoEstado, DataFechamento = vDataFechamento
+    WHERE ID = pCasoID;
+
+    -- Desvincula os detetives do caso
+    UPDATE Vinculado
+    SET DataDesvinculação = NOW()
+    WHERE Caso = pCasoID AND DataDesvinculação IS NULL;
+
+    -- Confirma a transação
+    COMMIT;
+END //
+DELIMITER ;
+
+-- CALL AtualizarEstadoCaso(1, 2);
+
+-- SELECT Detetive, Caso, DataVinculação, DataDesvinculação
+-- FROM Vinculado
+-- WHERE Caso = 1;
+
+
 -- R11: Os dados relativos de cada caso - evidências, suspeitos e testemunhas - devem ser apresentados por ordem cronológica.
 DELIMITER //
 
@@ -29,6 +68,34 @@ DELIMITER ;
 
 -- R12:  Dado o identificador do caso, deve ser possível aceder a todos os detetives que já estiveram envolvidos, 
 -- bem como detetives envolvidos no momento.
+
+DELIMITER //
+CREATE PROCEDURE ConsultarDetetivesCaso (
+    IN pCasoID INT
+)
+BEGIN
+    -- Retornar detetives atualmente envolvidos
+    SELECT 
+       *
+    FROM 
+        Detetive d
+        JOIN Vinculado v ON d.ID = v.Detetive
+    WHERE 
+        v.Caso = pCasoID
+        AND v.DataDesvinculação IS NULL;
+    
+    -- Retornar detetives já envolvidos (desvinculados)
+    SELECT 
+        *
+    FROM 
+        Detetive d
+        JOIN Vinculado v ON d.ID = v.Detetive
+    WHERE 
+        v.Caso = pCasoID
+        AND v.DataDesvinculação IS NOT NULL;
+END //
+
+DELIMITER ;
 
 -- R13: O sistema permite a pesquisa de características comuns entre casos,
 -- através da pesquisa de descrições nas seguintes entidades: casos, evidências, suspeitos e testemunhas.
