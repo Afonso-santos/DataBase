@@ -30,6 +30,34 @@ DELIMITER ;
 -- R12:  Dado o identificador do caso, deve ser possível aceder a todos os detetives que já estiveram envolvidos, 
 -- bem como detetives envolvidos no momento.
 
+DELIMITER //
+CREATE PROCEDURE ConsultarDetetivesCaso (
+    IN pCasoID INT
+)
+BEGIN
+    -- Retornar detetives atualmente envolvidos
+    SELECT 
+       *
+    FROM 
+        Detetive d
+        JOIN Vinculado v ON d.ID = v.Detetive
+    WHERE 
+        v.Caso = pCasoID
+        AND v.DataDesvinculação IS NULL;
+    
+    -- Retornar detetives já envolvidos (desvinculados)
+    SELECT 
+        *
+    FROM 
+        Detetive d
+        JOIN Vinculado v ON d.ID = v.Detetive
+    WHERE 
+        v.Caso = pCasoID
+        AND v.DataDesvinculação IS NOT NULL;
+END //
+
+DELIMITER ;
+
 -- R13: O sistema permite a pesquisa de características comuns entre casos,
 -- através da pesquisa de descrições nas seguintes entidades: casos, evidências, suspeitos e testemunhas.
 DROP PROCEDURE IF EXISTS PesquisaCaracteristicasComuns;
