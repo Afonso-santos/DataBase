@@ -25,16 +25,18 @@ CREATE PROCEDURE CriaClienteECaso (
     IN cliente_email VARCHAR(320),
     IN cliente_morada VARCHAR(250),
     IN caso_categoria INT,
-    IN caso_descrição TEXT(2000)
+    IN caso_descrição TEXT(2000),
+    OUT msg VARCHAR(255)
 )
 BEGIN
     DECLARE EXIT HANDLER FOR SQLEXCEPTION
     BEGIN
         ROLLBACK; -- Rollback in case of error
+        SET msg = 'Erro ao criar cliente e caso. Transação revertida.';
     END;
 
     START TRANSACTION;
-    
+
     SET @cliente_id = (SELECT COALESCE(MAX(ID) + 1, 1) FROM Cliente);
 
     INSERT INTO Cliente (ID, Nome, Telefone, Email, Morada)
@@ -45,10 +47,19 @@ BEGIN
     -- Estado 1: 'aberto'
 
     COMMIT; -- Commit the transaction if no error occurred
+    SET msg = CONCAT(
+        'Cliente (ID: ', @cliente_id, ') e caso (ID: ',
+        (SELECT MAX(ID) FROM Caso WHERE Cliente = @cliente_id),
+        ') criados com sucesso.'
+    );
 END //
 DELIMITER ;
 
--- DROP PROCEDURE CriaClienteECaso;
--- CALL CriaClienteECaso('João', '912345678', 'joao@example.com', 'Rua do João', 1, 'Descrição do caso teste');
+/*
+SET @msg = '';
+CALL CriaClienteECaso('Scherlock Teste', '912345678', 'scherlock@holmes.com', 'Rua Teste', 1, 'Descrição teste', @msg);
+SELECT @msg AS 'Mensagem';
+*/
 -- SELECT * FROM Cliente ORDER BY ID DESC LIMIT 1;
 -- SELECT * FROM Caso ORDER BY ID DESC LIMIT 1;
+-- DROP PROCEDURE CriaClienteECaso;
