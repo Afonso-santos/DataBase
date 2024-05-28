@@ -1,26 +1,32 @@
 \babel@toc {portuguese}{}\relax 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagrama de Gantt}}{8}{figure.1.1}%
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Diagrama de Gantt - Primeira Fase}}{8}{figure.1.1}%
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Diagrama de Gantt - Segunda Fase}}{9}{figure.1.2}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama ER Conceptual}}{31}{figure.3.1}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Diagrama ER Conceptual}}{34}{figure.3.1}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama ER Lógico após a aplicação da primeira regra de derivação}}{36}{figure.4.1}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama ER Lógico após a aplicação da segunda regra de derivação}}{39}{figure.4.2}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama ER Lógico após a aplicação da terceira regra de derivação}}{41}{figure.4.3}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama ER Lógico}}{44}{figure.4.4}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 1.}}{47}{figure.4.5}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 2.}}{48}{figure.4.6}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 3.}}{49}{figure.4.7}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 4.}}{50}{figure.4.8}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 5.a)}}{51}{figure.4.9}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 5.b)}}{52}{figure.4.10}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 5.c)}}{53}{figure.4.11}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6.a)}}{54}{figure.4.12}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6.b)}}{55}{figure.4.13}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6.c)}}{55}{figure.4.14}%
-\contentsline {figure}{\numberline {4.15}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6 (alternativa)}}{57}{figure.4.15}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama ER Lógico após a aplicação da primeira regra de derivação}}{39}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Diagrama ER Lógico após a aplicação da segunda regra de derivação}}{42}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama ER Lógico após a aplicação da terceira regra de derivação}}{44}{figure.4.3}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Diagrama ER Lógico}}{47}{figure.4.4}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 1.}}{50}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 2.}}{51}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 3.}}{52}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 4.}}{53}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 5.a)}}{54}{figure.4.9}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 5.b)}}{55}{figure.4.10}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 5.c)}}{56}{figure.4.11}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6.a)}}{57}{figure.4.12}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6.b)}}{58}{figure.4.13}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6.c)}}{58}{figure.4.14}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Representação gráfica da expressão em Álgebra Relacional 6 (alternativa)}}{60}{figure.4.15}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Cálculo do Espaço de Armazenamento da BD}}{65}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Cálculo do Espaço de Armazenamento da BD}}{66}{figure.5.2}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Cálculo do Espaço de Armazenamento da BD}}{67}{figure.5.3}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Cálculo do Espaço de Armazenamento da BD}}{68}{figure.5.4}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Cálculo do Espaço de Armazenamento da BD}}{69}{figure.5.5}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

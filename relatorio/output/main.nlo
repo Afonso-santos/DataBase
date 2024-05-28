@@ -1,9 +1,14 @@
-\nomenclatureentry{01\textbf{CDC}@[{\textbf{CDC}}]\begingroup Consultoria de Detetives Christie\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{02\textbf{SIM}@[{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{03\textbf{BD}@[{\textbf{BD}}]\begingroup Base de Dados\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{04\textbf{SBD}@[{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{05\textbf{SGBD}@[{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{06\textbf{ER}@[{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{07\textbf{ID}@[{\textbf{ID}}]\begingroup Identificador\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{08\textbf{AR}@[{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {6.0}|nompageref}{62}
-\nomenclatureentry{09\textbf{SQL}@[{\textbf{SQL}}]\begingroup \textit{Structured Query Language}\nomeqref {6.0}|nompageref}{62}
+\nomenclatureentry{01\textbf{CDC}@[{\textbf{CDC}}]\begingroup Consultoria de Detetives Christie\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{02\textbf{SIM}@[{\textbf{SIM}}]\begingroup Soluções Informáticas Minho\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{03\textbf{BD}@[{\textbf{BD}}]\begingroup Base de Dados\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{04\textbf{SBD}@[{\textbf{SBD}}]\begingroup Sistema de Base de Dados\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{05\textbf{SGBD}@[{\textbf{SGBD}}]\begingroup Sistema de Gestão de Base de Dados\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{06\textbf{ER}@[{\textbf{ER}}]\begingroup Entidade-Relacionamento\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{07\textbf{ID}@[{\textbf{ID}}]\begingroup Identificador\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{08\textbf{AR}@[{\textbf{AR}}]\begingroup Álgebra Relacional\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{09\textbf{SQL}@[{\textbf{SQL}}]\begingroup \textit{Structured Query Language}\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{10\textbf{DDL}@[{\textbf{DDL}}]\begingroup \textit{Data Definition Language}\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{11\textbf{DCL}@[{\textbf{DCL}}]\begingroup \textit{Data Control Language}\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{12\textbf{DQL}@[{\textbf{DQL}}]\begingroup \textit{Data Query Language}\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{13\textbf{DML}@[{\textbf{DML}}]\begingroup \textit{Data Manipulation Language}\nomeqref {6.0}|nompageref}{87}
+\nomenclatureentry{14\textbf{DTL}@[{\textbf{DTL}}]\begingroup \textit{Data Transaction Language}\nomeqref {6.0}|nompageref}{87}

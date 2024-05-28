@@ -66,7 +66,6 @@
 
 \lstset{
     frame=tb,
-    %% language=Java,
     language=SQL,
     aboveskip=3mm,
     belowskip=3mm,
@@ -178,14 +177,12 @@
     Tendo em consideração o tema deste ano - uma agência de detetives -, decidimos explorar
     uma agência liderada por Agatha Christie, de nome CDC - Consultoria de Detetives Christie.
     Relativamente à modelação e desenvolvimento do nosso projeto, iremos dividi-lo em partes: começaremos de forma abstrata e de alto nível, transformando os factos em requisitos e fazendo uma progressão sucessiva para um baixo nível à medida que convertemos estes num modelo conceptual, e, por conseguinte, o conceptual num modelo lógico. Para esta fase de modelação, recorremos às ferramentas BR-Modelo e \textit{MySQL Workbench}.
-    
-    Posteriormente, numa fase seguinte, desenvolveremos este modelo numa Base de Dados que cumpra o que a CDC necessita após a sua implementação.
+
+    Na segunda e última fase deste projeto, desenvolvemos a implementação física, transformando o modelo lógico previamente desenvolvido numa Base de Dados, garantindo a sua organização, otimização e cumprimento do que a CDC necessita através da implementação dos requisitos levantados no funcionamento da BD. Para esta fase, foram utilizada a ferramenta \textit{MySQL Workbench} e o \textit{MySQL Server}.
     
     \textbf{Área de Aplicação}: Desenvolvimento e Arquitetura de Sistema de Base de Dados.
 
-    \textbf{Palavras-Chave}: Base de Dados Relacionais, Levantamento e Análise de Requisitos, Modelação Conceptual e Lógica, BR-Modelo, \textit{ReLaX}, \textit{MySQL}.
-
-    \textcolor{red}{>> Atualizar o resumo do relatório de acordo com as mudanças na segunda parte do trabalho.}
+    \textbf{Palavras-Chave}: Base de Dados Relacionais, Levantamento e Análise de Requisitos, Modelação Conceptual e Lógica, Implementação Física, BR-Modelo, \textit{ReLaX}, \textit{MySQL}.
 
 \end{abstract}
 \end{flushleft}
@@ -194,6 +191,32 @@
 
 %==========================================================================
 % END ABSTRACT PAGE
+%==========================================================================
+
+%==========================================================================
+% BEGIN UPDATES PAGE
+%==========================================================================
+
+{\par\noindent\textbf{\Large{Atualizações Referentes à Primeira Fase}}\par\bigskip}
+    No limbo entre a primeira e a segunda fases, foram aplicadas algumas alterações baseadas em sugestões fornecidas pelo corpo docente aquando à apresentação do projeto.
+    
+    As primeiras alterações foram feitas no capítulo de \textit{\nameref{sec:requisitos}}, onde foram adicionados dois requisitos - o requisito nº 24, para, no subcapítulo 3.3 \textit{\nameref{sec:relacionamentos}}, complementar o relacionamento Cliente-Caso, e o requisito nº 51 de forma a suportar a escolha da interrogação nº 4 para a validação do modelo lógico.
+    
+    Com estes acréscimos na lista de requisitos, foi também necessário atualizar os números destes nas tabelas de requisitos e nas suas referências, de forma a manter a uniformidade do relatório.
+    
+    Também a nível dos requisitos, foram atualizados os requisitos nº 13 - removendo a pesquisa de características comuns de testemunhas -, nº 33 - correção de um erro ortográfico - e nº 43 - marcado como um requisito de controlo, em vez de manipulação.
+    
+     No mesmo âmbito, foi adicionado um texto de explanação relativamente à origem e fundamentação dos requisitos apresentados neste projeto.
+
+    No capítulo \textit{\nameref{sec:model_logica}}, foi corrigido o uso do termo “entidade lógica” para “tabela”, bem como se deu a adição de imagens do modelo lógico que ilustram o seu processo de construção.
+
+    Por fim, no subcapítulo \textit{\nameref{sec:val_model}}, foram adicionados os correspondentes requisitos para cada interrogação escolhida, e deu-se a atualização da expressão AR
+    correspondente à interrogação nº 4 \textit{“Estatísticas de casos abertos, fechados e arquivados numa semana específica.”}, onde esta apenas apresentava estatísticas para casos abertos.
+
+\pagebreak
+
+%==========================================================================
+% END UPDATES PAGE
 %==========================================================================
 
 %==========================================================================
@@ -338,19 +361,19 @@
     \clearpage
     
     \section{Recursos e Equipa de Trabalho}
-        \subsection{Recursos Humanos:}
+        \subsection{Recursos Humanos}
             \begin{itemize}
                 \item Funcionários da Consultoria (Detetives, estagiários e gerência);
                 \item Clientes (Entidades particulares, corporativas, etc);
                 \item Equipa de desenvolvimento.
             \end{itemize}
-        \subsection{Recursos Físicos:}
+        \subsection{Recursos Físicos}
             \begin{itemize}
                 \item Computadores;
                 \item Conexão à \textit{Internet};
                 \item Servidor.
             \end{itemize}
-        \subsection{Recursos Digitais:}
+        \subsection{Recursos Digitais}
             \begin{itemize}
                 \item Sistemas Operativos: \textit{Windows} 11 e \textit{Linux} (\textit{Ubuntu} 22.04.3 \textit{LTS});
                 \item \textit{Google Drive} e \textit{Google Sheets};
@@ -364,7 +387,7 @@
 
         \clearpage
         
-        \subsection{Equipa de Trabalho:}
+        \subsection{Equipa de Trabalho}
             \begin{itemize}
                 \item \textbf{Pessoal Interno:}
                 \begin{itemize}
@@ -376,28 +399,35 @@
                 \end{itemize}
             \item \textbf{Pessoal Externo:}
                 \begin{itemize}
-                    \item \textbf{Afonso Santos:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica;
-                    \item \textbf{Ana Pinto:} Levantamento de Requisitos, Modelação Conceptual e Lógica;
-                    \item \textbf{Flávia Araújo:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica;
-                    \item \textbf{Miguel Carvalho:} Levantamento de Requisitos, Modelação Conceptual e Lógica, Normalização de Dados, Álgebra Relacional. 
+                    \item \textbf{Afonso Santos:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica, Criação de Utilizadores, Povoamento, Definição e Caracterização de Vistas de Utilização, Indexação, Implementação de procedimentos, funções e gatilhos;
+                    \item \textbf{Ana Pinto:} Levantamento de Requisitos, Modelação Conceptual e Lógica, Caracterização de Vistas de Utilização;
+                    \item \textbf{Flávia Araújo:} Analista da Viabilidade do Projeto, Levantamento de Requisitos, Modelação Conceptual e Lógica, Apresentação e Explicação da BD, Povoamento, Implementação de procedimentos, funções e gatilhos;
+                    \item \textbf{Miguel Carvalho:} Levantamento de Requisitos, Modelação Conceptual e Lógica, Normalização de Dados, Álgebra Relacional, Apresentação e Explicação da BD, Criação de Utilizadores, Povoamento, Cálculo do Espaço, Definição e Caracterização de Vistas de Utilização, Tradução das Interrogações do Utilizador, Implementação de procedimentos, funções e gatilhos.
                 \end{itemize}
             \end{itemize}
 
     \clearpage
 
     \section{Plano de Execução do Projeto}
-        Para assegurar uma implementação eficiente e eficaz do SGBD, foram realizadas reuniões com a Sra$.$ Christie, detetives e estagiários, da CDC, envolvidos no projeto. Com base nessas interações, foi estabelecido um cronograma de execução, sendo este, no nosso caso, um Diagrama de Gantt (figura [\ref{fig:1.1}], página [\pageref{fig:1.1}]).
+        Para assegurar uma implementação eficiente e eficaz do SGBD, foram realizadas reuniões com a Sra$.$ Christie, detetives e estagiários, da CDC, envolvidos no projeto. Com base nessas interações, foi estabelecido um cronograma de execução, sendo este, no nosso caso, dois Diagramas de Gantt para a primeira (figura [\ref{fig:1.1}], página [\pageref{fig:1.1}]) e segunda (figura [\ref{fig:1.2}], página [\pageref{fig:1.2}]) fase respetivamente.
 
-        No Diagrama de Gantt referido na figura [\ref{fig:1.1}], definimos as várias fases do projeto e os intervenientes para cada uma, assim como uma estimativa do tempo necessário a concluir cada fase.
+        Nos Diagramas de Gantt referidos nas figuras [\ref{fig:1.1}] e [\ref{fig:1.2}], definimos as várias fases do projeto e os intervenientes para cada uma, assim como uma estimativa do tempo necessário a concluir cada fase.
         
-        \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:1}} para a visualização do Diagrama de Gantt original.
+        \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:1}} para a visualização das duas fases do projeto.
         \newgeometry{top=0.5cm,left=0cm,right=0cm,bottom=0.5cm}
 
         \begin{figure}
             \centering
-            \includegraphics[scale=0.99, angle=270]{images/gantt.pdf}
-            \caption{Diagrama de Gantt}
+            \includegraphics[scale=0.99, angle=270]{images/gantt1.pdf}
+            \caption{Diagrama de Gantt - Primeira Fase}
             \label{fig:1.1}
+        \end{figure}
+
+        \begin{figure}
+            \centering
+            \includegraphics[scale=0.99, angle=270]{images/gantt2.pdf}
+            \caption{Diagrama de Gantt - Segunda Fase}
+            \label{fig:1.2}
         \end{figure}
 
         \loadgeometry{default}
@@ -405,7 +435,7 @@
     \clearpage
     
     \section{Estrutura do Relatório}
-    O presente relatório é composto por \textcolor{red}{5} capítulos.
+    O presente relatório é composto por cinco capítulos.
     
     No primeiro capítulo, \textbf{contextualizamos} o projeto que iremos desenvolver, definindo a \textbf{motivação e objetivos} por detrás deste, bem como a sua \textbf{viabilidade}. Também listamos os \textbf{recursos necessários} para a execução deste projeto, bem como o seu \textbf{planeamento}, fazendo uma análise das várias etapas deste trabalho.
 
@@ -416,7 +446,15 @@
     No capítulo quatro, apresentamos a \textbf{modelação lógica} desenvolvida através do modelo conceptual. Aprofundamos o seu processo de \textbf{construção e validação}, e, após realizarmos o processo de conversão, apresentamos e explicamos o \textbf{modelo lógico produzido}.
     Por fim, e ainda no quarto capítulo, entramos em detalhe sobre a \textbf{normalização de dados} e \textbf{validação do modelo com interrogações do utilizador}, utilizando álgebra relacional para exemplos de acesso a dados.
 
-    \textcolor{red}{>> Adicionar capítulo cinco. \textbf{Implementação Física}.}
+    No capítulo cinco, começamos o processo de \textbf{implementação física}, onde detalhamos a execução concreta do modelo lógico na forma de uma BD. Começamos com a \textbf{apresentação e explicação da base de dados implementada}, descrevendo a estrutura das tabelas, relações entre elas e as restrições de integridade definidas. Seguidamente, abordamos a \textbf{criação de utilizadores da base de dados}, destacando os diferentes privilégios atribuídos a cada utilizador de acordo com as necessidades do sistema.
+    O \textbf{povoamento da base de dados} é então discutido, onde descrevemos o processo de inserção inicial de dados na base de dados, seja por meio de um \textit{script} de SQL ou através de um programa em \textit{Python}.
+    É também realizada uma análise sobre o \textbf{cálculo do espaço da base de dados}, de forma a garantir uma gestão eficiente dos recursos de armazenamento.
+    De seguida, a \textbf{definição e caracterização de vistas de utilização em SQL} são apresentadas, bem como a  \textbf{tradução das interrogações do utilizador para SQL}, de forma a moldar a BD de acordo com os requisitos definidos previamente.
+    A \textbf{indexação do sistema de dados} é também implementada neste capítulo, como parte crucial da otimização do desempenho da base de dados.
+    Por fim, é abordada a \textbf{implementação de procedimentos, funções e gatilhos}, algo que foi essencial para melhorar a
+    eficiência, a integridade e a automatização da BD.
+
+Com este capítulo, concluímos a implementação prática do projeto, fornecendo uma base sólida para a sua utilização e manutenção contínua.
 
 %==========================================================================
 % END INTRODUCTION
@@ -427,7 +465,7 @@
 %==========================================================================
 
 \chapter{Levantamento e Análise de Requisitos}
-    \label{requisitos}
+    \label{sec:requisitos}
     \section{Método de Levantamento e de Análise de Requisitos Adotado}
         \label{sec:2.1}
             O processo de definição de requisitos começa com uma reunião com a equipa para selecionar diversas estratégias de levantamento, de modo a captar toda a informação necessária para sustentar adequadamente e logicamente uma melhor esquematização e composição de requisitos. Das várias estratégias discutidas, assumimos que utilizamos estas:
@@ -439,12 +477,14 @@
             \end{itemize}
             
             Durante a reunião foi levantada a possibilidade de acompanhar uma investigação de perto, infelizmente foi negada por questões de segurança e de confidencialidade das informações dos participantes da investigação. 
-            
-    \newgeometry{top=2cm,left=2cm,right=2cm,bottom=3cm}
 
     \section{Organização dos Requisitos Levantados}
         \label{sec:2.2}
         \subsection{Requisitos de Descrição}
+        Os seguintes requisitos de descrição foram provenientes de reuniões com Agatha Christie e a sua Consultoria, onde foram definidos os dados que cada entidade deve possuir, bem como os relacionamentos entre si.
+
+        \newgeometry{top=2cm,left=2cm,right=2cm,bottom=3cm}
+
             \begin{table}[!ht]
                 \centering
                 \renewcommand{\arraystretch}{1.3}
@@ -628,7 +668,21 @@
 
         \clearpage
 
+        \loadgeometry{default}
+
          \subsection{Requisitos de Manipulação}
+         Os requisitos de manipulação apresentados foram desenvolvidos após reuniões e consulta dos registos físicos da Consultoria, que, tal como referido anteriormente, causavam dificuldades na procura de informação.
+         
+         Para tal, foram desenvolvidos os requisitos \textbf{11, 13, 19 e 21} para uma melhor organização dos dados e um acesso mais eficiente aos mesmos.
+         
+         Foram também desenvolvidos os requisitos \textbf{5, 12, 19, 20 e 33} para uma melhor gestão de funcionários, de forma a saber quem está a trabalhar em casos de momento.
+
+         Os requisitos \textbf{44} a \textbf{48} foram desenvolvidos com o propósito de resolver confusões financeiras que os registos antigos causavam e agilizar o processo de faturação.
+
+         Por fim, os requisitos \textbf{49, 50 e 51} geram relatórios pedidos por Agatha Christie tanto a nível de despesas e pagamentos, bem como de informações sobre os casos.
+
+         \newgeometry{top=2cm,left=2cm,right=2cm,bottom=3cm}
+
             \begin{table}[!ht]
                 \centering
                 \renewcommand{\arraystretch}{1.3}
@@ -650,7 +704,7 @@
                 & 12/03/2024 19:40 & Casos & Gerência & Miguel Carvalho\\
                 \hline
 
-                13 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema permite a pesquisa de características comuns entre casos, através da pesquisa de descrições nas seguintes entidades: casos, evidências, suspeitos e testemunhas.}}\\
+                13 & \multicolumn{4}{c|}{\pbox{15cm}{O sistema permite a pesquisa de características comuns entre casos, através da pesquisa de descrições nas seguintes entidades: casos, evidências e suspeitos.}}\\
                 \cline{2-5}
                 & 25/03/2024 21:50 & Casos & Funcionários & Miguel Carvalho\\
                 \hline
@@ -670,7 +724,7 @@
                 & 20/03/2024 18:30 & Detetives & Equipa de Projeto & Miguel Carvalho\\
                 \hline
 
-                33 & \multicolumn{4}{c|}{\pbox{15cm}{Uma desvinculação de um detetive a um caso, sejam os motivos aposentamento/demissão/remoção do detetive, deve atualizar o atributo “data de desvinculção”.}}\\
+                33 & \multicolumn{4}{c|}{\pbox{15cm}{Uma desvinculação de um detetive a um caso, sejam os motivos aposentamento/demissão/remoção do detetive, deve atualizar o atributo “data de desvinculação”.}}\\
                 \cline{2-5}
                 & 10/03/2024 12:35 & Vinculações & Gerência & Miguel Carvalho\\
                 \hline
@@ -730,7 +784,10 @@
         \end{table}
         \clearpage
 
-         \subsection{Requisitos de Controlo}         
+         \subsection{Requisitos de Controlo}  
+         Os requisitos de controlo desenvolvidos foram planeados tendo em conta as permissões de acesso que Agatha Christie pretendia ter na sua Consultoria. Como tal, o requisito \textbf{41} refere-se às permissões de um detetive estagiário, os requisitos \textbf{40} e \textbf{42} referem-se às permissões dos detetives envolvidos nos casos de momento, e o requisito \textbf{43} refere-se às permissões de administrador da BD (Agatha Christie). 
+
+         
             \begin{table}[!ht]
                 \centering
                 \renewcommand{\arraystretch}{1.3}
@@ -842,6 +899,7 @@
 
 \pagebreak
     \section{Identificação e Caracterização dos Relacionamentos}
+        \label{sec:relacionamentos}
         Na nossa modelação, englobámos cinco tipos de relacionamentos entre as entidades - três dos quais originam uma entidade. Devido a estas diferenças, aprofundaremos de forma individual cada um deles neste subcapítulo.
 
         \vspace{0.5cm}
@@ -1229,9 +1287,11 @@
 %==========================================================================
 
 \chapter{Modelação Lógica}
+    \label{sec:model_logica}
+
     \section{Construção e Validação do Modelo de Dados Lógico}
 
-               Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o \textit{MySQL Workbench} para traduzir esses conceitos em estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
+        Inicialmente, partimos do modelo conceptual, que representa os conceitos e relações do sistema de forma abstrata. Utilizámos o \textit{MySQL Workbench} para traduzir esses conceitos em estruturas de base de dados concretas, refletindo as entidades, atributos e relacionamentos identificados no modelo conceptual.
 
         Foram ajustados detalhes para otimizar a estrutura do banco de dados e garantir a sua eficiência e escalabilidade. Desde técnicas para garantir a normalização de dados, a definição de chaves primárias e estrangeiras, e a revisão de tipos de dados.
     
@@ -1373,7 +1433,7 @@
 
         \vspace{0.2cm}
 
-        A aplicação da regra de conversão de uma entidade conceptual em uma tabela deu origem ao seguinte modelo lógico (figura \ref{fig:4.1}):
+        A aplicação da regra de conversão de uma entidade conceptual em uma tabela deu origem ao seguinte modelo lógico (figura [\ref{fig:4.1}]):
 
         \vspace{0.1cm}
 
@@ -1449,7 +1509,7 @@
 
         \vspace{0.2cm}
 
-        No fim desta conversão de relacionamentos binários de grau N:M e atribuição de chaves estrangeiras para os restantes relacionamentos, obtemos o modelo lógico apresentado na figura \ref{fig:4.2}.
+        No fim desta conversão de relacionamentos binários de grau N:M e atribuição de chaves estrangeiras para os restantes relacionamentos, obtemos o modelo lógico apresentado na figura [\ref{fig:4.2}].
 
         \newgeometry{right=0.5cm,left=0.5cm,top=3cm,bottom=4cm}
 
@@ -1500,7 +1560,7 @@
 
         \vspace{0.5cm}
 
-        Dada a conversão dos atributos multivalorados definidos no modelo conceptual, obtivemos o seguinte modelo lógico (figura \ref{fig:4.3}) com a adição de duas tabelas:
+        Dada a conversão dos atributos multivalorados definidos no modelo conceptual, obtivemos o seguinte modelo lógico (figura [\ref{fig:4.3}]) com a adição de duas tabelas:
         \newgeometry{top=2cm,left=0cm,right=0cm,bottom=4cm}
 
         \clearpage
@@ -1592,7 +1652,7 @@
 
     \vspace{1cm}
 
-    Após a aplicação das regras de derivação do modelo de dados relacional, obtemos o modelo lógico apresentado na figura [\ref{fig:4.1}].
+    Após a aplicação das regras de derivação do modelo de dados relacional, obtemos o modelo lógico apresentado na figura [\ref{fig:4.4}].
 
     \textbf{Nota}: Consultar anexo \textit{\nameref{anexo:4}} para uma melhor visualização deste modelo.
     \newgeometry{top=0.1cm,left=0cm,right=0cm,bottom=0.1cm}
@@ -1631,6 +1691,8 @@
 
     \clearpage
     \section{Validação do Modelo com Interrogações do Utilizador}
+        \label{sec:val_model}
+        
         Para assegurar a completa validade do modelo lógico de ER, foram selecionadas um conjunto de expressões algébricas derivadas dos requisitos relativos à manipulação de dados, de forma a permitirem a validação de uma grande totalidade das relações e relacionamentos estipulados no modelo. Estas serão aprofundadas nos parágrafos seguintes.
 
         \textbf{Nota}: Consultar anexos \textit{\nameref{anexo:5}} e \textit{\nameref{anexo:6}} para a visualização das entidades e expressões utilizadas na ferramenta ReLaX.
@@ -1894,28 +1956,658 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
 
 \chapter{Implementação Física}
 \section{Apresentação e Explicação da Base de Dados Implementada}
-\textcolor{red}{>> Implementação do esquema lógico anteriormente desenvolvido em MySQL. Apresentação do processo de implementação realizado, expondo e justificando a forma como criaram cada uma das tabelas do esquema lógico. Apresentação do esquema físico produzido.}
+\label{chap:impBD}
+A implementação da Base de Dados efetuou-se através da tradução direta do modelo lógico previamente desenvolvido, com o acréscimo de restrições do domínio de valores e definição de valores predefinidos.
 
+Primeiramente, foi definida a ordem na qual as tabelas devem ser criadas, de forma a garantir o cumprimento da regra de integridade referencial:
+
+\begin{enumerate}
+    \item Tabelas de mapeamento de valores: \textit{CasoEstado}, \textit{CasoCategoria}, \textit{DetetiveEspecialidade}, \textit{DetetiveEstado} e \textit{EvidênciaTipo};
+    \item \textit{Cliente};
+    \item \textit{Caso};
+    \item \textit{Pagamento} e \textit{Despesa};
+    \item \textit{Evidência}, \textit{Detetive}, \textit{Suspeito} e \textit{Testemunha};
+    \item \textit Tabelas com múltiplos relacionamentos (1:N): \textit{Vinculado}, \textit{CasoSuspeito} e \textit{CasoTestemunha};
+\end{enumerate}
+
+Após a definição correta da ordem de criação das tabelas, demos início à construção do conjunto de instruções para a implementação da BD. A ordem definida acima não é estrita; para melhor legibilidade e organização, criámos imediatamente tabelas como \textit{CasoSuspeito} após a criação das tabelas \textit{Caso} e \textit{Suspeito}, já que os atributos referenciados pelas suas chaves estrangeiras já foram criados.
+
+Para cada tabela, de acordo com as definições de metadados presentes na modelação lógica, designámos a sua chave primária e, se existirem, as respetivas chaves estrangeiras, o tipo de dados de cada atributo e a sua nulidade.
+
+\clearpage
+
+Para além disso, nesta fase, aproveitámos para criar restrições para a definição do domínio de valores de certos atributos, como, por exemplo, o atributo “sexo” da tabela \textit{Suspeito}, que garante que o valor deste atributo é 'M', 'F' ou nulo:
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+CREATE TABLE IF NOT EXISTS Suspeito (
+    -- (...)
+    Sexo CHAR(1) NULL CHECK (Sexo IN ('M', 'F') OR Sexo IS NULL),
+    -- (...)
+);
+\end{lstlisting}
+
+De forma a agilizar a inserção de registos em certas tabelas, definimos valores predefinidos para certos atributos, como, por exemplo, o atributo “DataVinculação” da tabela \textit{Vinculado}, que permite a atribuição automática da data atual em uma vinculação de um detetive a um caso:
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+CREATE TABLE IF NOT EXISTS Vinculado (
+    -- (...)
+    DataVinculação DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    -- (...)
+);
+\end{lstlisting}
+
+Também, para agilizar a inserção de registos, definimos um incremento sequencial automático das chaves primárias em tabelas onde consideramos pertinente implementar esta funcionalidade, como, por exemplo, na chave primária da tabela \textit{Caso}:   
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+CREATE TABLE IF NOT EXISTS Caso (
+    ID INT NOT NULL AUTO_INCREMENT,
+    -- (...)
+    PRIMARY KEY (ID),
+    -- (...)
+);
+\end{lstlisting}
+
+Após este processo, considerámos o \textit{script} de implementação da Base de Dados como completo. Para consultar este esquema físico produzido, confira o anexo \textit{\nameref{anexo:8}}.
+
+\clearpage
 \section{Criação de Utilizadores da Base de Dados}
-\textcolor{red}{>> Apresentação e caracterização dos utilizadores (um ou dois exemplos) da base de dados. Criação dos perfis de utilização desses utilizadores no sistema de bases de dados, definindo, para cada um deles, as suas permissões de trabalho.}
+
+    Para além do administrador da base de dados, Agatha Christie, o sistema deve garantir dois tipos de utilizador, com as respetivas permissões:
+    \begin{itemize}
+        \item \textbf{Detetive efetivo} - Visualiza, cria e modifica registos. Baseado nos requisitos de controlo \textbf{40} \textit{“O sistema deve garantir que apenas os detetives que estão vinculados a um determinado caso, podem alterar os dados relativos ao mesmo.”} e \textbf{42} \textit{“O sistema deve oferecer acesso aos dados de um caso aberto apenas aos detetives a si associados e a Agatha Christie.”};
+        \item \textbf{Detetive estagiário} - Visualiza registos. Baseado no requisito de controlo \textbf{41} \textit{“O sistema deve garantir que os detetives estagiários apenas podem ler dados relativos a casos não abertos, ou seja, casos fechados e arquivados.”}.
+    \end{itemize}
+
+    Do seguinte modo, foram criados os seguintes utilizadores, detetive efetivo e estagiário, respetivamente:
+
+    \vspace{0.4cm}
+    \begin{lstlisting}[escapechar=!]
+GRANT SELECT, INSERT, UPDATE ON cdc.* TO 'detetive1'!@!'localhost';
+
+GRANT SELECT ON cdc.* TO 'estagiario5'!@!'localhost';
+    \end{lstlisting}
+
+    De forma a garantir o cumprimento total das restrições de permissões mencionadas nos requisitos 40, 41 e 42, ter-se-ia de recorrer ao uso de \textit{software} adicional, que, através do estado do detetive e/ou do estado do caso, determina, com o uso de instruções SQL, se a dada operação que o utilizador quer efetuar é, de facto, permitida, e, se tal for, permitir a sua execução no SBD.
+
+    A estrutura de permissões implementada para os diferentes tipos de detetives da consultoria visa a segurança e a confidencialidade dos dados.
+
+    Para a visualização do \textit{script} utilizado na criação dos utilizadores e definição das respetivas permissões, consulte o anexo \textit{\nameref{anexo:9}}.
+
+\clearpage
+\newgeometry{top=3cm}
 
 \section{Povoamento da Base de Dados}
-\textcolor{red}{>> Apresentação e descrição das diversas ações de povoamento realizadas. O povoamento da base de dados deve ser realizado de duas formas: 1) inserindo os dados na base de dados diretamente com instruções INSERT; 2) utilizar um pequeno programa (desenvolvido na linguagem que preferirem) que aceda à base de dados implementada e faça o povoamento de uma ou duas tabelas com “meia-dúzia” de registos. Explique sumariamente a conceção e implementação do programa utilizado.}
+
+O povoamento da Base de Dados deu-se através da conversão manual dos registos físicos da CDC para um \textit{script} com instruções pertencentes ao conjunto DML, mais especificamente, instruções \textit{INSERT INTO}.
+
+Assim como no subcapítulo \textit{\nameref{chap:impBD}}, a ordem na qual os registos são inseridos é fundamental para o povoamento correto da BD, assim como o cumprimento das restrições implementadas, desde o uso correto de chaves estrangeiras e o respeito dos domínios de valores estabelecidos.
+
+Na inserção de clientes, exemplificamos o uso do incremento sequencial automático previamente desenvolvido, omitindo, assim, o identificador do cliente no seu registo.
+
+Para além deste \textit{script} SQL, foi ainda implementado um programa em \textit{Python}, que exemplifica a execução de instruções SQL no servidor da BD. Este começa por, através do \textit{package mysql.connector}, estabelecer uma conexão com o servidor, e inicializa um objeto cursor para execução de \textit{queries}. De seguida, são introduzidos cinco clientes na BD, similarmente como no povoamento descrito anteriormente. Estes clientes são apresentados no terminal através de uma \textit{query} que efetua a seleção dos últimos cinco clientes criados através da ordenação decrescente do seus identificadores. Por fim, o cursor e a conexão são encerrados, respetivamente.
+
+Para consultar o \textit{script} SQL e o programa \textit{Python}, por favor confira os respetivos anexos \textit{\nameref{anexo:10}} e \textit{\nameref{anexo:11}}.
 
 \section{Cálculo do Espaço da Base de Dados}
-\textcolor{red}{>> Calcular a dimensão inicial da base de dados (1 registo por tabela) e depois indicar a sua taxa de crescimento anual, assumindo valores que acharem adequados para o vosso caso de aplicação. Devem ter em atenção o tipo de dados dos vários atributos das tabelas e o espaço que o MySQL reserva para cada um deles. Sugiro a utilização de uma folha de cálculo para realizarem este cálculo.}
+
+Para o cálculo do espaço de armazenamento da BD, calculámos a dimensão inicial com um registo por tabela.
+
+Para a obtenção dos tamanhos de cada tipo de dados, recorremos à secção \textit{13.7 Data Type Storage Requirements} do Manual de Referência \textit{MySQL 8.0} \cite{MySQLManual}. Neste cálculo, estipulámos que os caracteres utilizados em campos de texto têm correspondência direta na tabela ASCII, ou seja, estes ocupam um \textit{byte} por caractere.
+
+Deste modo, obtemos uma dimensão inicial total de 8773 \textit{bytes}. Ao longo dos anos, a CDC observou uma taxa de crescimento anual média de 20\%, este crescimento resultaria num acréscimo de, aproximadamente, 1755 \textit{bytes} ($8773 \times 0.20$) do espaço de armazenamento da Base de Dados, por ano.
+
+Para consultar a folha de cálculo utilizada, confira o anexo \textit{\nameref{anexo:12}}.
+
+\loadgeometry{default}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.83]{images/armazenamento/1.png}
+    \caption{Cálculo do Espaço de Armazenamento da BD}
+    \label{fig:5.1}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.83]{images/armazenamento/2.png}
+    \caption{Cálculo do Espaço de Armazenamento da BD}
+    \label{fig:5.2}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.83]{images/armazenamento/3.png}
+    \caption{Cálculo do Espaço de Armazenamento da BD}
+    \label{fig:5.3}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.83]{images/armazenamento/4.png}
+    \caption{Cálculo do Espaço de Armazenamento da BD}
+    \label{fig:5.4}
+\end{figure}
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[scale=0.83]{images/armazenamento/5.png}
+    \caption{Cálculo do Espaço de Armazenamento da BD}
+    \label{fig:5.5}
+\end{figure}
+
+\clearpage
 
 \section{Definição e Caracterização de Vistas de Utilização em SQL}
-\textcolor{red}{>> Desenvolver um conjunto de vistas (VIEW), que considerem necessárias ou úteis para a realização de algumas consultas dos utilizadores da base de dados implementada.}
+
+Com o objetivo de facilitar e otimizar as consultas dos dados aos utilizadores, foram implementadas as seguintes vistas de utilização:
+
+\textit{\textbf{TodosSuspeitos}}
+
+A vista \textit{TodosSuspeitos} apresenta todos os suspeitos registados na agência, através da seleção de todos os atributos dos registos da tabela \textit{Suspeito}.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+DELIMITER //
+CREATE VIEW TodosSuspeitos AS
+    SELECT * FROM Suspeito;
+//
+DELIMITER ;
+\end{lstlisting}
+
+\textit{\textbf{CasosAtivos}}
+
+A vista \textit{CasosAtivos} apresenta todos os casos ativos da agência, em um determinado momento, através da filtragem onde o estado do caso se encontra em aberto. Nesta, é feita a junção dos atributos \textit{Estado} e \textit{Categoria} com as respetivas tabelas de mapeamento de valores, de forma a melhorar a apresentação da tabela resultado desta vista.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+DELIMITER //
+CREATE VIEW CasosAtivos AS
+    SELECT
+        C.ID AS CasoID,
+        C.Descrição,
+        C.DataAbertura,
+        CC.Designação AS Categoria,
+        CL.Nome AS 'Nome do cliente',
+        CL.Telefone AS 'Telefone do cliente',
+        CL.Email AS 'Email do cliente'
+    FROM Caso AS C
+    INNER JOIN Cliente AS CL
+    ON C.Cliente = CL.ID
+    INNER JOIN CasoCategoria AS CC
+    ON C.Categoria = CC.ID
+    WHERE
+        C.Estado = 1; -- 'aberto'
+//
+DELIMITER ;
+\end{lstlisting}
+
+\clearpage
+
+\textit{\textbf{DetetivesAtivos}}
+
+Similarmente a vista apresentada anteriormente, a vista \textit{DetetivesAtivos} apresenta todos os casos ativos da agência, em um determinado momento,
+através da filtragem onde o estado do detetive se encontra como contratado. Nesta, é feita a junção do atributo \textit{Especialidade} com a respetiva tabela de mapeamento de valores, \textit{DetetiveEspecialidade}, de forma a melhorar a apresentação da tabela resultado desta vista.
+
+\vspace{0.4cm}
+\begin{lstlisting}
+DELIMITER //
+CREATE VIEW DetetivesAtivos AS
+    SELECT
+        D.ID AS DetetiveID,
+        D.Nome,
+        D.Email,
+        D.Telefone,
+        D.DataNascimento,
+        D.Morada,
+        D.Salário,
+        D.DataContratação,
+        D.Efetivo,
+        DE.Designação AS Especialidade
+    FROM Detetive AS D
+    JOIN DetetiveEspecialidade AS DE
+    ON D.Especialidade = DE.ID
+    WHERE
+        D.Estado = 1; -- 'contratado'
+//
+DELIMITER ;
+\end{lstlisting}
+
+\clearpage
 
 \section{Tradução das Interrogações do Utilizador para SQL}
-\textcolor{red}{>> Apresentação de queries SQL, que representem as interrogações previamente apresentadas aquando da validação do esquema lógico construído. Se acharem pertinente, poderão desenvolver outras queries.}
+
+\textbf{Nota}: Para consultar as \textit{queries} desenvolvidas, confira o anexo \textit{\nameref{anexo:13}}.
+
+{\large\textbf{5.6.1 Aceder a identificadores de detetives que estão vinculados a um caso em específico (exemplo: ID do caso = 1), nessa instância.}}
+
+A primeira \textit{query} SQL foi obtida através da tradução direta da expressão AR previamente apresentada no subcapítulo \textit{\nameref{sec:val_model}}. Esta efetua a seleção de todos atributos da tabela \textit{Vinculado} onde o identificador do caso é igual a um e a data de desvinculação é nula, obtendo, assim, os identificadores dos detetives ativamente vinculados, bem como a descrição e data de vinculação.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+SELECT * FROM Vinculado
+	WHERE Caso = 1 AND DataDesvinculação IS NULL;
+\end{lstlisting}
+
+{\large\textbf{5.6.2 Aceder a casos onde um detetive em específico (exemplo: ID do detetive = 1) está ativamente vinculado, nessa instância.}}
+
+Similarmente à \textit{query} anterior, a segunda \textit{query} foi obtida através da tradução direta da correspondente expressão AR, e esta apresenta todos os casos onde um detetive está ativamente vinculado através do filtragem do seu identificador e da data de desvinculação.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+SELECT * FROM Vinculado
+	WHERE Detetive = 1 AND DataDesvinculação IS NULL;
+\end{lstlisting}
+
+{\large\textbf{5.6.3 Relatório completo de pagamentos com data, descrição e valor para um caso em específico (exemplo: ID do caso = 1).}}
+
+A tradução da expressão AR permitiu a obtenção da terceira \textit{query}, a qual apresenta a data, valor e descrição de todos os pagamentos referentes a um caso em específico.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+SELECT Data, Valor, Descrição FROM Pagamento
+	WHERE Caso = 1;
+\end{lstlisting}
+
+\clearpage
+
+{\large\textbf{5.6.4 Estatísticas de casos abertos, fechados e arquivados numa semana específica (exemplo: de 14/03/2024 a 20/04/2024).}}
+
+A tradução direta da expressão AR facilmente permitiu a obtenção da \textit{query} nº 4, nesta é efetuado a operação SQL \textit{INNER JOIN} para obter a designação do estado do caso e, a partir da operação \textit{WHERE}, são apresentados apenas os casos cuja data de abertura ou de fecho se encontram entre o intervalado das datas dadas como exemplo. Em alternativa, poderia-se usar a função SQL \textit{WEEK}, que retorna o número da semana da data passada como argumento, deste modo, o utilizador apenas precisava de especificar o número da semana em vez do intervalo de datas.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+SELECT C.ID, C.DataAbertura, C.DataFechamento, CE.Designação
+	FROM Caso AS C
+    INNER JOIN CasoEstado AS CE
+    ON C.Estado = CE.ID
+	WHERE (C.DataAbertura >= '2024-03-14' AND C.DataAbertura <= '2024-04-20')
+		OR (C.DataFechamento >= '2024-03-14' AND C.DataFechamento <= '2024-04-20');
+\end{lstlisting}
+
+{\large\textbf{5.6.5 Apresentar os dados de um caso (exemplo: ID do caso = 1) - evidências, suspeitos e testemunhas - por ordem cronológica.}}
+
+Assim como nas expressões AR previamente apresentadas, esta interrogação foi também divida em três \textit{queries} SQL, que originam três tabelas resultado - evidências, suspeitos e testemunhas -, relativas a um caso, e por ordem cronológica.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+SELECT * FROM Evidência
+	WHERE Caso = 1
+	ORDER BY DataColeta ASC;
+
+SELECT S.* FROM Suspeito AS S
+	INNER JOIN CasoSuspeito AS CS
+    ON CS.Caso = 1
+    ORDER BY S.DataRegisto ASC;
+
+SELECT T.* FROM Testemunha AS T
+	INNER JOIN CasoTestemunha AS CT
+    ON CT.Caso = 1
+    ORDER BY T.DataRegisto ASC;
+\end{lstlisting}
+
+\clearpage
+
+{\large\textbf{5.6.6 Relatório diário de novas evidências, suspeitos e testemunhas de um caso em específico (exemplo: ID do caso = 1 e data = 20/03/2024).}}
+
+Assim como no subcapítulo \textit{\nameref{sec:val_model}}, serão apresentadas duas versões da implementação em SQL da interrogação nº 6.
+
+Na primeira versão, através da tradução direta das expressões AR, foram obtidas três \textit{queries} SQL que apresentam como tabelas de resultado, as vinculações, suspeitos e testemunhas relativas a um caso em específico numa determinada data. Para a apresentação do relatório diário, em vez de se filtrar a data especifica ('2024-03-20', no exemplo apresentado), poderia-se usufruir do uso da função SQL \textit{CURRENT\_DATE}.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+SELECT ID, DataColeta, Descrição FROM Evidência
+	WHERE Caso = 1
+		AND DataColeta = '2024-03-20';
+
+SELECT S.* FROM Suspeito AS S
+	INNER JOIN CasoSuspeito AS CS
+    ON CS.Caso = 1
+    WHERE S.DataRegisto = '2024-03-20';
+
+SELECT T.* FROM Testemunha AS T
+	INNER JOIN CasoTestemunha AS CT
+    ON CT.Caso = 1
+    WHERE T.DataRegisto = '2024-03-20';
+\end{lstlisting}
+
+\vspace{1cm}
+
+A versão alternativa a interrogação nº 6, exemplifica como as três \textit{queries} SQL anteriores poderiam ser combinadas em uma só. Esta \textit{query} foi obtida através da tradução da expressão AR previamente apresentada, com exceção da criação uma tabela auxiliar \textit{Target} que guarda os atributos \textit{Data} e \textit{Caso} para as filtragens e junções seguintes, e do uso da operação \textit{LEFT JOIN} em vez da junção natural, ao combinar os resultados das três tabelas resultado em uma só. Esta \textit{query} tem um comportamento similar a expressão AR apresentada com exceção
+na apresentação da tabela resultado final.
+
+\clearpage
+\newgeometry{top=0.8cm}
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+WITH Target AS (
+    SELECT
+        '2024-03-20' AS Data,
+        '1' AS Caso
+),
+ES AS (
+    SELECT
+        E.Caso AS E_Caso,
+        E.ID AS E_ID,
+        E.Tipo AS E_Tipo,
+        E.Descrição AS E_Descrição,
+        E.Arquivo AS E_Arquivo
+    FROM Evidência AS E, Target
+        WHERE E.Caso = Target.Caso
+            AND E.DataColeta = Target.Data
+),
+SS AS (
+    SELECT
+        CS.Caso AS S_Caso,
+        S.ID AS S_ID,
+        S.Nome AS S_Nome,
+        S.Email AS S_Email,
+        S.Telefone AS S_Telefone,
+        S.DataNascimento AS S_DataNascimento,
+        S.Sexo AS S_Sexo,
+        S.Morada AS S_Morada,
+        S.Descrição AS S_Descrição
+    FROM Suspeito AS S, Target
+        INNER JOIN CasoSuspeito AS CS
+        ON CS.Caso = Target.Caso
+        WHERE S.DataRegisto = Target.Data
+),
+TS AS (
+    SELECT
+        CT.Caso AS T_Caso,
+        T.Nome AS T_Nome,
+        T.Email AS T_Email,
+        T.Telefone AS T_Telefone,
+        T.Morada AS T_Morada
+    FROM Testemunha AS T, Target
+        INNER JOIN CasoTestemunha AS CT
+        ON CT.Caso = Target.Caso
+        WHERE T.DataRegisto = Target.Data
+),
+Result AS (
+	SELECT * FROM ES
+        LEFT JOIN SS
+        ON ES.E_Caso = SS.S_Caso
+        LEFT JOIN TS
+        ON ES.E_Caso = TS.T_Caso
+)
+-- SELECT * FROM Result;
+\end{lstlisting}
+
+\loadgeometry{default}
 
 \section{Indexação do Sistema de Dados}
-\textcolor{red}{>> Apresentação de eventuais razões para definir um conjunto de índices sobre uma ou mais tabelas da base de dados. Criação e explicação dos índices indicados.}
+
+A indexação permite otimizar as operações de consulta dos dados. Um dos aspetos destacados na análise de viabilidade foi a redução do tempo que os detetives necessitam para buscar informações sobre evidências e outros detetives. Estas indexações visam diretamente atender a essa necessidade, melhorando a eficácia das investigações. Após uma análise, criámos três indexações com os seguintes propósitos:
+
+Implementámos uma indexação na coluna \textit{Caso}, que é uma chave estrangeira na tabela \textit{Evidência}, com o objetivo de facilitar a pesquisa de evidências. Esta melhoria é crucial para a resolução dos casos, uma vez que permite uma maior eficiência na obtenção de informações importantes. 
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!, numbers=none]
+CREATE INDEX idx_Caso ON Evidência (Caso);
+\end{lstlisting}
+\vspace{0.6cm}
+
+Criámos a indexação \textit{idx\_telefone} na tabela \textit{Detetive}, especificamente na coluna \textit{Telefone}, para otimizar as consultas relacionadas aos números de telefone dos detetives. Esta decisão foi tomada porque, no âmbito das operações diárias, é fundamental ter uma maneira rápida e eficiente de contactar os detetives.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!, numbers=none]
+CREATE INDEX idx_telefone ON Detetive (Telefone);
+\end{lstlisting}
+\vspace{0.6cm}
+
+Para justificar a criação do índice \textit{idx\_dataDesvinculação} na tabela \textit{Vinculado} com base na coluna \textit{dataDesvinculação}, podemos mencionar a necessidade de melhorar o desempenho das consultas que frequentemente filtram ou ordenam os resultados por esta coluna. Além disso, ao utilizarmos várias \textit{views} e \textit{stored procedures} que dependem de consultas rápidas e eficientes sobre a data de desvinculação, a criação deste índice torna-se essencial.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!, numbers=none]
+CREATE INDEX idx_dataDesvinculação ON Vinculado (DataDesvinculação);
+\end{lstlisting}
+\vspace{0.6cm}
+
+\textbf{Nota}: Para consultar o \textit{script} para a indexação da BD confira o anexo \textit{\nameref{anexo:14}}.
+
+\clearpage
+
+\newgeometry{top=3cm}
 
 \section{Implementação de procedimentos, funções e gatilhos}
-\textcolor{red}{>> Desenvolvimento de um procedimento, de uma função e de um gatilho, que trabalhem com alguns objetos de dados criados na base de dados. Apresentar a razão da sua criação e explicar o seu funcionamento. Um dos exemplos criados deverá incluir um caso concreto de aplicação de transações.}
+
+A implementação de procedimentos, funções e gatilhos em BD é essencial para melhorar a eficiência, a integridade e a automatização.
+Procedimentos e funções permitem a reutilização de código, facilitando operações complexas e repetitivas de forma padronizada. Gatilhos permitem executar ações automaticamente, o que garante uma melhor consistência e integridade dos dados.
+
+\subsection{Procedimentos}
+
+Para a execução de certos requisitos de manipulação, recorremos ao uso de procedimentos, de forma a agilizar a execução destes.
+
+\textbf{Nota}: Para consultar os procedimentos implementados, confira os anexos \textit{\nameref{anexo:15}} e \textit{\nameref{anexo:16}}.
+
+Deste modo, alguns dos procedimentos criados são:
+
+\textit{\textbf{ConsultarDetetivesCaso}}
+
+Este procedimento foi criado de forma a melhorar a eficiência e automatização da BD para a obtenção, através do identificador de um caso, de todos os detetives que já estiveram envolvidos, bem como os que se encontram ativamente vinculados neste caso. Este procedimento baseia-se no requisito nº \textbf{12} -
+\textit{“Dado o identificador
+do caso, deve ser possível aceder a todos os detetives que já estiveram envolvidos, bem como
+detetives envolvidos no momento.”} - e uma derivação deste já foi estudada na primeira interrogação levantada para a \textit{\nameref{sec:val_model}}.
+
+Como supramencionado, este procedimento recebe como parâmetro o identificador do caso, e através da junção das tabelas \textit{Detetive} e \textit{Vinculado} pelo identificador do detetive, e da operação \textit{WHERE} para a filtragem de identificadores dos casos na tabela \textit{Vinculado} que sejam iguais ao identificador do caso passado como parâmetro, é permitida a obtenção de todos os registos de detetives que estão ou estiveram associados ao caso em específico.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE PROCEDURE ConsultarDetetivesCaso (IN CasoID INT)
+BEGIN
+    SELECT * FROM Detetive AS D
+        INNER JOIN Vinculado AS V
+        ON D.ID = V.Detetive
+        WHERE V.Caso = CasoID;
+END //
+DELIMITER ;
+\end{lstlisting}
+
+\loadgeometry{default}
+\clearpage
+
+\textit{\textbf{DesvincularDetetive}}
+
+Baseado no requisito nº \textbf{33} - \textit{“Uma desvinculação de um detetive a um caso, sejam os motivos aposentamento/demissão/remoção do detetive, deve atualizar o atributo “data de desvinculação”.
+”} -, o procedimento \textit{DesvincularDetetive} permite, através dos identificadores de um detetive, de um caso a qual este detetive esteja vinculado, e uma descrição da desvinculação, atualizar a respetiva vinculação, se existente, marcando-a como uma desvinculação, através da atribuição da data e hora atual e a descrição passada como parâmetro. É garantido pelo termo da condição da operação \textit{WHERE} - \textit{DataDesvinculação IS NULL} -, que apenas será atualizado um registo da tabela, ou nenhum no caso de tal vinculação, passada como parâmetro, não existir.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE PROCEDURE DesvincularDetetive (IN detetive_id INT, IN caso_id INT, IN descrição_desv TEXT(400))
+BEGIN
+    UPDATE Vinculado
+    SET
+        DataDesvinculação = CURRENT_TIMESTAMP,
+        Descrição = descrição_desv
+    WHERE
+        Detetive = detetive_id
+        AND Caso = caso_id
+        AND DataDesvinculação IS NULL;
+END //
+DELIMITER ;
+\end{lstlisting}
+
+\clearpage
+
+\textit{\textbf{CriaClienteECaso}}
+
+O procedimento \textit{CriaClienteECaso} simplifica e agiliza o processo de criação de um novo cliente e o respetivo inquérito de um novo caso. Este, através do uso de uma transação SQL, cria um novo cliente com valores dados como parâmetros, e se tal for criado com sucesso, é de seguida criado o caso com os respetivos parâmetros. Se por algum motivo não for possível a criação do novo caso a transação é abortada e revertida, e nem o cliente, nem o caso, são criados.
+
+É utilizado um parâmetro \textit{msg} para apresentação de uma mensagem após a execução deste procedimento, se a transação for bem sucedida é apresentada uma mensagem de sucesso com os novos identificadores do cliente e do caso, caso contrário é apresentada uma mensagem de erro. É demonstrado em comentário um exemplo de como este procedimento pode ser chamado.
+
+Este procedimento baseia-se nos requisitos de descrição nº 2 - \textit{“Um registo de um caso deve incluir os seguintes atributos: identificador único, identificador de cliente, identificador (número inteiro) do estado, categoria, descrição, data de abertura, (...)”} - e nº 23 - \textit{“Um registo de um cliente deve incluir os seguintes atributos: identificador único, nome completo, telefone, email (opcional), e endereço de morada (opcional).”}.
+
+\clearpage
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE PROCEDURE CriaClienteECaso (
+    IN cliente_nome VARCHAR(150),
+    IN cliente_telefone VARCHAR(20),
+    IN cliente_email VARCHAR(320),
+    IN cliente_morada VARCHAR(250),
+    IN caso_categoria INT,
+    IN caso_descrição TEXT(2000),
+    OUT msg VARCHAR(255)
+)
+BEGIN
+    DECLARE EXIT HANDLER FOR SQLEXCEPTION
+    BEGIN
+        ROLLBACK; -- Rollback in case of error
+        SET msg = 'Erro ao criar cliente e caso. Transação revertida.';
+    END;
+
+    START TRANSACTION;
+
+    SET @cliente_id = (SELECT COALESCE(MAX(ID) + 1, 1) FROM Cliente);
+
+    INSERT INTO Cliente (ID, Nome, Telefone, Email, Morada)
+    VALUES (@cliente_id, cliente_nome, cliente_telefone, cliente_email, cliente_morada);
+
+    INSERT INTO Caso (Cliente, Categoria, Estado, Descrição, DataAbertura, DataFechamento)
+    VALUES (@cliente_id, caso_categoria, 1, caso_descrição, CURRENT_TIMESTAMP, NULL);
+    -- Estado 1: 'aberto'
+
+    COMMIT; -- Commit the transaction if no error occurred
+    SET msg = CONCAT(
+        'Cliente (ID: ', @cliente_id, ') e caso (ID: ',
+        (SELECT MAX(ID) FROM Caso WHERE Cliente = @cliente_id),
+        ') criados com sucesso.'
+    );
+END //
+DELIMITER ;
+
+/*
+SET @msg = '';
+CALL CriaClienteECaso('Scherlock Teste', '912345678', 'scherlock@holmes.com', 'Rua Teste', 1, 'Descrição teste', @msg);
+SELECT @msg AS 'Mensagem';
+*/
+\end{lstlisting}
+
+\clearpage
+
+\subsection{Funções}
+
+Para a execução de requisitos de manipulação do âmbito financeiro, recorremos ao uso de funções, de forma a agilizar a execução destes, e permitir a reutilização de instruções. 
+
+\textbf{Nota}: Para consultar as funções implementadas, confira o anexo \textit{\nameref{anexo:17}}.
+
+Deste modo, algumas das funções criadas são:
+
+\textit{\textbf{CustoTotalCaso}}
+
+Baseada no requisito nº \textbf{44} - \textit{“É permitido pelo sistema obter o custo total de um caso, através da soma de todas as despesas relativas ao mesmo. Salários de detetives não estão incluídos.”} -, a função \textit{CustoTotalCaso} permite o cálculo do custo total de um caso, cujo identificador é passado como argumento, através do somatório do valor de todas as despesas do caso em especifico, localizados na tabela \textit{Despesa} nos registos em que o identificador do caso seja igual ao identificador passado como argumento. O valor deste somatório e retornado pela função, e se o caso não existir ou não tenha registos de despesas, a função retorna zero.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE FUNCTION CustoTotalCaso (ID INT) RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+BEGIN
+    DECLARE custo_total DECIMAL(10, 2) DEFAULT 0;
+    SELECT COALESCE(0, SUM(Valor)) INTO custo_total FROM Despesa
+        WHERE Despesa.Caso = ID;
+    RETURN custo_total;
+END //
+DELIMITER ;
+\end{lstlisting}
+
+\clearpage
+
+\textit{\textbf{LucroCaso}}
+
+A função \textit{LucroCaso} exemplifica a reutilização de instruções através do uso das funções \textit{RendimentoTotalCaso} e \textit{CustoTotalCaso} para o cálculo do lucro total do caso, cujo identificador é passado como argumento. Esta baseia-se no requisito nº \textbf{46} - “É permitido pelo sistema obter o lucro/prejuízo de um caso, através da subtração do valor obtido em R45 (rendimento) pelo valor obtido em R44 (custo).”. Similarmente à função apresentada anteriormente, se o caso com o identificador dado não existir, a função \textit{LucroCaso} retorna zero.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE FUNCTION LucroCaso (ID INT) RETURNS DECIMAL(10, 2)
+DETERMINISTIC
+BEGIN
+    DECLARE lucro_prejuizo DECIMAL(10, 2) DEFAULT 0;
+    DECLARE rendimento_total DECIMAL(10, 2) DEFAULT 0;
+    DECLARE custo_total DECIMAL(10, 2) DEFAULT 0;
+
+    SET rendimento_total = RendimentoTotalCaso(ID);
+    SET custo_total = CustoTotalCaso(ID);
+
+    SET lucro_prejuizo = rendimento_total - custo_total;
+    RETURN lucro_prejuizo;
+END //
+DELIMITER ;
+\end{lstlisting}
+
+\clearpage
+
+\subsection{Gatilhos}
+
+Através do uso de gatilhos SQL, foi possível automatizar as execuções de certos requisitos de manipulação, garantido a consistência e integridade dos dados.
+
+\textbf{Nota}: Para consultar os gatilhos implementados, confira o anexo \textit{\nameref{anexo:18}}.
+
+Deste modo. foram desenvolvidos os seguintes gatilhos:
+
+\textit{\textbf{UpdateCasoEstado}}
+
+Baseado no requisito nº \textbf{5} - \textit{“Quando um caso é resolvido ou arquivado o seu estado é atualizado respetivamente, assim como a data de fechamento e é feita a desvinculação dos seus detetives.”} -, o gatilho \textit{UpdateCasoEstado} permite atualização automática da data de fecho de um caso, assim como efetua a desvinculação de todos os detetives ativamente vinculados a este.
+
+Primeiramente, após a atualização de um registo da tabela \textit{Caso}, é verificado se o estado antigo era igual a um, valor correspondente a ser um caso “aberto” pelo mapeamento efetuado na tabela \textit{CasoEstado}, e se o novo estado é dois (“resolvido”) ou três (“arquivado”), se tal acontecer a data de fechamento do respetivo caso é atualizada, assim como é feita a desvinculação de todos os seus detetives ativamente vinculados, através do identificador do caso atualizado e da data de desvinculação ser nula na tabela \textit{Vinculado}, são atualizadas às datas de desvinculação desses registos a data atual.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE TRIGGER UpdateCasoEstado
+BEFORE UPDATE ON Caso
+FOR EACH ROW
+BEGIN
+    -- Verifica se o estado do caso foi alterado para 2: "resolvido" ou 3: "arquivado"
+    -- e se o seu antes da atualização era 1: "aberto"
+    IF OLD.Estado = 1 AND NEW.Estado IN (2, 3) THEN
+        -- Atualiza a data de fechamento do caso
+        SET NEW.DataFechamento = CURRENT_DATE;
+
+        -- Desvincula os detetives associados ao caso
+        UPDATE Vinculado
+        SET DataDesvinculação = CURRENT_TIMESTAMP
+            WHERE Caso = NEW.ID AND DataDesvinculação IS NULL;
+    END IF;
+END //
+DELIMITER ;
+\end{lstlisting}
+
+\clearpage
+
+\textit{\textbf{UpdateDetetiveEstado}}
+
+Baseado no requisito nº \textbf{20} - \textit{“Quando um detetive é demitido ou se aposenta o seu atributo “estado” deve ser atualizado respetivamente, assim como o atributo “data de desvinculação” de todas as suas vinculações a casos”} -, o gatilho \textit{UpdateDetetiveEstado} permite a desvinculação de todos os casos ativos de um detetive, quando o seu estado é atualizado.
+
+Primeiramente, antes da atualização de um registo da tabela \textit{Detetive}, é verificado se o seu estado antigo era igual a um, valor correspondente a “contratado” pelo mapeamento efetuado na tabela \textit{DetetiveEstado}, e se o seu novo estado é dois (“demitido”) ou três (“aposentado”), se tal acontecer é feita a desvinculação de todos os seus casos ativos, através do identificador do detetive atualizado e da data de desvinculação ser nula na tabela \textit{Vinculado}, são atualizadas às datas de desvinculação desses registos a data atual.
+
+\vspace{0.4cm}
+\begin{lstlisting}[escapechar=!]
+DELIMITER //
+CREATE TRIGGER UpdateDetetiveEstado
+AFTER UPDATE ON Detetive
+FOR EACH ROW
+BEGIN
+    -- Verifica se o estado do detetive foi alterado para 2: "demitido" ou 3: "aposentado"
+    -- e se o seu antes da atualização era 1: "contratado"
+    IF OLD.Estado = 1 AND NEW.Estado IN (2, 3) THEN
+        -- Atualiza a data de desvinculação de todas as suas vinculações a casos
+        UPDATE Vinculado
+        SET DataDesvinculação = CURRENT_TIMESTAMP
+            WHERE Detetive = NEW.ID AND DataDesvinculação IS NULL;
+    END IF;
+END //
+DELIMITER ;
+\end{lstlisting}
 
 %==========================================================================
 % END IMPLEMENTAÇÃO FÍSICA
@@ -1925,12 +2617,9 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
 % BEGIN CONCLUSÕES DE TRABALHO FUTURO
 %==========================================================================
 
-\newgeometry{top=2.5cm}
 \chapter{Conclusões e Trabalho Futuro}
 
-    \textcolor{red}{>> Resumo breve do trabalho realizado e das ações desenvolvidas. Enumeração e análise de aspetos positivos e negativos identificados durante o processo de desenvolvimento do sistema de bases de dados. Apresentação e explicação de melhorias a realizar, se justificáveis.}
-
-    Em suma, a equipa de trabalho concluiu todas as etapas planeadas na fase inicial do projeto, conforme detalhado no diagrama de Gantt, com a exceção da etapa \textit{[\ref{requisitos}] Levantamento e Análise de Requisitos}, que acabou por requerer dois dias adicionais além do previsto. Foi assim criado um novo diagrama de Gantt na conclusão do projeto, que expressa a realidade cronológica das etapas do desenvolvimento do trabalho (consultar anexo \textit{\nameref{anexo:7}}).
+    Em suma, a equipa de trabalho concluiu todas as etapas planeadas em ambas as fases do projeto, conforme detalhado nos diagramas de Gantt, com a exceção da etapa \textit{\nameref{sec:requisitos}} - esta pertencente à primeira parte -, que acabou por requerer dois dias adicionais além do previsto. Foi assim criado um novo diagrama de Gantt relativo à primeira parte aquando à conclusão dessa fase, que expressa a realidade cronológica das etapas do desenvolvimento do trabalho (consultar anexo \textit{\nameref{anexo:7}}).
 
     No que diz respeito ao trabalho realizado, foram concluídos os seguintes pontos:
     \begin{itemize}
@@ -1939,15 +2628,13 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
         \item \textbf{Modelação Conceptual}: Criação de um modelo de alto nível que representa os conceitos e relações principais do sistema. Nesta etapa realizou-se a identificação das principais entidades, atributos e relacionamentos, bem como a elaboração do diagrama
         Entidade-Relacionamento conceptual;
         \item \textbf{Modelação Lógica}: O modelo conceptual foi refinado e convertido em um modelo lógico de menor nível, o que envolveu a inclusão de mais metadata e a criação de tabelas adicionais para garantir a uniformidade do domínio de dados. Além disso, foram aplicadas técnicas de normalização à arquitetura para assegurar a eficiência e integridade dos dados no sistema.
+        \item \textbf{Implementação Física}: A implementação física em \textit{MySQL} originou-se da tradução do modelo lógico desenvolvido. Daí, prosseguiu-se a criação de utilizadores com as respetivas permissões, povoou-se a BD e o calculou-se o seu espaço de armazenamento, bem como o crescimento anual. Foram definidas e caracterizadas um conjunto de vistas baseadas nos requisitos levantados, e efetuou-se a tradução das expressões AR para \textit{queries} SQL. Por fim, otimizámos o SBD através da criação de índices em atributos frequentemente acedidos e deu-se a implementação de procedimentos, funções e gatilhos.
+        
     \end{itemize}
 
     Um dos pontos fortes do projeto foi a manutenção da simplicidade da solução apresentada, garantindo simultaneamente o cumprimento de todos os requisitos definidos com a CDC.
 
-    \textcolor{red}{No entanto, durante o processo, surgiu a consideração de implementar uma entidade denominada “Comunicações” para o registo das interações entre detetives e partes envolvidas nos casos. Contudo, devido à complexidade adicional que a sua implementação e integração no Sistema de Base de Dados trariam, a equipa, juntamente com a CDC, optou por não prosseguir com esta adição.}
-
-    \textcolor{red}{A próxima fase do projeto concentrar-se-á na implementação física do Sistema de Base de Dados através da tradução do modelo lógico realizado, na avaliação do armazenamento, na implementação de um sistema de recolha de dados para a transição dos dados da CDC para o novo SBD desenvolvido.}
-
-\loadgeometry{default}
+    Durante o processo, surgiu a consideração de implementar uma entidade denominada “Comunicação” para o registo das interações entre detetives e partes envolvidas nos casos, como testemunhas, suspeitos ou clientes. Esta entidade incluiria atributos como o ID do detetive, o ID da pessoa envolvida na comunicação e um atributo para indicar o tipo desta pessoa (cliente, testemunha ou suspeito). Isso permitiria um registo detalhado e organizado de todas as comunicações, melhorando a gestão e análise das interações no sistema.
 
 %==========================================================================
 % END CONCLUSÕES DE TRABALHO FUTURO
@@ -1966,8 +2653,13 @@ De modo semelhante à unificação de expressões descrita anteriormente, estas 
 \begin{thebibliography}{9}
 \bibitem{DatabaseSystems}
 Connolly, T., \& Begg, C. (2015). Database Systems: A Practical Approach to Design, Implementation, and Management (6th ed.). Pearson Education. London, UK.
+
 \bibitem{Aprendizagem em Banco de Dados}
 Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferramenta de Modelagem E.R. Monografia de Especialização. Universidade Federal de Santa Catarina, Brasil.
+
+\bibitem{MySQLManual}
+MySQL 8.0 Reference Manual (2024). \href{https://dev.mysql.com/doc/refman/8.0/en/storage-requirements.html}{\underline{MySQL 8.0 Reference Manual: Data Type Storage} \underline{Requirements}}. MySQL, Oracle.
+
 \end{thebibliography}
 
 %% Add bibliografia to index
@@ -1984,13 +2676,6 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
 %% Portuguese babel does not translate this environment
 \renewcommand{\nomname}{Lista de Siglas e Acrónimos}
 
-%% Text that can be shown before acronyms list
-% \renewcommand{\nompreamble}{
-%     \textcolor{red}{
-%         <<Apresentar uma lista com todas as siglas e acrónimos utilizados durante a realização do trabalho. O formato base para esta lista deverá ser da forma como abaixo se apresenta.>>
-%     }
-% }
-
 %% acronyms
 \nomenclature[01]{\textbf{CDC}}{Consultoria de Detetives Christie}
 \nomenclature[02]{\textbf{SIM}}{Soluções Informáticas Minho}
@@ -2001,6 +2686,11 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
 \nomenclature[07]{\textbf{ID}}{Identificador}
 \nomenclature[08]{\textbf{AR}}{Álgebra Relacional}
 \nomenclature[09]{\textbf{SQL}}{\textit{Structured Query Language}}
+\nomenclature[10]{\textbf{DDL}}{\textit{Data Definition Language}}
+\nomenclature[11]{\textbf{DCL}}{\textit{Data Control Language}}
+\nomenclature[12]{\textbf{DQL}}{\textit{Data Query Language}}
+\nomenclature[13]{\textbf{DML}}{\textit{Data Manipulation Language}}
+\nomenclature[14]{\textbf{DTL}}{\textit{Data Transaction Language}}
 
 %% Show acronyms
 \printnomenclature
@@ -2018,7 +2708,7 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
 \addchap{Anexos}
 
     \addsec{
-        \href{https://drive.google.com/file/d/1agTd5YEz52V7wCNFIrlbNgWCyI8yPJf1/view?usp=sharing}{\small [I] Diagrama de Gantt}
+        \href{https://docs.google.com/spreadsheets/d/1o4Pl00OfLMH4ukDdvNz3TweH2OxFpA7t8Vd_v-Idx-c/edit?usp=sharing}{\small [I] Diagrama de Gantt}
         \label{anexo:1}
     }
     
@@ -2048,8 +2738,65 @@ Cândido, C. H. (2005). Aprendizagem em Banco de Dados: Implementação de Ferra
     }
 
     \addsec{
-        \href{https://drive.google.com/file/d/13TvAYIQOglJ_Wpz7RWt_ZgIu_MXA9gk9/view?usp=sharing}{\small [VII] Diagrama de Gantt na Realidade}
+        \href{https://drive.google.com/file/d/13TvAYIQOglJ_Wpz7RWt_ZgIu_MXA9gk9/view?usp=sharing}{\small [VII] Diagrama de Gantt na Realidade - 1ª fase}
         \label{anexo:7}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1oGGkJKPapxG5coPGU3IdcriHo9COB0QO/view?usp=sharing}{\small [VIII] Implementação do Esquema Físico da BD (DDL)}
+        \label{anexo:8}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1jUaUkb0EvXktnOZBCtd0Xn0PIAaBdjWp/view?usp=sharing}{\small [IX] Criação de Utilizadores no SBD (DCL)}
+        \label{anexo:9}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1jHDskg01RIq9xx9dfI-Q77jqsetva0iq/view?usp=sharing}{\small [X] \textit{Script} SQL para o Povoamento da BD (DML)}
+        \label{anexo:10}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1o6yMS2C_AZW8a5LTT15YZFSd4mV6spFH/view?usp=sharing}{\small [XI] Programa \textit{Python} para o Povoamento da BD}
+        \label{anexo:11}
+    }
+
+    \addsec{
+        \href{https://docs.google.com/spreadsheets/d/18_HumE2Tp6iXIrclJ8NqL4j14i6Q-a4SDhE66DnfLqM/edit?usp=sharing}{\small [XII] Folha de Cálculo do Espaço da BD}
+        \label{anexo:12}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1P2X82Eap49ieG7HGnaFuIOPcqnsBxjbo/view?usp=sharing}{\small [XIII] \textit{Queries} Traduzidas das Expressões AR (DQL)}
+        \label{anexo:13}
+    }
+
+    \clearpage
+
+    \addsec{
+        \href{https://drive.google.com/file/d/17UHQtZnMSAuA3ZXFf_N5niAitrfxhskw/view?usp=sharing}{\small [XIV] Indexação (DML)}
+        \label{anexo:14}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1nDGx4cxhMKwkiVAS5sH81arn8V7eACcN/view?usp=sharing}{\small [XV] Procedimentos (DQL)}
+        \label{anexo:15}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1--1piEEx0GlXXKYT-MLY0XA2kPCFKb5F/view?usp=sharing}{\small [XVI] Procedimentos (DML)}
+        \label{anexo:16}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1o7GW8LkoDmEmKEOOKMgYNpa-enBbEYrA/view?usp=sharing}{\small [XVII] Funções (DQL)}
+        \label{anexo:17}
+    }
+
+    \addsec{
+        \href{https://drive.google.com/file/d/1PzfLeuxHLfIze96VfyxKeXouO8-L8QTt/view?usp=sharing}{\small [XVIII] Gatilhos (DML)}
+        \label{anexo:18}
     }
 
 %==========================================================================
