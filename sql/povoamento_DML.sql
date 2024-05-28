@@ -59,7 +59,6 @@ INSERT INTO Caso (ID, Cliente, Categoria, Estado, Descrição, DataAbertura, Dat
     (5, 4, 5, 2, 'Violação de direitos trabalhistas', '2023-02-06', '2023-02-20'),
     (6, 5, 1, 3, 'Investigação de homicídio', '2023-12-01', '2024-01-11'),
 	(7, 6, 6, 1, 'Corrupção administrativa', '2024-04-21', NULL);
-    
 
 -- Povoar tabela Pagamento
 INSERT INTO Pagamento (Caso, Descrição, Valor, Data) VALUES
@@ -72,7 +71,7 @@ INSERT INTO Pagamento (Caso, Descrição, Valor, Data) VALUES
     (6, 'Pagamento: Análise Forense', 120.50, '2023-12-05'),
     (6, 'Pagamento: Consulta de Registos Policiais', 190.30, '2023-12-30'),
     (7, 'Pagamento: Investigação de Registos Administrativos', 157.50, '2024-04-28');
-    
+
 -- Povoar tabela Despesa
 INSERT INTO Despesa (Caso, Descrição, Valor, Data) VALUES
 	(1, 'Análise Forense', 100.00, '2024-02-24'),
@@ -97,7 +96,6 @@ INSERT INTO Evidência (ID, Caso, Tipo, DataColeta, Descrição, Arquivo) VALUES
     (9, 6, 3, '2024-02-26', 'Relatório sobre a análise de impressões digitais', 'https://cdc.com/detetetive-1/relatorio-9.pdf'),
     (10, 7, 2, '2024-04-25', 'Documentos administrativos indicando irregularidades', NULL);
 
-
 -- Povoar tabela Detetive com 4 detetives e 1 estagiário
 INSERT INTO Detetive (ID, Especialidade, Estado, Nome, Email, Telefone, DataNascimento, Morada, Salário, DataContratação, DataFimContratação, Efetivo) VALUES
     (1, 3, 1, 'Joana Santos', 'joanasantos@example.com',  '912314572', '1980-01-27', 'Alameda do Mar, 7', 4600.00, '2020-02-12', NULL, 1),
@@ -107,7 +105,6 @@ INSERT INTO Detetive (ID, Especialidade, Estado, Nome, Email, Telefone, DataNasc
     (5, 8, 1, 'Manuela Carvalho', 'manuelacarvalho@example.com',  '960253777', '1997-04-20', 'Bairro do Mar, 10', 4600.00, '2022-05-20', NULL, 1),
     (6, 7, 2, 'Juliana Sousa', 'julianasousa@example.com',  '916572398', '2000-04-27', 'Rua de Castro, 98', 4600.00, '2023-01-01', '2024-05-27', 1),
     (7, 6, 1, 'André Silva', 'andresilva@example.com', '912098467', '2002-05-09', 'Alameda das Rosas, 2', 1500.00, '2024-02-05', NULL, 0);
-
 
 -- Povoar tabela Vinculado
 INSERT INTO Vinculado (Detetive, Caso, DataVinculação, DataDesvinculação, Descrição) VALUES
@@ -131,7 +128,6 @@ INSERT INTO Suspeito (ID, Nome, Email, Telefone, DataNascimento, Sexo, Morada, D
     (7, 'Ricardo Lopes', 'ricardolopes@example.com', '990123456', '1986-12-02', 'M', 'Bairro da Serra, 77', 'Homem, olhos verdes, cabelo castanho, estatura média, atlético. Suspeito de investigação de homicídio devido a provas de ADN encontradas na cena do crime.', '2023-12-02'),
     (8, 'Patrícia Duarte', 'patriciaduarte@example.com', '991234567', '1981-04-27', 'F', 'Rua do Sol, 99', 'Mulher, olhos castanhos, cabelo preto, estatura média, robusta. Suspeita de corrupção administrativa devido a transferências bancárias suspeitas.', '2024-04-22');
 
-
 -- Povoar tabela CasoSuspeito
 INSERT INTO CasoSuspeito (Caso, Suspeito) VALUES
     (1, 1),
@@ -142,7 +138,6 @@ INSERT INTO CasoSuspeito (Caso, Suspeito) VALUES
     (5, 6),
     (6, 7),
     (7, 8);
-
 
 -- Povoar tabela Testemunha
 INSERT INTO Testemunha (ID, Nome, Email, Telefone, Morada, DataRegisto) VALUES
