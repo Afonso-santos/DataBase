@@ -1,5 +1,3 @@
-USE CDC;
-
 -- 1. Aceder a identificadores de detetives que estão vinculados a um
 -- caso em específico (exemplo: ID do caso = 1), nessa instância.
 SELECT * FROM Vinculado
