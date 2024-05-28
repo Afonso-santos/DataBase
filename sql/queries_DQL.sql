@@ -53,7 +53,7 @@ ES AS (
 	SELECT
 		E.Caso AS E_Caso,
 		E.ID AS E_ID,
-		E.Tipo AS E_Tipo, -- TODO INNER JOIN TO GET VALUES
+		E.Tipo AS E_Tipo,
 		E.Descrição AS E_Descrição,
 		E.Arquivo AS E_Arquivo
 	FROM Evidência AS E, Target
