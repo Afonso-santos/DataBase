@@ -42,6 +42,19 @@ SELECT T.* FROM Testemunha AS T
 
 -- 6. Relatório diário de novas evidências, suspeitos e testemunhas
 -- de um caso em específico (exemplo: ID do caso = 1 e data = 20/03/2024).
+SELECT ID, DataColeta, Descrição FROM Evidência
+	WHERE Caso = 1
+		AND DataColeta = '2024-03-20';
+
+SELECT S.* FROM Suspeito AS S
+	INNER JOIN CasoSuspeito AS CS
+    ON CS.Caso = 1
+    WHERE S.DataRegisto = '2024-03-20';
+
+SELECT T.* FROM Testemunha AS T
+	INNER JOIN CasoTestemunha AS CT
+    ON CT.Caso = 1
+    WHERE T.DataRegisto = '2024-03-20';
 
 -- 6. versão alternativa
 WITH Target AS (
