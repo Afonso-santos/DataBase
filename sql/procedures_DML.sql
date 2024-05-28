@@ -18,8 +18,6 @@ DELIMITER ;
 
 -- Procedimento que cria um novo cliente e um caso associado
 -- a esse cliente, recorrendo a uma transação.
-USE CDC;
-
 DELIMITER //
 CREATE PROCEDURE CriaClienteECaso (
     IN cliente_nome VARCHAR(150),
